@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>main</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js.js"></script>
+  </head>
+  <style media="screen">
+    @import 'reset.css';
+    @font-face {
+    font-family: "20Kopeek_Regular";
+    src: url("./fonts/20Kopeek_Regular.otf") format("TrueType");
+    font-style: normal;
+    font-weight: normal;
+    }
+
+    ::-webkit-scrollbar {
+    width: 0;
+    }
+
+    body {
+      width: 100vw;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: auto;
+      background-color: black;
+    }
+    .blocks {
+      position: relative;
+      height: 270vh;
+      width: 100vw;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-areas: "first second"
+                           "third second"
+                           "fourth fourth"
+                           "fifth sixth"
+                           "seventh seventh"
+    }
+    .part {
+      border-radius: 1em;
+      background-color: white;
+      position: relative;
+      overflow: hidden;
+      border-style: solid;
+      border-color: black;
+    }
+    .first {
+      border-width: 0.2em 0.15em 0.15em 0.2em;
+      grid-area: first;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas: "first_option"
+                           "second_option"
+                           "third_option"
+                           "fourth_option"
+    }
+    .first_option {
+      grid-area: first_option;
+      background-color: white;
+      transition: all .2s;
+    }
+    .second_option {
+      grid-area: second_option;
+      background-color: white;
+      transition: all .2s;
+    }
+    .third_option {
+      grid-area: third_option;
+      background-color: white;
+      transition: all .2s;
+    }
+    .fourth_option {
+      grid-area: fourth_option;
+      background-color: white;
+      transition: all .2s;
+    }
+    .first p {
+      position: relative;
+      font-family: "20Kopeek_Regular";
+      font-size: 1.5vw;
+      cursor: pointer;
+      /* padding: 1vh 1vh; */
+    }
+    .second {
+      grid-area: second;
+      border-width: 0.2em 0.2em 0.15em 0.15em;
+    }
+    .third {grid-area: third;
+      border-width: 0.15em 0.15em 0.15em 0.2em;
+    }
+    .fourth {
+      grid-area: fourth;
+      border-width: 0.15em 0.2em 0.15em 0.2em;
+    }
+    .fifth {
+      grid-area: fifth;
+      border-width: 0.15em 0.15em 0.15em 0.2em;
+    }
+    .sixth {
+      grid-area: sixth;
+      border-width: 0.15em 0.2em 0.15em 0.15em;
+    }
+    .seventh {
+      grid-area: seventh;
+      border-width: 0.15em 0.2em 0.2em 0.15em;
+    }
+  </style>
+  <body>
+    <div class="blocks">
+      <div class="part first">
+        <div class="first_option">
+          <p>УСЛУГИ</p>
+        </div>
+        <div class="second_option">
+          <p>МЕРОПРИЯТИЯ</p>
+        </div>
+        <div class="third_option">
+          <p>ОНЛАЙН-ТЕРАПИЯ</p>
+        </div>
+        <div class="fourth_option">
+          <p>НАЙТИ ДРУГА</p>
+        </div>
+      </div>
+      <div class="part second">
+
+      </div>
+      <div class="part third"></div>
+      <div class="part fourth">
+
+      </div>
+      <div class="part fifth"></div>
+      <div class="part sixth">
+
+      </div>
+      <div class="part seventh">
+
+      </div>
+
+    </div>
+  </body>
+</html>
