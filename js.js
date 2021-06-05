@@ -36,4 +36,13 @@ $(document).ready(function() {
   $('.fourth_option').mouseout(function () {
     $('.fourth_option').css('background-color', 'white');
   });
+
+  $('.block4').click(function () {
+    'flex-grow':$(this).flex-grow() * 1.1
+  });
+
+
+  // $('.block4').click(function(){
+  // $('.block4').animate({flex-grow: '+=2'});
+  // });
 });
