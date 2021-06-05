@@ -103,10 +103,14 @@
     .third {
       grid-area: third;
       border-width: 0.15em 0.15em 0.15em 0.2em;
+      display: flex;
+      justify-content: center;
     }
+    .third img {height: 100%;}
     .fourth {
       grid-area: fourth;
       border-width: 0.15em 0.2em 0.15em 0.2em;
+      overflow: hidden;
     }
     .animation_numberphone {
       position: relative;
@@ -114,15 +118,29 @@
       width: 100vw;
       display: flex;
       align-items: center;
+      padding-left: 100vw;
+      animation: numberphone_action 10s linear infinite;
+    }
+    @keyframes numberphone_action {
+      0%{transform: translate(0, 0);}
+      100%{transform: translate(-200vw, 0)}
+    }
+    @keyframes numberphone_action_ipad {
+      0%{transform: translate(0, 0);}
+      100%{transform: translate(-220vw, 0)}
+    }
+    @keyframes numberphone_action_iphone {
+      0%{transform: translate(0, 0);}
+      100%{transform: translate(-400vw, 0)}
     }
     .numberphone {
       font-family: "20Kopeek_Regular";
       font-size: 3vw;
-      position: absolute;
-      padding: 1vw;
+      position: relative;
+      display: inline-block;
     }
-    .first_textpart {left: 0;}
-    .second_textpart {right: 0;}
+    .first_textpart {padding-left: 1vw;}
+    .second_textpart {padding-left: 14vw;}
     .fifth {
       grid-area: fifth;
       border-width: 0.15em 0.15em 0.15em 0.2em;
@@ -176,9 +194,9 @@
       .blocks {
         grid-template-rows: 0.5fr 1.5fr 0.15fr 0.4fr 0.15fr;
         grid-template-areas: "first first"
-                             "third second"
+                             "fifth second"
                              "fourth fourth"
-                             "fifth sixth"
+                             "third sixth"
                              "seventh seventh"
       }
       .first p {
@@ -189,10 +207,19 @@
         font-size: 4vw;
         padding: 1.4vw 1.5vw;
       }
+      .second {
+        border-width: 0.15em 0.2em 0.15em 0.15em;
+      }
       .second img {padding: 1.2vw 1.5vw;}
       .second p {font-size: 2.6vw;}
+
       .numberphone {font-size: 4vw;}
-      .animation_numberphone {width: 120vw;}
+      .animation_numberphone {
+        width: 120vw;
+        animation: numberphone_action_ipad 10s linear infinite;
+      }
+      .first_textpart {padding-left: 1vw;}
+      .second_textpart {padding-left: 4vw;}
       .sixth h1 {
         font-size: 4vw;
         padding: 1.4vw 1.5vw;
@@ -204,7 +231,8 @@
       }
       @media only screen and (min-width: 320px) and (max-width: 568px) {
         .blocks {
-          grid-template-rows: 0.7fr 1.5fr 0.15fr 0.4fr 0.4fr 0.15fr;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 0.7fr 1.5fr 0.15fr 0.8fr 0.4fr 0.15fr;
           grid-template-areas: "first first"
                                "second second"
                                "fourth fourth"
@@ -212,6 +240,9 @@
                                "sixth sixth"
                                "seventh seventh"
         }
+        .first {border-width: 0.2em 0.2em 0.15em 0.2em;}
+        .second, .third, .fourth, .sixth {border-width: 0.15em 0.2em 0.15em 0.2em;}
+        .seventh {border-width: 0.15em 0.2em 0.2em 0.2em;}
         .first p {
           font-size: 9vw;
           padding-left: 2vw;
@@ -226,7 +257,12 @@
         }
         .second img {padding: 6vw 3vw; height: 7vw;}
         .numberphone {font-size: 9vw;}
-        .animation_numberphone {width: 200vw;}
+        .animation_numberphone {
+          width: 300vw;
+          animation: numberphone_action_iphone 10s linear infinite;
+        }
+        .first_textpart {padding-left: 1vw;}
+        .second_textpart {padding-left: 4vw;}
         .sixth h1 {
           font-size: 9vw;
           padding: 5vw 3vw;
@@ -235,7 +271,9 @@
         .second_line p {font-size: 5vw;}
         .first_line {margin-top: 30vw;}
         .second_line {margin-top: 5%;}
+        .fifth {display: none;}
       }
+
   </style>
   <body>
     <div class="blocks">
@@ -258,7 +296,9 @@
         <img src="img/logo2.svg" alt="">
         <p>Одним игрушкам сильно везёт — они становятся лучшими друзьями со&nbsp;своим ребёнком и&nbsp;живут долго и&nbsp;счастливо. Другим же везёт меньше, после чего они попадают к&nbsp;нам — в&nbsp;клинику «Доигрались», где каждая игрушка может получить необходимую поддержку после полученных душевных травм, пройти курс реабилитации и&nbsp;начать жить настоящей жизнью.<br><br>Наша клиника не&nbsp;только делает больные игрушки здоровыми, но и&nbsp;оказывает влияние на&nbsp;общество, ликвидируя игрушечные опасности, проводит различные комьюнити-образующие мероприятия, осуществляет поддержку в&nbsp;формате групповых занятий и&nbsp;по&nbsp;горячей линии.<br><br>Мы готовы помочь каждой игрушке справиться с&nbsp;душевными травмами и&nbsp;понять, как она действительно хочет жить.</p>
       </div>
-      <div class="part third"></div>
+      <div class="part third">
+        <img src="img/flag.svg" alt="">
+      </div>
       <div class="part fourth">
         <div class="animation_numberphone">
           <p class="numberphone first_textpart">ТЕЛЕФОН ЭКСТРЕННОЙ ПОДДЕРЖКИ</p>
