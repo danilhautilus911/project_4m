@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>main2</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js.js"></script>
+  </head>
+  <style media="screen">
+    @import 'reset.css';
+    @font-face {
+    font-family: "20Kopeek_Regular";
+    src: url("./fonts/20Kopeek_Regular.otf") format("TrueType");
+    font-style: normal;
+    font-weight: normal;
+    }
+    ::-webkit-scrollbar {
+    width: 0;
+    }
+
+    body {
+      width: 100vw;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: auto;
+      /* background-color: black; */
+    }
+    .header {
+      background-color: black;
+      height: 5vw;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "logo options options options";
+      background-color: black;
+    }
+    .logo, .options {
+      position: relative;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+    }
+    .logo {
+      grid-area: logo;
+      border-width: 0.2em 0.15em 0.2em 0.2em;
+      display: flex;
+      align-items: center;
+    }
+    .options {
+      grid-area: options;
+      border-width: 0.2em 0.2em 0.2em 0.15em;
+    }
+    .logo_picture {
+      height: 1.2vw;
+      position: absolute;
+      right: 0;
+      padding-right: 1vw;
+    }
+    .back_circle {
+      position: relative;
+      height: 2.5vw;
+      width: 2.5vw;
+      margin-left: 0.5vw;
+      border-radius: 50%;
+      border-color: black;
+      border-style: solid;
+      border-width: 0.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back_circle img {
+      height: 80%;
+    }
+    .options {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #7FDEFF;
+    }
+    .options a {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      color: black;
+      text-decoration: none;
+    }
+    h1 {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+    }
+    .main {
+      position: relative;
+      width: 100vw;
+      height: 150vh;
+      display: grid;
+      background-color: black;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "first second second second"
+                           "third fourth fourth fourth"
+                           "fifth sixth sixth sixth"
+    }
+    .part {
+      border-radius: 1em;
+      background-color: white;
+      position: relative;
+      overflow: hidden;
+      border-style: solid;
+      border-color: black;
+    }
+    .first {
+      grid-area: first;
+      border-width: 0.2em 0.15em 0.15em 0.2em;
+    }
+    .second {
+      grid-area: second;
+      border-width: 0.2em 0.2em 0.15em 0.15em;
+    }
+    .third {
+      grid-area: third;
+      border-width: 0.15em 0.15em 0.15em 0.2em;
+    }
+    .fourth {
+      grid-area: fourth;
+      border-width: 0.15em 0.2em 0.15em 0.15em;
+    }
+    .fifth {
+      grid-area: fifth;
+      border-width: 0.15em 0.15em 0.15em 0.2em;
+    }
+    .sixth {
+      grid-area: sixth;
+      border-width: 0.15em 0.2em 0.2em 0.15em;
+    }
+
+
+  </style>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <div class="back_circle">
+          <img src="img/arrow.svg" alt="">
+        </div>
+        <img class="logo_picture"src="img/logo.svg" alt="">
+      </div>
+      <div class="options">
+        <a href="#">УСЛУГИ</a>
+        <a href="#">МЕРОПРИЯТИЯ</a>
+        <a href="#">ОНЛАЙН-ТЕРАПИЯ</a>
+        <a href="#">НАЙТИ ХОЗЯИНА</a>
+      </div>
+    </div>
+    <div class="main">
+        <div class="part first">
+          <!-- <h1>ПСИХОЛОГИЯ</h1> -->
+        </div>
+        <div class="part second">
+
+        </div>
+        <div class="part third">
+          <!-- <h1>РЕМОНТ</h1> -->
+        </div>
+        <div class="part fourth">
+
+        </div>
+        <div class="part fifth">
+
+        </div>
+        <div class="part sixth">
+
+        </div>
+    </div>
+  </body>
+</html>
