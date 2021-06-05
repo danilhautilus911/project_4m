@@ -16,7 +16,6 @@
     font-style: normal;
     font-weight: normal;
     }
-
     ::-webkit-scrollbar {
     width: 0;
     }
@@ -31,11 +30,10 @@
     }
     .blocks {
       position: relative;
-      height: 270vh;
       width: 100vw;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(5, 1fr);
+      grid-template-rows: 1fr 1.5fr 0.25fr 0.9fr 0.25fr;
       grid-template-areas: "first second"
                            "third second"
                            "fourth fourth"
@@ -60,44 +58,71 @@
                            "third_option"
                            "fourth_option"
     }
-    .first_option {
-      grid-area: first_option;
+    .first div {
       background-color: white;
       transition: all .2s;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
     }
-    .second_option {
-      grid-area: second_option;
-      background-color: white;
-      transition: all .2s;
-    }
-    .third_option {
-      grid-area: third_option;
-      background-color: white;
-      transition: all .2s;
-    }
-    .fourth_option {
-      grid-area: fourth_option;
-      background-color: white;
-      transition: all .2s;
-    }
+    .first_option {grid-area: first_option;}
+    .second_option {grid-area: second_option;}
+    .third_option {grid-area: third_option;}
+    .fourth_option {grid-area: fourth_option;}
     .first p {
       position: relative;
       font-family: "20Kopeek_Regular";
-      font-size: 1.5vw;
-      cursor: pointer;
-      /* padding: 1vh 1vh; */
+      font-size: 3vw;
+      padding-left: 1vw;
     }
     .second {
       grid-area: second;
       border-width: 0.2em 0.2em 0.15em 0.15em;
     }
-    .third {grid-area: third;
+    .second h1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 1.4vw 1vw;
+    }
+    .second img {
+      height: 3vw;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1.2vw 1vw;
+    }
+    .second p {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.8vw;
+      position: relative;
+      padding: 25vw 2vw 6vw 2vw;
+    }
+    .third {
+      grid-area: third;
       border-width: 0.15em 0.15em 0.15em 0.2em;
     }
     .fourth {
       grid-area: fourth;
       border-width: 0.15em 0.2em 0.15em 0.2em;
     }
+    .animation_numberphone {
+      position: relative;
+      height: 100%;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+    }
+    .numberphone {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      position: absolute;
+      padding: 1vw;
+    }
+    .first_textpart {left: 0;}
+    .second_textpart {right: 0;}
     .fifth {
       grid-area: fifth;
       border-width: 0.15em 0.15em 0.15em 0.2em;
@@ -106,10 +131,111 @@
       grid-area: sixth;
       border-width: 0.15em 0.2em 0.15em 0.15em;
     }
+    .sixth h1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 2vw 1vw;
+    }
+    .first_line {
+      position: relative;
+      height: 1.5vw;
+      width: 93%;
+      margin: auto;
+      margin-top: 15vw;
+    }
+    .first_line p {
+      position: absolute;
+      font-size: 1.8vw;
+      font-family: "20Kopeek_Regular";
+    }
+    .first_line .right {right: 0;}
+    .second_line {
+      position: relative;
+      height: 1.5vw;
+      width: 93%;
+      margin: auto;
+      margin-top: 2%;
+    }
+    .second_line p {
+      position: absolute;
+      font-size: 1.8vw;
+      font-family: "20Kopeek_Regular";
+    }
+    .second_line .right {right: 0;}
     .seventh {
       grid-area: seventh;
       border-width: 0.15em 0.2em 0.2em 0.15em;
+      background-color: #7FDEFF;
     }
+
+
+    @media only screen and (min-width: 569px) and (max-width: 1023px) {
+      .blocks {
+        grid-template-rows: 0.5fr 1.5fr 0.15fr 0.4fr 0.15fr;
+        grid-template-areas: "first first"
+                             "third second"
+                             "fourth fourth"
+                             "fifth sixth"
+                             "seventh seventh"
+      }
+      .first p {
+        font-size: 4vw;
+        padding-left: 2vw;
+      }
+      .second h1 {
+        font-size: 4vw;
+        padding: 1.4vw 1.5vw;
+      }
+      .second img {padding: 1.2vw 1.5vw;}
+      .second p {font-size: 2.6vw;}
+      .numberphone {font-size: 4vw;}
+      .animation_numberphone {width: 120vw;}
+      .sixth h1 {
+        font-size: 4vw;
+        padding: 1.4vw 1.5vw;
+      }
+      .first_line p {font-size: 2.6vw;}
+      .second_line p {font-size: 2.6vw;}
+      .first_line {margin-top: 17vw;}
+      .second_line {margin-top: 4%;}
+      }
+      @media only screen and (min-width: 320px) and (max-width: 568px) {
+        .blocks {
+          grid-template-rows: 0.7fr 1.5fr 0.15fr 0.4fr 0.4fr 0.15fr;
+          grid-template-areas: "first first"
+                               "second second"
+                               "fourth fourth"
+                               "third third"
+                               "sixth sixth"
+                               "seventh seventh"
+        }
+        .first p {
+          font-size: 9vw;
+          padding-left: 2vw;
+        }
+        .second h1 {
+          font-size: 9vw;
+          padding: 5vw 3vw;
+        }
+        .second p {
+          font-size: 5vw;
+          padding: 35vw 3vw 20vw 3vw;
+        }
+        .second img {padding: 6vw 3vw; height: 7vw;}
+        .numberphone {font-size: 9vw;}
+        .animation_numberphone {width: 200vw;}
+        .sixth h1 {
+          font-size: 9vw;
+          padding: 5vw 3vw;
+        }
+        .first_line p {font-size: 5vw;}
+        .second_line p {font-size: 5vw;}
+        .first_line {margin-top: 30vw;}
+        .second_line {margin-top: 5%;}
+      }
   </style>
   <body>
     <div class="blocks">
@@ -128,15 +254,28 @@
         </div>
       </div>
       <div class="part second">
-
+        <h1>О НАС</h1>
+        <img src="img/logo2.svg" alt="">
+        <p>Одним игрушкам сильно везёт — они становятся лучшими друзьями со&nbsp;своим ребёнком и&nbsp;живут долго и&nbsp;счастливо. Другим же везёт меньше, после чего они попадают к&nbsp;нам — в&nbsp;клинику «Доигрались», где каждая игрушка может получить необходимую поддержку после полученных душевных травм, пройти курс реабилитации и&nbsp;начать жить настоящей жизнью.<br><br>Наша клиника не&nbsp;только делает больные игрушки здоровыми, но и&nbsp;оказывает влияние на&nbsp;общество, ликвидируя игрушечные опасности, проводит различные комьюнити-образующие мероприятия, осуществляет поддержку в&nbsp;формате групповых занятий и&nbsp;по&nbsp;горячей линии.<br><br>Мы готовы помочь каждой игрушке справиться с&nbsp;душевными травмами и&nbsp;понять, как она действительно хочет жить.</p>
       </div>
       <div class="part third"></div>
       <div class="part fourth">
-
+        <div class="animation_numberphone">
+          <p class="numberphone first_textpart">ТЕЛЕФОН ЭКСТРЕННОЙ ПОДДЕРЖКИ</p>
+          <p class="numberphone second_textpart">+ 0 (123) 456 78 90</p>
+        </div>
       </div>
       <div class="part fifth"></div>
       <div class="part sixth">
-
+        <h1>КОНТАКТЫ</h1>
+        <div class="first_line">
+          <p class="left">Почта</p>
+          <p class="right">doigralis@yandex.ru</p>
+        </div>
+        <div class="second_line">
+          <p class="left">Адрес</p>
+          <p class="right">Пластилиновое шоссе, 35</p>
+        </div>
       </div>
       <div class="part seventh">
 
