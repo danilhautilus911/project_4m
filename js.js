@@ -37,12 +37,19 @@ $(document).ready(function() {
     $('.fourth_option').css('background-color', 'white');
   });
 
-  // $('.block4').click(function () {
-  //   'flex-grow':$(this).flex-grow() * 1.1
-  // });
+  $('.block').click(function () {
+    $(this).css( "flex-grow", "+=1" );
+  });
 
   $('.accordion-item_trigger').click(function(){
+    // setTimeout(function() {
+    //   $(this).next('.accordion-item_content').find('button').css('opacity', '1');
+    // }, 800);
+    // setTimeout(function(){ alert("Hello"); }, 3000);
     $(this).next('.accordion-item_content').slideToggle(200);
+
+
+    // $(this).next('.accordion-item_content').find('button').css('opacity', '1')
   });
 
   $('.accordion-item_trigger_first').mouseover(function () {
