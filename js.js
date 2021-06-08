@@ -145,5 +145,8 @@ $(document).ready(function() {
     $('.button12').css('opacity', '0');
   });
 
+  $('.back_circle').click(function(){
+    $(this).next('.options').slideToggle(200);
+  });
 
 });
