@@ -91,18 +91,14 @@
       color: black;
       text-decoration: none;
     }
-    h1 {
-      font-family: "20Kopeek_Regular";
-      font-size: 1.3vw;
-    }
     .main {
       position: relative;
       width: 100vw;
-      height: 150vh;
+      /* height: 150vh; */
       display: grid;
       background-color: black;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 18vw 1fr 50vw;
       grid-template-areas: "first second second second"
                            "third fourth fourth fourth"
                            "fifth sixth sixth sixth"
@@ -111,13 +107,21 @@
       border-radius: 1em;
       background-color: white;
       position: relative;
-      overflow: hidden;
+      /* overflow: hidden; */
       border-style: solid;
       border-color: black;
     }
     .first {
       grid-area: first;
       border-width: 0.2em 0.15em 0.15em 0.2em;
+    }
+    h1 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 0.5vw 1vw;
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
     .second {
       grid-area: second;
@@ -131,14 +135,67 @@
       grid-area: fourth;
       border-width: 0.15em 0.2em 0.15em 0.15em;
     }
+    .accordion-item {position: relative; border-bottom: 0.2em solid black;}
+    .arrow_picture {
+      position: absolute;
+      height: 2vw;
+      right: 0;
+      top: 0;
+      padding: 1.5vw;
+      opacity: 0;
+      transition: all .1s;
+    }
+    .rotational_action {
+      transform: rotate(90deg);
+    }
+    .accordion-item_trigger, .accordion-item_holder {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 1vw;
+      cursor: pointer;
+    }
+    .accordion-item_content {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.8vw;
+      display: none;
+      padding: 2vw 1vw;
+      max-width: 65vw;
+    }
+    .rectangle {
+      height: 10vw;
+    }
     .fifth {
       grid-area: fifth;
-      border-width: 0.15em 0.15em 0.15em 0.2em;
+      border-width: 0.15em 0.15em 0.2em 0.2em;
     }
     .sixth {
       grid-area: sixth;
       border-width: 0.15em 0.2em 0.2em 0.15em;
     }
+    button {
+    font-family: "20Kopeek_Regular";
+    font-size: 1.3vw;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    border: none;
+    border-radius: 51px;
+    padding: 0.5vw 1vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background: #7FDEFF;
+    margin: 2vw 1vw;
+    }
+    .part2_buttons {
+      opacity: 0;
+      bottom: 1vw;
+      margin: 0;
+      margin-right: 1vw;
+      transition: all .1s;
+    }
+
+
 
 
   </style>
@@ -159,22 +216,119 @@
     </div>
     <div class="main">
         <div class="part first">
-          <!-- <h1>ПСИХОЛОГИЯ</h1> -->
+          <h1>ПСИХОЛОГИЯ</h1>
         </div>
-        <div class="part second">
-
-        </div>
+        <div class="part second"></div>
         <div class="part third">
-          <!-- <h1>РЕМОНТ</h1> -->
+          <h1>РЕМОНТ</h1>
         </div>
         <div class="part fourth">
-
+          <div class="wrapper">
+            <div class="accordion">
+              <div class="accordion-item">
+                <div class="accordion-item_trigger accordion-item_trigger_first">
+                  ИНДИВИДУАЛЬНОЕ КОНСУЛЬТИРОВАНИЕ
+                  <img class="arrow_picture arrow_picture_first"src="img/arrow2.svg" alt="">
+                </div>
+                <div class="accordion-item_content">
+                  Индивидуальное психологическое консультирование&nbsp;— это особая форма работы с&nbsp;психологом, направленная на&nbsp;повышение качества жизни. В&nbsp;процессе беседы игрушка начинает лучше понимать себя: собственные настроения и&nbsp;переживания, реакции на&nbsp;те&nbsp;или иные ситуации, желания и&nbsp;потребности.
+                  <button type="button" id="button1" name="button">запись</button>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-item_trigger accordion-item_trigger_second">
+                  ГРУППОВОЕ КОНСУЛЬТИРОВАНИЕ
+                  <img class="arrow_picture arrow_picture_second"src="img/arrow2.svg" alt="">
+                </div>
+                <div class="accordion-item_content">
+                  В&nbsp;условиях группового психологического консультирования психолог набирает группу, которая будет работать с&nbsp;определенной темой или&nbsp;циклом тем, и&nbsp;в&nbsp;нее приходят игрушки с&nbsp;похожими проблемами. Например, заявляется тема «разрыв отношений», или&nbsp;«проблема утраты смысла жизни»&nbsp;— и&nbsp;собираются те, кто готов проработать эти вопросы.
+                  <button type="button" id="button2" name="button">запись</button>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-item_trigger accordion-item_trigger_third">
+                  ПСИХОЛОГИЧЕСКАЯ РЕАБИЛИТАЦИЯ
+                  <img class="arrow_picture arrow_picture_third"src="img/arrow2.svg" alt="">
+                </div>
+                <div class="accordion-item_content">
+                  Комплекс мероприятий, направленных на&nbsp;восстановление, коррекцию или&nbsp;компенсацию нарушений психических функций, состояний, личностного статуса больных, а&nbsp;также игрушек, перенесших заболевания, получивших психическую травму в&nbsp;результате резкого изменения социальных отношений и&nbsp;условий жизни.
+                  <button type="button" id="button3" name="button">запись</button>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-item_trigger accordion-item_trigger_fourth">
+                  ПСИХОЛОГИЧЕСКАЯ ДИАГНОСТИКА
+                  <img class="arrow_picture arrow_picture_fourth"src="img/arrow2.svg" alt="">
+                </div>
+                <div class="accordion-item_content">
+                  Психологическая диагностика&nbsp;— это раздел психологии, который занимается разработкой методов оценки индивидуальных психологических особенностей игрушки. Она помогает:
+                  <li>лучше узнать себя</li>
+                  <li>оценить свои сильные и&nbsp;слабые стороны</li>
+                  <li>выбрать оптимальный способ психологической помощи</li>
+                  <button type="button" id="button4" name="button">запись</button>
+                </div>
+              </div>
+              <div class="accordion-item">
+                  <div class="accordion-item_trigger accordion-item_trigger_fifth">
+                    ИГРОВАЯ ПСИХОТЕРАПИЯ
+                    <img class="arrow_picture arrow_picture_fifth"src="img/arrow2.svg" alt="">
+                  </div>
+                  <div class="accordion-item_content">
+                    Психотерапевтический метод работы с эмоциональными и поведенческими затруднениями, использующий игру в качестве терапевтического воздействия.
+                    <button type="button" id="button5" name="button">запись</button>
+                  </div>
+              </div>
+              <div class="rectangle"></div>
+            </div>
+          </div>
         </div>
         <div class="part fifth">
 
         </div>
         <div class="part sixth">
-
+          <div class="accordion-item">
+              <div class="accordion-item_holder accordion-item_holder_first">
+                КОМПЛЕСНАЯ РЕСТАВРАЦИЯ
+                <button type="button" class="part2_buttons button6" name="button">запись</button>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-item_holder accordion-item_holder_second">
+                ПРОШИВКА
+                <button type="button" class="part2_buttons button7" name="button">запись</button>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-item_holder accordion-item_holder_third">
+                ПРОКЛЕЙКА
+                <button type="button" class="part2_buttons button8" name="button">запись</button>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-item_holder accordion-item_holder_fourth">
+                ЧИСТКА
+                <button type="button" class="part2_buttons button9" name="button">запись</button>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-item_holder accordion-item_holder_fifth">
+                ЗАМЕНА ПЛЮШЕВОГО НАПОЛНИТЕЛЯ
+                <button type="button" class="part2_buttons button10" name="button">запись</button>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-item_holder accordion-item_holder_sixth">
+                КОСМЕТИЧЕСКИЙ РЕМОНТ
+                <button type="button" class="part2_buttons button11" name="button">запись</button>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <div class="accordion-item_holder accordion-item_holder_seventh">
+                ВОССОЗДАНИЕ УТРАЧЕННОГО
+                <button type="button" class="part2_buttons button12" name="button">запись</button>
+              </div>
+          </div>
+          <div class="rectangle"></div>
         </div>
     </div>
   </body>
