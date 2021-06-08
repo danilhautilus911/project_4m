@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>main2</title>
+    <title>services</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -76,9 +76,7 @@
       align-items: center;
       justify-content: center;
     }
-    .back_circle img {
-      height: 80%;
-    }
+    .back_circle img {height: 80%;}
     .options {
       display: flex;
       justify-content: space-around;
@@ -91,13 +89,11 @@
       color: black;
       text-decoration: none;
     }
-    .second_o, .third_o, .fourth_o {
-      color: #4BBDE4 !important;
-    }
+    .second_o, .third_o, .fourth_o {color: #4BBDE4 !important;}
     .main {
       position: relative;
       width: 100vw;
-      min-height: 100%;
+      min-height: 100vh;
       /* height: 150vh; */
       display: grid;
       background-color: black;
@@ -207,12 +203,10 @@
         grid-template-areas: "options";
       }
       .logo {display: none;}
-      .options a {
-        font-size: 2.6vw;
-      }
+      .options a {font-size: 2.6vw;}
       .main {
         grid-template-columns: 1fr;
-        grid-template-rows: 20vw 1fr 20vw 55.5vw;;
+        grid-template-rows: 20vw 1fr 20vw 58vw;;
         grid-template-areas: "first"
                              "fourth"
                              "third"
@@ -229,8 +223,82 @@
       .accordion-item_content {
         font-size: 2.6vw;
         padding: 2vw 2vw;
+        max-width: 80vw;
+      }
+      button {
+        font-size: 2vw;
+        padding: 0.8vw 1.5vw 1.2vw;
+        margin: 2vw 2vw;
+      }
+      .arrow_picture {
+        height: 3.2vw;
+        padding: 1.5vw 1vw;
       }
       /* .rectangle {display: none;} */
+    }
+    @media only screen and (min-width: 320px) and (max-width: 568px) {
+      .header {
+        height: 15vw;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo";
+      }
+      .logo {
+        border-width: 0.2em 0.2em 0.2em 0.2em;
+      }
+      .options {
+        border-width: 0.15em 0.2em 0.2em 0.2em;
+        display: block;
+        display: none;
+      }
+      .options a{
+        font-size: 9vw;
+        padding: 2.9vw 2vw;
+        display: block;
+      }
+      .back_circle {
+        height: 8vw;
+        width: 8vw;
+        margin-left: 1.5vw;
+      }
+      .logo_picture {
+        height: 5.5vw;
+        padding-right: 2vw;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50vw 1fr 50vw 162vw;
+        grid-template-areas: "first"
+                             "fourth"
+                             "third"
+                             "sixth"
+      }
+      .second {display: none;}
+      .fifth {display: none;}
+      .first {border-width: 0.2em 0.2em 0.15em 0.2em;}
+      .fourth {border-width: 0.15em 0.2em 0.15em 0.2em;}
+      .third {border-width: 0.15em 0.2em 0.15em 0.2em;}
+      .sixth {border-width: 0.15em 0.2em 0.2em 0.2em;}
+      h1 {font-size: 9vw; padding: 2vw 2vw;}
+      .accordion-item_trigger, .accordion-item_holder {font-size: 9vw; padding: 2vw 2vw;}
+      .accordion-item_content {
+        font-size: 5vw;
+        padding: 2vw 3vw 14vw;
+        max-width: 100vw;
+      }
+      button {
+        font-size: 4vw;
+        padding: 1.4vw 3vw 2vw;
+        margin: 3vw 3vw;
+      }
+      .arrow_picture {display: none;}
+      .rectangle {height: 20vw;}
+      .rectangle1 {display: none;}
+      .accordion-item5 {border-bottom: none !important;}
+      .part2_buttons {
+        margin: 1.5vw 2vw;
+      }
     }
 
 
@@ -306,17 +374,17 @@
                   <button type="button" id="button4" name="button">запись</button>
                 </div>
               </div>
-              <div class="accordion-item">
+              <div class="accordion-item accordion-item5">
                   <div class="accordion-item_trigger accordion-item_trigger_fifth">
                     ИГРОВАЯ ПСИХОТЕРАПИЯ
                     <img class="arrow_picture arrow_picture_fifth"src="img/arrow2.svg" alt="">
                   </div>
                   <div class="accordion-item_content">
-                    Психотерапевтический метод работы с эмоциональными и поведенческими затруднениями, использующий игру в качестве терапевтического воздействия.
+                    Психотерапевтический метод работы с&nbsp;эмоциональными и&nbsp;поведенческими затруднениями, использующий игру в&nbsp;качестве терапевтического воздействия.
                     <button type="button" id="button5" name="button">запись</button>
                   </div>
               </div>
-              <div class="rectangle"></div>
+              <div class="rectangle rectangle1"></div>
             </div>
           </div>
         </div>
