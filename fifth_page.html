@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>events</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js.js"></script>
+  </head>
+  <style media="screen">
+    @import 'reset.css';
+    @font-face {
+    font-family: "20Kopeek_Regular";
+    src: url("./fonts/20Kopeek_Regular.otf") format("TrueType");
+    font-style: normal;
+    font-weight: normal;
+    }
+    ::-webkit-scrollbar {
+    width: 0;
+    }
+
+    body {
+      width: 100vw;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: auto;
+      /* background-color: black; */
+    }
+    .header {
+      background-color: black;
+      height: 4vw;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "logo options options options";
+      background-color: black;
+    }
+    .logo, .options {
+      position: relative;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+    }
+    .logo {
+      grid-area: logo;
+      border-width: 0.2em 0.15em 0.2em 0.2em;
+      display: flex;
+      align-items: center;
+    }
+    .options {
+      grid-area: options;
+      border-width: 0.2em 0.2em 0.2em 0.15em;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #FFDD5B;
+    }
+    .options a {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      color: black;
+      text-decoration: none;
+    }
+    .first_o, .third_o, .fourth_o {color: #E1B60F !important;}
+    .logo_picture {
+      height: 1.2vw;
+      position: absolute;
+      right: 0;
+      padding-right: 1vw;
+    }
+    .back_circle {
+      position: relative;
+      height: 2.5vw;
+      width: 2.5vw;
+      margin-left: 0.5vw;
+      border-radius: 50%;
+      border-color: black;
+      border-style: solid;
+      border-width: 0.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back_circle img {height: 80%;}
+    .main {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      display: grid;
+      background-color: black;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 10VW 28VW 8VW 28VW 8VW;
+      grid-template-areas: "empty1 right"
+                           "info1 right"
+                           "empty2 right"
+                           "info2 right"
+                           "empty3 right"
+    }
+    .empty, .info, .right {
+      border-radius: 1em;
+      background-color: white;
+      position: relative;
+      border-style: solid;
+      border-color: black;
+    }
+    .empty1 {
+      grid-area: empty1;
+      border-width: 0.2em 0.15em 0.15em 0.2em;
+    }
+    .info1 {
+      grid-area: info1;
+      border-width: 0.15em 0.15em 0.15em 0.2em;
+    }
+    .empty2 {
+      grid-area: empty2;
+      border-width: 0.15em 0.15em 0.15em 0.2em;
+    }
+    .info2 {
+      grid-area: info2;
+      border-width: 0.15em 0.15em 0.15em 0.2em;
+    }
+    .empty3 {
+      grid-area: empty3;
+      border-width: 0.15em 0.15em 0.2em 0.2em;
+    }
+    .right {
+      grid-area: right;
+      border-width: 0.2em 0.2em 0.2em 0.15em;
+    }
+    .info1 {
+      position: relative;
+    }
+    .data, h1 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 0.5vw 1vw;
+    }
+    p {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.8vw;
+      padding: 0.5vw 1vw;
+    }
+    .event {
+      position: relative;
+      display: grid;
+      grid-template-columns: 0.5fr 2fr;
+      border-bottom: 0.25vw solid black;
+    }
+    .event1 {grid-template-areas: "event1_data event1_content";}
+    .event1_data {grid-area: event1_data; border-right: 0.25vw solid black;}
+    .event1_content {grid-area: event1_content;}
+
+    .event2 {grid-template-areas: "event2_data event2_content";}
+    .event2_data {grid-area: event2_data; border-right: 0.25vw solid black;}
+    .event2_content {grid-area: event2_content;}
+
+    .event3 {grid-template-areas: "event3_data event3_content";}
+    .event3_data {grid-area: event3_data; border-right: 0.25vw solid black;}
+    .event3_content {grid-area: event3_content;}
+
+    .event4 {grid-template-areas: "event4_data event4_content"; border-bottom: none !important;}
+    .event4_data {grid-area: event4_data; border-right: 0.25vw solid black;}
+    .event4_content {grid-area: event4_content;}
+
+    .event5 {grid-template-areas: "event5_data event5_content";}
+    .event5_data {grid-area: event5_data; border-right: 0.25vw solid black;}
+    .event5_content {grid-area: event5_content;}
+
+    .event6 {grid-template-areas: "event6_data event6_content";}
+    .event6_data {grid-area: event6_data; border-right: 0.25vw solid black;}
+    .event6_content {grid-area: event6_content;}
+
+    .event7 {grid-template-areas: "event7_data event7_content";}
+    .event7_data {grid-area: event7_data; border-right: 0.25vw solid black;}
+    .event7_content {grid-area: event7_content;}
+
+    .event8 {grid-template-areas: "event8_data event8_content"; border-bottom: none !important;}
+    .event8_data {grid-area: event8_data; border-right: 0.25vw solid black;}
+    .event8_content {grid-area: event8_content;}
+
+    .posters {
+      position: fixed;
+      /* padding-top: 4vw; */
+      height: 96vw;
+      width: 50vw;
+      right: 0;
+      top: 4vw;
+      z-index: 999;
+      background-color: red;
+    }
+
+  </style>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <div class="back_circle">
+          <img src="img/arrow.svg" alt="">
+        </div>
+        <img class="logo_picture"src="img/logo.svg" alt="">
+      </div>
+      <div class="options">
+        <a class="first_o" href="#">УСЛУГИ</a>
+        <a class="second_o" href="#">МЕРОПРИЯТИЯ</a>
+        <a class="third_o" href="#">ОНЛАЙН-ТЕРАПИЯ</a>
+        <a class="fourth_o" href="#">НАЙТИ ХОЗЯИНА</a>
+      </div>
+    </div>
+    <div class="main">
+      <div class="empty empty1"></div>
+      <div class="info info1">
+        <div class="event event1">
+          <div class="data event1_data">14.06</div>
+          <div class="event1_content">
+              <h1>ОНЛАЙН-ЛЕКЦИЯ</h1>
+              <p>ТЕМА: «Хобби как смысл жизни»</p>
+          </div>
+        </div>
+        <div class="event event2">
+          <div class="data event2_data">28.06</div>
+          <div class="event2_content">
+              <h1>АНОНС ЛИНИИ</h1>
+              <p>???</p>
+          </div>
+        </div>
+        <div class="event event3">
+          <div class="data event3_data">15.07</div>
+          <div class="event3_content">
+              <h1>ОПЭН ТОК</h1>
+              <p>ТЕМА: «Польза личного дневника»</p>
+          </div>
+        </div>
+        <div class="event event4">
+          <div class="data event4_data">10.08</div>
+          <div class="event4_content">
+              <h1>МК</h1>
+              <p>«Навыки саморегуляции»</p>
+          </div>
+        </div>
+      </div>
+      <div class="empty empty2"></div>
+      <div class="info info2">
+        <div class="event event5">
+          <div class="data event5_data">22.08</div>
+          <div class="event5_content">
+              <h1>ГРУППОВОЕ ЗАНЯТИЕ</h1>
+              <p>ТЕМА: «Домашнее насилие в мире игрушек»</p>
+          </div>
+        </div>
+        <div class="event event6">
+          <div class="data event6_data">15.09</div>
+          <div class="event6_content">
+              <h1>ОНЛАЙН-ЛЕКЦИЯ</h1>
+              <p>«От мечты к цели»</p>
+          </div>
+        </div>
+        <div class="event event7">
+          <div class="data event7_data">31.10</div>
+          <div class="event7_content">
+              <h1>ХЭЛЛОУИН</h1>
+              <p>???</p>
+          </div>
+        </div>
+        <div class="event event8">
+          <div class="data event8_data">19.11</div>
+          <div class="event8_content">
+              <h1>ОНЛАЙН-ЛЕКЦИЯ</h1>
+              <p>«Навыки саморегуляции»</p>
+          </div>
+        </div>
+      </div>
+      <div class="empty empty3"></div>
+      <div class="right"></div>
+    </div>
+    <div class="posters">
+      <div class="poster1">
+
+      </div>
+
+    </div>
+  </body>
+</html>
