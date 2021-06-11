@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>test1</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js.js"></script>
+  </head>
+  <style media="screen">
+    @import 'reset.css';
+    @font-face {
+    font-family: "20Kopeek_Regular";
+    src: url("./fonts/20Kopeek_Regular.otf") format("TrueType");
+    font-style: normal;
+    font-weight: normal;
+    }
+    ::-webkit-scrollbar {
+    width: 0;
+    }
+
+    body {
+      width: 100vw;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: auto;
+      /* background-color: black; */
+    }
+    .header {
+      grid-area: header;
+      background-color: black;
+      height: 4vw;
+      width: 100vw;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "logo options options options";
+      background-color: black;
+    }
+    .logo, .options {
+      position: relative;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+    }
+    .logo {
+      grid-area: logo;
+      border-width: 0.2em 0.15em 0.15em 0.2em;
+      display: flex;
+      align-items: center;
+    }
+    .options {
+      grid-area: options;
+      border-width: 0.2em 0.2em 0.15em 0.15em;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #FF5959;
+    }
+    .options a {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      color: black;
+      text-decoration: none;
+    }
+    .first_o, .second_o, .fourth_o {color: #DF3A33 !important;}
+    .logo_picture {
+      height: 1.2vw;
+      position: absolute;
+      right: 0;
+      padding-right: 1vw;
+    }
+    .back_circle {
+      position: relative;
+      height: 2.5vw;
+      width: 2.5vw;
+      margin-left: 0.5vw;
+      border-radius: 50%;
+      border-color: black;
+      border-style: solid;
+      border-width: 0.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back_circle img {height: 80%;}
+    .main {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      display: grid;
+      background-color: black;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 4vw 1fr;
+      grid-template-areas: "header header header"
+                           "empty1 text empty2";
+    }
+    .text_wrapper, .empty1, .empty2 {
+      border-radius: 1em;
+      background-color: white;
+      position: relative;
+      border-style: solid;
+      border-color: black;
+    }
+    .text_wrapper {
+      grid-area: text;
+      border-width: 0.15em 0.15em 0.2em 0.15em;
+      display: grid;
+      grid-template-rows: 5vw 1fr;
+      grid-template-areas: "head_text"
+                           "body_text";
+      background-color: transparent !important;
+    }
+    .empty1 {
+      grid-area: empty1;
+      border-width: 0.15em 0.15em 0.2em 0.2em;
+    }
+    .empty2 {
+      grid-area: empty2;
+      border-width: 0.15em 0.2em 0.2em 0.15em;
+    }
+    .head_text {
+      grid-area: head_text;
+      border-bottom: 0.2em black solid;
+      border-radius: 1em;
+      background-color: white;
+    }
+    .body_text {
+      grid-area: body_text;
+      border-radius: 1em;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      /* justify-content: center; */
+    }
+    h1 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 1vw 1vw;
+    }
+    p {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.8vw;
+      padding: 7vh 1vw 7vh 1vw;
+    }
+    button {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      position: relative;
+      border: none;
+      border-radius: 51px;
+      padding: 0.5vw 1vw 0.7vw;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      background: #FF5959;
+      margin: 0 auto;
+    }
+    @media only screen and (min-width: 569px) and (max-width: 1023px) {
+      .empty1 {
+        display: none;
+      }
+      .header {
+        height: 6vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "options";
+      }
+      .logo {display: none;}
+      .options a {font-size: 2.6vw;}
+      .main {
+        position: relative;
+        width: 100vw;
+        min-height: 100vh;
+        display: grid;
+        background-color: black;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 6vw 1fr;
+        grid-template-areas: "header header"
+                             "text empty2";
+      }
+      .text_wrapper {
+        grid-template-rows: 6.5vw 1fr;
+      }
+      h1 {
+        font-size: 4.5vw;
+        padding: 1vw 2vw;
+      }
+      p {
+        font-size: 2.6vw;
+        padding: 7vw 2vw 7vw 2vw;
+      }
+      button {
+        font-size: 2vw;
+        padding: 0.8vw 1.5vw 1.2vw;
+      }
+    }
+    @media only screen and (min-width: 320px) and (max-width: 568px) {
+      .empty1, .empty2 {
+        display: none;
+      }
+      .header {
+        height: 15vw;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo";
+      }
+      .logo {
+        border-width: 0.2em 0.2em 0.15em 0.2em;
+      }
+      .options {
+        border-width: 0.15em 0.2em 0.2em 0.2em;
+        display: block;
+        display: none;
+      }
+      .options a{
+        font-size: 9vw;
+        padding: 2.9vw 2vw;
+        display: block;
+      }
+      .back_circle {
+        height: 8vw;
+        width: 8vw;
+        margin-left: 1.5vw;
+      }
+      .logo_picture {
+        height: 5.5vw;
+        padding-right: 2vw;
+      }
+      .main {
+        position: relative;
+        width: 100vw;
+        min-height: 100vh;
+        display: grid;
+        background-color: black;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15vw 1fr;
+        grid-template-areas: "header"
+                             "text";
+      }
+      h1 {
+        font-size: 9vw;
+        padding: 2vw 2vw;
+      }
+      .text_wrapper {
+        grid-template-rows: 14vw 1fr;
+      }
+      p {
+        font-size: 5vw;
+        padding: 7vh 3vw 7vh;
+      }
+      button {
+        font-size: 4vw;
+        padding: 1.4vw 3vw 2vw;
+      }
+    }
+
+  </style>
+  <body>
+    <div class="main">
+      <div class="header">
+        <div class="logo">
+          <div class="back_circle">
+            <img src="img/arrow.svg" alt="">
+          </div>
+          <img class="logo_picture"src="img/logo.svg" alt="">
+        </div>
+        <div class="options">
+          <a class="first_o" href="#">УСЛУГИ</a>
+          <a class="second_o" href="#">МЕРОПРИЯТИЯ</a>
+          <a class="third_o" href="#">ОНЛАЙН-ТЕРАПИЯ</a>
+          <a class="fourth_o" href="#">НАЙТИ ХОЗЯИНА</a>
+        </div>
+      </div>
+      <div class="text_wrapper">
+        <div class="head_text">
+          <h1>ЦВЕТОВОЙ ТЕСТ</h1>
+        </div>
+        <div class="body_text">
+          <p>Во время теста тебе будут показаны карточки с&nbsp;различными цветами. Твоя задача&nbsp;– указать, какой цвет вам нравится больше других в&nbsp;данный момент времени. Не&nbsp;пытайся ассоциировать цвета ни&nbsp;с&nbsp;чем посторонним,&nbsp;– например, с&nbsp;цветом одежды или&nbsp;интерьера.<br><br>Просто выбирайте карточки, к&nbsp;которым чувствуешь большую симпатию
+по&nbsp;сравнению с&nbsp;остальными.</p>
+          <button type="button" id="button5" name="button">начать</button>
+        </div>
+      </div>
+      <div class="empty1"></div>
+      <div class="empty2"></div>
+    </div>
+
+  </body>
+</html>
