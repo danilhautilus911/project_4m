@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>test2</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js.js"></script>
+  </head>
+  <style media="screen">
+    @import 'reset.css';
+    @font-face {
+    font-family: "20Kopeek_Regular";
+    src: url("./fonts/20Kopeek_Regular.otf") format("TrueType");
+    font-style: normal;
+    font-weight: normal;
+    }
+    ::-webkit-scrollbar {
+    width: 0;
+    }
+
+    body {
+      width: 100vw;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: auto;
+      /* background-color: black; */
+    }
+    .header {
+      grid-area: header;
+      background-color: black;
+      height: 4vw;
+      width: 100vw;
+      /* position: fixed; */
+      top: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "logo options options options";
+      background-color: black;
+    }
+    .logo, .options {
+      position: relative;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+    }
+    .logo {
+      grid-area: logo;
+      border-width: 0.2em 0.15em 0.15em 0.2em;
+      display: flex;
+      align-items: center;
+    }
+    .options {
+      grid-area: options;
+      border-width: 0.2em 0.2em 0.15em 0.15em;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: white;
+    }
+    .options a {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      color: black;
+      text-decoration: none;
+    }
+    .first_o, .second_o, .fourth_o {color: #C5C5C5 !important;}
+    .logo_picture {
+      height: 1.2vw;
+      position: absolute;
+      right: 0;
+      padding-right: 1vw;
+    }
+    .back_circle {
+      position: relative;
+      height: 2.5vw;
+      width: 2.5vw;
+      margin-left: 0.5vw;
+      border-radius: 50%;
+      border-color: black;
+      border-style: solid;
+      border-width: 0.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back_circle img {height: 80%;}
+    .main {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      display: grid;
+      background-color: black;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 4vw 4vw 5fr 5fr;
+      grid-template-areas: "header header header header"
+                           "top top top top"
+                           "block1 block2 block3 block4"
+                           "block5 block6 block7 block8";
+    }
+    .top, .block1, .block2, .block3, .block4, .block5, .block6, .block7, .block8 {
+      border-radius: 1em;
+      position: relative;
+      border-style: solid;
+      border-color: black;
+    }
+    .top {
+      position: relative;
+      grid-area: top;
+      background-color: transparent;
+      border-width: 0.15em 0.2em 0.15em 0.2em;
+      display: grid;
+      grid-template-columns: 0.35fr 10fr;
+      grid-template-areas: "number text";
+    }
+    .number {
+      border-radius: 1em;
+      grid-area: number;
+      border-right: 0.2em black solid;
+      background-color: white;
+    }
+    .text {
+      border-radius: 1em;
+      grid-area: text;
+      background-color: white;
+      position: relative;
+    }
+    h1, p {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.8vw;
+      padding: 1vw 0.5vw 1vw 1vw;
+    }
+    .second_number, .third_number, .second_sentence, .third_sentence {display: none;}
+    .block1 {
+      grid-area: block1;
+      background-color: #FFDD5B;
+      border-width: 0.15em 0.15em 0.15em 0.2em;
+    }
+    .block2 {
+      grid-area: block2;
+      background-color: #777777;
+      border-width: 0.15em 0.15em 0.15em 0.15em;
+    }
+    .block3 {
+      grid-area: block3;
+      background-color: #7FDEFF;
+      border-width: 0.15em 0.15em 0.15em 0.15em;
+    }
+    .block4 {
+      grid-area: block4;
+      background-color: #FF5959;
+      border-width: 0.15em 0.2em 0.15em 0.15em;
+    }
+    .block5 {
+      grid-area: block5;
+      background-color: #4BBDE4;
+      border-width: 0.15em 0.15em 0.2em 0.2em;
+    }
+    .block6 {
+      grid-area: block6;
+      background-color: #F655A0;
+      border-width: 0.15em 0.15em 0.15em 0.15em;
+    }
+    .block7 {
+      grid-area: block7;
+      background-color: #DF3A33;
+      border-width: 0.15em 0.15em 0.15em 0.15em;
+    }
+    .block8 {
+      grid-area: block8;
+      background-color: #C5C5C5;
+      border-width: 0.15em 0.2em 0.2em 0.15em;
+    }
+    button {
+      font-family: "20Kopeek_Regular";
+      font-size: 1vw;
+      position: absolute;
+      right: 0;
+      /* top: 0; */
+      bottom: 0;
+      border: none;
+      border-radius: 51px;
+      padding: 0.5vw 1vw 0.7vw;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      background: #FF5959;
+      margin: 0.6vw 1vw;
+    }
+    @media only screen and (min-width: 569px) and (max-width: 1023px) {
+      .header {
+        height: 6vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "options";
+      }
+      .logo {display: none;}
+      .options a {font-size: 2.6vw;}
+      .main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 6vw 8vw 5fr 5fr 5fr 5fr;
+        grid-template-areas: "header header"
+                             "top top"
+                             "block1 block2"
+                             "block3 block4"
+                             "block5 block6"
+                             "block7 block8";
+      }
+      h1, p {
+          font-size: 2.6vw;
+          padding: 1vw 1vw 1vw 1vw;
+      }
+      p {max-width: 50vw}
+      .text {
+        width: 95vw;
+      }
+      .top {
+        display: block;
+        border-radius: 1em;
+        background-color: white;
+      }
+      .number, .text {
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 0;
+        border: none;
+        background-color: transparent;
+      }
+      .number {border-right: none;}
+      h1 {padding: 1vw 0vw 1vw 1vw;}
+      button {
+        font-size: 2vw;
+        padding: 0.8vw 1.5vw 1.2vw;
+        margin: 1.5vw 1vw;
+      }
+    }
+    @media only screen and (min-width: 320px) and (max-width: 568px) {
+      .header {
+        height: 15vw;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo";
+      }
+      .logo {
+        border-width: 0.2em 0.2em 0.15em 0.2em;
+      }
+      .options {
+        border-width: 0.15em 0.2em 0.2em 0.2em;
+        display: block;
+        display: none;
+      }
+      .options a{
+        font-size: 9vw;
+        padding: 2.9vw 2vw;
+        display: block;
+      }
+      .back_circle {
+        height: 8vw;
+        width: 8vw;
+        margin-left: 1.5vw;
+      }
+      .logo_picture {
+        height: 5.5vw;
+        padding-right: 2vw;
+      }
+      .main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 15vw 30vw 5fr 5fr 5fr 5fr;
+        grid-template-areas: "header header"
+                             "top top"
+                             "block1 block2"
+                             "block3 block4"
+                             "block5 block6"
+                             "block7 block8";
+      }
+      p {
+          font-size: 5vw;
+          padding: 3vw 2vw;
+      }
+      .top {
+        display: block;
+        border-radius: 1em;
+        background-color: white;
+      }
+      .text {
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 0;
+        border: none;
+        background-color: transparent;
+      }
+      .number {display: none;}
+      button {
+        bottom: 0;
+        font-size: 4vw;
+        padding: 1.4vw 3vw 2vw;
+        margin: 3vw 3vw;
+      }
+    }
+
+
+  </style>
+  <body>
+    <div class="main">
+      <div class="header">
+        <div class="logo">
+          <div class="back_circle">
+            <img src="img/arrow.svg" alt="">
+          </div>
+          <img class="logo_picture"src="img/logo.svg" alt="">
+        </div>
+        <div class="options">
+          <a class="first_o" href="#">УСЛУГИ</a>
+          <a class="second_o" href="#">МЕРОПРИЯТИЯ</a>
+          <a class="third_o" href="#">ОНЛАЙН-ТЕРАПИЯ</a>
+          <a class="fourth_o" href="#">НАЙТИ ХОЗЯИНА</a>
+        </div>
+      </div>
+      <div class="top">
+        <div class="number">
+          <h1 class="first_number">1.</h1>
+          <h1 class="second_number">3.</h1>
+          <h1 class="third_number">2.</h1>
+        </div>
+        <div class="text">
+          <p class="first_sentence">Расставьте цвета от наименее симпатичного к наиболее симпатичному.</p>
+          <p class="second_sentence">Расставьте цвета от наиболее симпатичного к наименее симпатичному.</p>
+          <p class="third_sentence">Расставьте цвета от наиболее несимпатичного к наименее несимпатичному.</p>
+        </div>
+        <button type="button" id="button5" name="button">дальше</button>
+      </div>
+      <div class="block1"></div>
+      <div class="block2"></div>
+      <div class="block3"></div>
+      <div class="block4"></div>
+      <div class="block5"></div>
+      <div class="block6"></div>
+      <div class="block7"></div>
+      <div class="block8"></div>
+    </div>
+
+  </body>
+</html>
