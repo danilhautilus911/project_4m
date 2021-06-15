@@ -19,6 +19,15 @@
     ::-webkit-scrollbar {
     width: 0;
     }
+    @font-face {
+    font-family: "20Kopeek_DemiBold";
+    src: url("./fonts/20Kopeek_DemiBold.otf") format("TrueType");
+    font-style: normal;
+    font-weight: normal;
+    }
+    ::-webkit-scrollbar {
+    width: 0;
+    }
 
     body {
       width: 100vw;
@@ -88,6 +97,226 @@
       justify-content: center;
     }
     .back_circle img {height: 80%;}
+    .footer {
+      background-color: black;
+      height: 5vw;
+      width: 100vw;
+      position: fixed;
+      bottom: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 4fr 1fr;
+      grid-template-areas: "text shkala strelka";
+      background-color: black;
+    }
+    .text, .shkala, .strelka {
+      position: relative;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+    }
+    .text {
+      grid-area: text;
+      border-width: 0.4vw 0.2vw 0.4vw 0.4vw;
+    }
+    p {
+      font-family: "20Kopeek_Regular";
+    }
+    .text p, .strelka p {
+      font-size: 1.3vw;
+      padding: 0.8vw;
+      display: inline-block;
+    }
+    .shkala {
+      grid-area: shkala;
+      border-width: 0.4vw 0.2vw 0.4vw 0.2vw;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .shkala p {
+      font-size: 2vw;
+      padding: 0vw 1vw 1vw 3vw;
+      display: inline-block;
+      border-right: black solid 0.4vw;
+    }
+    .first {padding: 0vw 1vw 1vw 4vw !important;}
+    .tenth {
+      padding: 0vw 1vw 1vw 2vw !important;
+      border: none !important;
+    }
+    .strelka {
+      background-color: #FFDD5B !important;
+      grid-area: strelka;
+      border-width: 0.4vw 0.4vw 0.4vw 0.2vw;
+    }
+    .strelka img {
+      transform: rotate(180deg);
+      position: absolute;
+      top: 20%;
+      right: 5%;
+      height: 60%;
+    }
+    .main {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      /* height: 150vh; */
+      display: grid;
+      background-color: black;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 4vw 1fr 5vw;
+      grid-template-areas: ". . ."
+                           "column1 empty empty"
+                           ". . .";
+    }
+    .empty {
+      grid-area: empty;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+      border-width: 0.01vw 0.4vw 0vw 0.2vw;
+    }
+    .column1 {
+      grid-area: column1;
+      position: relative;
+    }
+    .h1, .paragraph1, .paragraph2, .paragraph3, .paragraph4 {
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+    }
+    .h1{
+      border-width: 0.01vw 0.2vw 0.2vw 0.4vw;
+    }
+    h1 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 1vw;
+    }
+    .paragraph1 {border-width: 0.15vw 0.15vw 0.15vw 0.2vw;}
+    .paragraph2 {border-width: 0.15vw 0.15vw 0.15vw 0.2vw;}
+    .paragraph3 {border-width: 0.15vw 0.15vw 0.15vw 0.2vw;}
+    .paragraph4 {border-width: 0.15vw 0.15vw 0vw 0.2vw;}
+    h2 {
+      font-family: "20Kopeek_DemiBold";
+      font-size: 1.8vw;
+      padding: 2vw 1vw 1vw;
+    }
+    p {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.8vw;
+      padding: 2vw 1vw;
+      /* max-width: 10vw; */
+    }
+    @media only screen and (min-width: 569px) and (max-width: 1023px) {
+      .header {
+        height: 6vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "options";
+      }
+      .logo {display: none;}
+      .options a {font-size: 2.6vw;}
+      .footer {
+        height: 6vw;
+        grid-template-columns: 1fr;
+        grid-template-areas: "strelka";
+      }
+      .text, .shkala {display: none;}
+      .strelka p {
+        font-size: 2.6vw;
+        text-transform: uppercase;
+        padding: 1.3vw;
+      }
+      .strelka img {right: 1%;}
+      .main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 6vw 1fr 6vw;
+        grid-template-areas: ". ."
+                             "column1 empty"
+                             ". .";
+      }
+      h1 {
+        font-size: 4.5vw;
+        padding: 1vw 2vw;
+      }
+      h2 {font-size: 2.6vw; padding: 2vw 2vw 1vw;}
+      p {font-size: 2.6vw; padding: 2vw 2vw;}
+    }
+    @media only screen and (min-width: 320px) and (max-width: 568px){
+      .header {
+        height: 15vw;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo";
+      }
+      .logo {
+        border-width: 0.2em 0.2em 0.2em 0.2em;
+      }
+      .options {
+        border-width: 0.15em 0.2em 0.2em 0.2em;
+        display: block;
+        display: none;
+      }
+      .options a{
+        font-size: 9vw;
+        padding: 2.9vw 2vw;
+        display: block;
+      }
+      .back_circle {
+        height: 8vw;
+        width: 8vw;
+        margin-left: 1.5vw;
+      }
+      .logo_picture {
+        height: 5.5vw;
+        padding-right: 2vw;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 15vw 1fr 15vw;
+        grid-template-areas: "."
+                             "column1"
+                             ".";
+      }
+      .footer {
+        height: 15vw;
+        grid-template-columns: 1fr;
+        grid-template-areas: "strelka";
+      }
+      .text, .shkala {display: none;}
+      h1 {
+        font-size: 9vw;
+        padding: 2vw 2vw;
+      }
+      .h1 {border-width: 0em 0.2em 0.15em 0.2em;}
+      .empty {display: none;}
+      h2 {
+        font-size: 5vw;
+        padding: 5vw 3vw 1vw;
+      }
+      p {
+        font-size: 5vw;
+        padding: 2vw 3vw 5vw;
+      }
+      .paragraph1, .paragraph2, .paragraph3 {border-width: 0.15em 0.2em 0.15em 0.2em;}
+      .paragraph4 {border-width: 0.15em 0.2em 0em 0.2em;}
+      .strelka p {
+        font-size: 5.5vw;
+        text-transform: uppercase;
+        padding: 4vw 2vw;
+      }
+      .strelka {border-width: 0.2em 0.2em 0.4em 0.2em;}
+      .strelka img {top: 14%;}
+    }
+
   </style>
   <body>
     <div class="header">
@@ -103,6 +332,51 @@
         <a class="third_o" href="#">ОНЛАЙН-ТЕРАПИЯ</a>
         <a class="fourth_o" href="#">НАЙТИ ХОЗЯИНА</a>
       </div>
+    </div>
+    <div class="main">
+      <div class="empty"></div>
+      <div class="column1">
+        <div class="h1">
+          <h1>ИНТЕРПРЕТАЦИЯ ЦВЕТОВЫХ ВЫБОРОВ</h1>
+        </div>
+        <div class="paragraph1">
+          <h2>Тенденция к стабилизации + принуждение + перераздражение</h2>
+          <p>Вы хотите оградить себя от невыносимых требований партнера и&nbsp;пытаетесь поддержать внешнее спокойствие и&nbsp;установленный порядок.</p>
+        </div>
+        <div class="paragraph2">
+          <h2>Эмоциональное отношение к&nbsp;высокозначимым лицам</h2>
+          <p>Вы претендуете на&nbsp;неограниченную сердечную взаимность, но&nbsp;опасаетесь разочарований и&nbsp;боитесь утраты имеющейся любви. Для&nbsp;упрочения собственной эмоциональной позиции и&nbsp;чувственного настроя на&nbsp;партнера Вы&nbsp;стремитесь вести себя независимо, при&nbsp;этом открыто призывая других уважать и&nbsp;по&nbsp;достоинству оценивать Вас.</p>
+        </div>
+        <div class="paragraph3">
+          <h2>Характеристика воли и самооценка</h2>
+          <p>Вы считаете, что не&nbsp;обладаете достаточной сопротивляемостью для&nbsp;того, чтобы добиться желаемого, а&nbsp;потому вследствие собственной неуверенности обладаете повышенной возбудимостью. Вы крайне нуждаетесь в&nbsp;раздражителях, которые бы поддерживали и&nbsp;удовлетворяли Ваше привычное состояние возбужденности. Ищете контакты, средства и&nbsp;приемы для разрядки накопившейся внутри энергии. Развиваете активную деятельность с&nbsp;тем, чтобы избежать опасности энергетического упадка и&nbsp;не&nbsp;впасть в&nbsp;состояние опустошенности.</p>
+        </div>
+        <div class="paragraph4">
+          <h2>Возбудимость и импульсивность</h2>
+          <p>Вы чрезмерно раздражены и&nbsp;изнурены мучительными волнениями, но&nbsp;при этом весьма возбудимы, а&nbsp;потому опасаетесь необдуманных действий.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+        <div class="text">
+          <p>Шкала эмоционального самочувствия</p>
+        </div>
+        <div class="shkala">
+          <p class="first">1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+          <p>5</p>
+          <p>6</p>
+          <p>7</p>
+          <p>8</p>
+          <p>9</p>
+          <p class="tenth">10</p>
+        </div>
+        <div class="strelka">
+          <p>Необходима релаксация</p>
+          <img src="img/arrow.svg" alt="">
+        </div>
     </div>
 
   </body>
