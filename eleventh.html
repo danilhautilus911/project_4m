@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>blank</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js.js"></script>
+  </head>
+  <style media="screen">
+    /* * {
+        box-sizing: border-box;
+    } */
+
+    @import 'reset.css';
+    @font-face {
+    font-family: "20Kopeek_Regular";
+    src: url("./fonts/20Kopeek_Regular.otf") format("TrueType");
+    font-style: normal;
+    font-weight: normal;
+    }
+    ::-webkit-scrollbar {
+    width: 0;
+    }
+
+    body {
+      width: 100vw;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: auto;
+      /* background-color: black; */
+    }
+    .header {
+      background-color: black;
+      height: 4vw;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "logo options options options";
+      background-color: black;
+    }
+    .logo, .options {
+      position: relative;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+    }
+    .logo {
+      grid-area: logo;
+      border-width: 0.2em 0.15em 0.2em 0.2em;
+      display: flex;
+      align-items: center;
+    }
+    .options {
+      grid-area: options;
+      border-width: 0.2em 0.2em 0.2em 0.15em;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #FF83BD;
+    }
+    .options a {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      color: black;
+      text-decoration: none;
+    }
+    .first_o, .second_o, .third_o {color: #F655A0 !important;}
+    .logo_picture {
+      height: 1.2vw;
+      position: absolute;
+      right: 0;
+      padding-right: 1vw;
+    }
+    .back_circle {
+      position: relative;
+      height: 2.5vw;
+      width: 2.5vw;
+      margin-left: 0.5vw;
+      border-radius: 50%;
+      border-color: black;
+      border-style: solid;
+      border-width: 0.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back_circle img {height: 80%;}
+    .main {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      display: grid;
+      background-color: black;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 4vw 5vw 1fr 8vw;
+      grid-template-areas: ". . ."
+                           "h1 h1_2 h1_3"
+                           "column1 column2 column3"
+                           "footer footer footer";
+    }
+    .column1_part1, .column1, .column2_part1, .column2_part2, .column2_part3, .column3_part1, .column3, .footer {
+      position: relative;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+    }
+    .column1 {
+      grid-area: column1;
+      position: relative;
+      background-color: white;
+      border-width: 0.15em 0.15em 0.15em 0.2em;
+    }
+    h1 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 1vw 1vw;
+    }
+    .column1 p {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.8vw;
+      padding: 3vw 1vw 1vw;
+    }
+    .column1_part1 {grid-area: h1; border-width: 0.15em 0.15em 0.15em 0.2em;}
+    .column1_part2 {height: calc(100% - 5.5vw); background-color: transparent !important;}
+    .column2_part1 {grid-area: h1_2; border-width: 0.15em 0.15em 0.15em 0.15em;}
+    .column2_part2 {border-width: 0.15em 0.15em 0.15em 0.15em;}
+    .column2_part3 {border-width: 0.15em 0.15em 0.15em 0.15em;}
+    .column2 {grid-area: column2; border-width: 0.15em 0.15em 0.15em 0.15em;}
+    .column3_part1 {grid-area: h1_3; border-width: 0.15em 0.2em 0.15em 0.15em;}
+    .column3 {grid-area: column3; border-width: 0.15em 0.2em 0.15em 0.15em;}
+    .footer {
+      grid-area: footer;
+      border-width: 0.15em 0.2em 0.2em 0.2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.8vw;
+      padding: 1vw;
+    }
+    input[type="text"],
+    select {
+      display: block;
+      width: 90%;
+      position: relative;
+      margin: 0vw 1.2vw;
+      height: 2.5vw;
+      border: 0.3em solid black;
+    }
+    .color {
+      display: flex;
+      width: 90%;
+      position: relative;
+      margin: 0vw 1.2vw;
+      height: 2.5vw;
+      flex-direction: row;
+      border: 0.3em solid black;
+    }
+    .color_general {
+      border-right: 0.3em solid black;
+      flex-grow: 1;
+    }
+    .color10 {border-right: none !important;}
+    button {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.5vw;
+      position: relative;
+      margin: 0.2vw;
+      border: 0.2em solid black;
+      border-radius: 2em;
+      padding: 0.2vw 0.7vw 0.7vw;
+      background-color: white;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+    }
+    .button1 {margin-left: 1vw;}
+    .button5 {margin-left: 0.5vw;}
+    .p2 {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      padding: 1vw;
+    }
+    .p2_input {
+      border: none !important;
+      border-bottom: 0.3em solid black !important;
+      height: 2vw !important;
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      color: black;
+      width: 60% !important;
+      margin: 0.5vw 1.2vw !important;
+      /* padding: 1vw; */
+    }
+    .sentence1_part2, .sentence1_part3, .sentence1_column3 {padding: 3vw 1vw 1vw;}
+    .input5_part2, .input4_part3, .input2_column3 {margin: 0vw 1.2vw 4vw !important;}
+
+  </style>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <div class="back_circle">
+          <img src="img/arrow.svg" alt="">
+        </div>
+        <img class="logo_picture"src="img/logo.svg" alt="">
+      </div>
+      <div class="options">
+        <a class="first_o" href="#">УСЛУГИ</a>
+        <a class="second_o" href="#">МЕРОПРИЯТИЯ</a>
+        <a class="third_o" href="#">ОНЛАЙН-ТЕРАПИЯ</a>
+        <a class="fourth_o" href="#">НАЙТИ ХОЗЯИНА</a>
+      </div>
+    </div>
+    <div class="main">
+
+      <div class="column1_part1">
+        <h1>АНКЕТА ДРУГА</h1>
+      </div>
+      <div class="column column1">
+        <div class="column1_part2">
+          <p>Наш центр предоставляет всем одиноким игрушкам возможность найти себе хозяина. Для этого достаточно лишь заполнить предложенную анкету, отправить её и&nbsp;ждать ответа!</p>
+        </div>
+      </div>
+
+      <div class="column2_part1">
+        <h1>ЛИЧНЫЕ ДАННЫЕ</h1>
+      </div>
+      <div class="column column2">
+        <div class="column2_part2">
+          <p class="sentence1_part2">Имя</p>
+          <input type="text" name="" value="">
+          <p>Возраст</p>
+          <input type="text" name="" value="">
+          <p>Любимый цвет</p>
+          <div class="color">
+            <div class="color_general color1"></div>
+            <div class="color_general color2"></div>
+            <div class="color_general color3"></div>
+            <div class="color_general color4"></div>
+            <div class="color_general color5"></div>
+            <div class="color_general color6"></div>
+            <div class="color_general color7"></div>
+            <div class="color_general color8"></div>
+            <div class="color_general color9"></div>
+            <div class="color_general color10"></div>
+          </div>
+          <p>Любимая песня</p>
+          <input type="text" name="" value="">
+          <p>Увлечения</p>
+          <button type="button" class="button1" name="button">пицца</button>
+          <button type="button" class="button2" name="button">спорт</button>
+          <button type="button" class="button3" name="button">музыка</button>
+          <button type="button" class="button4" name="button">видеоигры</button>
+          <button type="button" class="button5" name="button">фильмы</button>
+          <button type="button" class="button6" name="button">театр</button>
+          <button type="button" class="button7" name="button">архитектура</button>
+          <button type="button" class="button8" name="button">танцы</button>
+          <input class="p2_input" type="text" name="" value="" placeholder="Другое">
+          <p>Любимый фильм</p>
+          <input class="input5_part2" type="text" name="" value="">
+        </div>
+        <div class="column2_part3">
+          <p class="sentence1_part3">Официальное название</p>
+          <input type="text" name="" value="">
+          <p>Компания-производитель</p>
+          <input type="text" name="" value="">
+          <p>Год производства</p>
+          <input type="text" name="" value="">
+          <p>Страна-производитель</p>
+          <input class="input4_part3" type="text" name="" value="">
+        </div>
+      </div>
+
+      <div class="column3_part1">
+        <h1>КОНТАКТЫ</h1>
+      </div>
+      <div class="column column3">
+        <p class="sentence1_column3">Телефон</p>
+        <input type="text" name="" value="">
+        <p>Почтовый адрес</p>
+        <input class="input2_column3" type="text" name="" value="">
+      </div>
+      <div class="footer">
+        <button type="button" class="button_footer" name="button">отправить</button>
+      </div>
+    </div>
+  </body>
+</html>
