@@ -101,11 +101,11 @@
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 4vw 5vw 1fr 8vw;
       grid-template-areas: ". . ."
-                           "h1 h1_2 h1_3"
+                           "column1_header column2_header column3_header"
                            "column1 column2 column3"
                            "footer footer footer";
     }
-    .column1_part1, .column1, .column2_part1, .column2_part2, .column2_part3, .column3_part1, .column3, .footer {
+    .column1_header, .column1, .column2_header, .column2_part1, .column2_part2, .column3_header, .column3, .footer {
       position: relative;
       background-color: white;
       border-radius: 1em;
@@ -128,13 +128,13 @@
       font-size: 1.8vw;
       padding: 3vw 1vw 1vw;
     }
-    .column1_part1 {grid-area: h1; border-width: 0.15em 0.15em 0.15em 0.2em;}
+    .column1_header {grid-area: column1_header; border-width: 0.15em 0.15em 0.15em 0.2em;}
     .column1_part2 {height: calc(100% - 5.5vw); background-color: transparent !important;}
-    .column2_part1 {grid-area: h1_2; border-width: 0.15em 0.15em 0.15em 0.15em;}
+    .column2_header {grid-area: column2_header; border-width: 0.15em 0.15em 0.15em 0.15em;}
+    .column2_part1 {border-width: 0.15em 0.15em 0.15em 0.15em;}
     .column2_part2 {border-width: 0.15em 0.15em 0.15em 0.15em;}
-    .column2_part3 {border-width: 0.15em 0.15em 0.15em 0.15em;}
     .column2 {grid-area: column2; border-width: 0.15em 0.15em 0.15em 0.15em;}
-    .column3_part1 {grid-area: h1_3; border-width: 0.15em 0.2em 0.15em 0.15em;}
+    .column3_header {grid-area: column3_header; border-width: 0.15em 0.2em 0.15em 0.15em;}
     .column3 {grid-area: column3; border-width: 0.15em 0.2em 0.15em 0.15em;}
     .footer {
       grid-area: footer;
@@ -204,6 +204,148 @@
     }
     .sentence1_part2, .sentence1_part3, .sentence1_column3 {padding: 3vw 1vw 1vw;}
     .input5_part2, .input4_part3, .input2_column3 {margin: 0vw 1.2vw 4vw !important;}
+    @media only screen and (min-width: 569px) and (max-width: 1023px) {
+      .header {
+        height: 6vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "options";
+      }
+      .logo {display: none;}
+      .options a {font-size: 2.6vw;}
+
+      .text, .shkala {display: none;}
+      .strelka p {
+        font-size: 2.6vw;
+        text-transform: uppercase;
+        padding: 1.3vw;
+      }
+      .strelka img {right: 1%;}
+      .main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 6vw 7vw 1fr 0fr 0fr 12vw;
+        grid-template-areas: ". ."
+                             "column1_header column2_header"
+                             "column1 column2"
+                             "column3_header column2"
+                             "column3 column2"
+                             "footer footer";
+      }
+      h1 {
+        font-size: 4.5vw;
+        padding: 1vw 2vw;
+      }
+      .column1_text p, p {
+        font-size: 2.6vw;
+        padding: 2vw 2vw;
+      }
+      button {
+        font-size: 2vw;
+        padding: 0.8vw 1vw 1.2vw;
+        margin: 0.5vw;
+      }
+      .button5 {margin-left: 2.5vw;}
+      .button1 {margin-left: 3vw;}
+      .uvlecheniya {padding: 2vw 2vw 1vw;}
+      .column2 {
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas: "column2_part1"
+                             "column2_part2";
+      }
+      .column2_part1 {grid-area: column2_part1};
+      .column2_part2 {grid-area: column2_part2};
+    }
+    @media only screen and (min-width: 320px) and (max-width: 568px) {
+      .header {
+        height: 15vw;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo";
+      }
+      .logo {
+        border-width: 0.2em 0.2em 0.2em 0.2em;
+      }
+      .options {
+        border-width: 0.15em 0.2em 0.2em 0.2em;
+        display: block;
+        display: none;
+      }
+      .options a{
+        font-size: 9vw;
+        padding: 2.9vw 2vw;
+        display: block;
+      }
+      .back_circle {
+        height: 8vw;
+        width: 8vw;
+        margin-left: 1.5vw;
+      }
+      .logo_picture {
+        height: 5.5vw;
+        padding-right: 2vw;
+      }
+      .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 15vw 0fr 0.5fr 0fr 0fr 0fr 0fr 20vw;
+        grid-template-areas: "."
+                             "column1_header"
+                             "column1"
+                             "column2_header"
+                             "column2"
+                             "column3_header"
+                             "column3"
+                             "footer";
+      }
+      h1 {
+        font-size: 9vw;
+        padding: 3vw 3vw;
+      }
+      p {
+        font-size: 5vw;
+        padding: 2vw 3vw 2vw;
+      }
+      .column1_text p {
+        font-size: 5vw;
+        padding: 6vw 3vw 2vw;
+      }
+      .sentence1_part2, .sentence1_part3, .sentence1_column3 {
+        padding: 6vw 3vw 2vw;
+      }
+      input[type="text"], select, .color {
+        margin: 0vw 3vw;
+        height: 6.5vw;
+      }
+      .input5_part2, .input4_part3, .input2_column3 {
+        margin: 0vw 3vw 6vw !important;
+      }
+      button {
+        font-size: 4vw;
+        padding: 1vw 2.2vw 1.9vw;;
+        margin: 1vw 1vw;
+      }
+      .button1 {
+        margin-left: 4.5vw;
+      }
+      .button5 {
+        margin-left: 3vw;
+      }
+      .p2_input {
+        height: 6.5vw !important;
+        font-size: 4vw;
+        margin: 1vw 3vw 3vw!important;
+      }
+      .column1_header {border-width: 0.15em 0.2em 0.15em 0.2em;}
+      .column1 {border-width: 0.15em 0.2em 0.15em 0.2em;}
+      .column2_header {border-width: 0.15em 0.2em 0.15em 0.2em;}
+      .column2_part1 {border-width: 0.15em 0.2em 0.15em 0.2em;}
+      .column2_part2 {border-width: 0.15em 0.2em 0.15em 0.2em;}
+      .column2 {border-width: 0.15em 0.2em 0.15em 0.2em;}
+      .column3_header {grid-arborder-width: 0.15em 0.2em 0.15em 0.2em;}
+      .column3 {border-width: 0.15em 0.2em 0.15em 0.2em;}
+      .footer {border-width: 0.15em 0.2em 0.2em 0.2em;}
+    }
 
   </style>
   <body>
@@ -221,22 +363,22 @@
         <a class="fourth_o" href="#">НАЙТИ ХОЗЯИНА</a>
       </div>
     </div>
-    <div class="main">
 
-      <div class="column1_part1">
+    <div class="main">
+      <div class="column1_header">
         <h1>АНКЕТА ДРУГА</h1>
       </div>
       <div class="column column1">
-        <div class="column1_part2">
+        <div class="column1_text">
           <p>Наш центр предоставляет всем одиноким игрушкам возможность найти себе хозяина. Для этого достаточно лишь заполнить предложенную анкету, отправить её и&nbsp;ждать ответа!</p>
         </div>
       </div>
 
-      <div class="column2_part1">
+      <div class="column2_header">
         <h1>ЛИЧНЫЕ ДАННЫЕ</h1>
       </div>
       <div class="column column2">
-        <div class="column2_part2">
+        <div class="column2_part1">
           <p class="sentence1_part2">Имя</p>
           <input type="text" name="" value="">
           <p>Возраст</p>
@@ -256,7 +398,7 @@
           </div>
           <p>Любимая песня</p>
           <input type="text" name="" value="">
-          <p>Увлечения</p>
+          <p class="uvlecheniya">Увлечения</p>
           <button type="button" class="button1" name="button">пицца</button>
           <button type="button" class="button2" name="button">спорт</button>
           <button type="button" class="button3" name="button">музыка</button>
@@ -269,7 +411,7 @@
           <p>Любимый фильм</p>
           <input class="input5_part2" type="text" name="" value="">
         </div>
-        <div class="column2_part3">
+        <div class="column2_part2">
           <p class="sentence1_part3">Официальное название</p>
           <input type="text" name="" value="">
           <p>Компания-производитель</p>
@@ -281,7 +423,7 @@
         </div>
       </div>
 
-      <div class="column3_part1">
+      <div class="column3_header">
         <h1>КОНТАКТЫ</h1>
       </div>
       <div class="column column3">
