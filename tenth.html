@@ -59,7 +59,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      background-color: #FF5959;
+      background-color: #FF83BD;
     }
     .options a {
       font-family: "20Kopeek_Regular";
@@ -67,7 +67,7 @@
       color: black;
       text-decoration: none;
     }
-    .first_o, .second_o, .fourth_o {color: #DF3A33 !important;}
+    .first_o {color: #F655A0 !important;}
     .logo_picture {
       height: 1.2vw;
       position: absolute;
@@ -88,6 +88,111 @@
       justify-content: center;
     }
     .back_circle img {height: 80%;}
+    .main {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      display: grid;
+      background-color: black;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 4vw 1fr 0fr 0fr;
+      grid-template-areas: ". . . ."
+                           "item1 item1 item2 item2"
+                           "item1 item1 item2 item2"
+                           "item3 item4 item5 item6";
+    }
+    .item {
+      position: relative;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+    }
+    .item1 {
+      grid-area: item1;
+      border-width: 0.15em 0.15em 0.15em 0.2em;
+    }
+    .item2 {
+      grid-area: item2;
+      border-width: 0.15em 0.2em 0.15em 0.15em;
+    }
+    .item3 {
+      grid-area: item3;
+      border-width: 0.15em 0.15em 0.2em 0.2em;
+    }
+    .item4 {
+      grid-area: item4;
+      border-width: 0.15em 0.15em 0.2em 0.15em;
+    }
+    .item5 {
+      grid-area: item5;
+      border-width: 0.15em 0.15em 0.2em 0.15em;
+    }
+    .item6 {
+      grid-area: item6;
+      border-width: 0.15em 0.2em 0.2em 0.15em;
+    }
+    .picture {
+      width: 92%;
+      margin: 4% 4% 0%;
+      height: 32vw;
+      background-color: #E5E5E5;
+      border-radius: 2em;
+    }
+    h1 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 1vw 25vw 1vw 4%;
+      display: inline-block;
+    }
+    h2 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 0.5vw 0% 1vw 7%;
+      display: inline-block;
+    }
+    p {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      padding: 0vw 0vw 3% 4%;
+      display: inline-block;
+      max-width: 42vw;
+    }
+    .plus {
+      height: 2vw;
+      width: 2vw;
+      border: 0.3em solid black;
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      margin-left: 2vw;
+      bottom: 1.5vw;
+      right: 2vw;
+    }
+    .cross {
+      position: absolute;
+      display: block;
+      width: 0.25em;
+      height: 1.8vw;
+      background: black;
+    }
+    .cross-1 {
+      transform: rotate(90deg);
+    }
+    .item2 h1 {padding: 1vw 7.5vw 1vw 5%;}
+    .picture_type2 {
+      width: 86%;
+      margin: 7% 7% 0%;
+      height: 20vw;
+      background-color: #E5E5E5;
+      border-radius: 1.5em;
+    }
+    h3 {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      padding: 1vw 7% 0vw;
+    }
 
   </style>
   <body>
@@ -99,10 +204,79 @@
         <img class="logo_picture"src="img/logo.svg" alt="">
       </div>
       <div class="options">
-        <a class="first_o" href="#">УСЛУГИ</a>
-        <a class="second_o" href="#">МЕРОПРИЯТИЯ</a>
-        <a class="third_o" href="#">ОНЛАЙН-ТЕРАПИЯ</a>
-        <a class="fourth_o" href="#">НАЙТИ ХОЗЯИНА</a>
+        <a class="first_o" href="#">НАЙТИ ДРУГА</a>
+        <a class="second_o" href="#">МАГАЗИН</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="item item1">
+        <div class="picture picture1">
+
+        </div>
+        <h1>КНИГА</h1>
+        <h2>250₽</h2>
+        <p>Рассказывает о том, как правильно взаимодействовать с игрушечным пространством, обо всех его особенностях и важных моментах.</p>
+        <div class="plus">
+          <span class="cross cross-1"></span>
+          <span class="cross cross-2"></span>
+        </div>
+      </div>
+      <div class="item item2">
+        <div class="picture picture2">
+
+        </div>
+        <h1>ИГРОВОЙ НАБОР</h1>
+        <h2>7000₽</h2>
+        <p>Открывает человеку мир игрушечной психологии. Включает здание клиники и множество аскессуаров для полноценной работы.</p>
+        <div class="plus">
+          <span class="cross cross-1"></span>
+          <span class="cross cross-2"></span>
+        </div>
+      </div>
+      <div class="item item3">
+        <div class="picture_type2 picture2">
+
+        </div>
+        <h3>ЕЖЕДНЕВНИК</h3>
+        <h2>250₽</h2>
+        <div class="plus">
+          <span class="cross cross-1"></span>
+          <span class="cross cross-2"></span>
+        </div>
+      </div>
+      <div class="item item4">
+        <div class="picture_type2 picture2">
+
+        </div>
+        <h3>ШОППЕР</h3>
+        <h2>450₽</h2>
+        <div class="plus">
+          <span class="cross cross-1"></span>
+          <span class="cross cross-2"></span>
+        </div>
+      </div>
+      <div class="item item5">
+        <div class="picture_type2 picture2">
+
+        </div>
+        <h3>ЧЕХОЛ</h3>
+        <h2>300₽</h2>
+        <div class="plus">
+          <span class="cross cross-1"></span>
+          <span class="cross cross-2"></span>
+        </div>
+      </div>
+      <div class="item item6">
+        <div class="picture_type2 picture2">
+
+        </div>
+        <h3>ПЛАКАТ</h3>
+        <h2>100₽</h2>
+        <div class="plus">
+          <span class="cross cross-1"></span>
+          <span class="cross cross-2"></span>
+        </div>
       </div>
     </div>
 
