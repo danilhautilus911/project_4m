@@ -88,6 +88,107 @@
       justify-content: center;
     }
     .back_circle img {height: 80%;}
+    .main {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      /* height: 150vh; */
+      display: grid;
+      background-color: black;
+      grid-template-columns: 1fr;
+      grid-template-rows: 4vw 1fr 3fr 1fr 3fr 1fr;
+      grid-template-areas: "."
+                           "first_row"
+                           "second_row"
+                           "third_row"
+                           "fourth_row"
+                           "fifth_row";
+    }
+    .rows {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+    }
+    .first_row {grid-area: first_row;}
+    .second_row {grid-area: second_row;}
+    .third_row {grid-area: third_row;}
+    .fourth_row {grid-area: fourth_row;}
+    .fifth_row {grid-area: fifth_row;}
+    .block {
+      height: 100%;
+      transition: all .2s;
+      flex-grow: 1;
+      cursor: pointer;
+    }
+    .block_column1 {background-color: #7FDEFF;}
+    .block_column2 {background-color: #FF83BD;}
+    .block_column3 {background-color: #FFDD5B;}
+    .block_column4 {background-color: #7FDEFF;}
+    .block_column5 {background-color: #FFDD5B;}
+    .block_column6 {background-color: #FF5959;}
+    .block_column7 {background-color: #FF83BD;}
+    .block_column8 {background-color: #7FDEFF;}
+    .block_column9 {background-color: #FFDD5B;}
+    .block_column10 {background-color: #FF5959;}
+    @media only screen and (min-width: 569px) and (max-width: 1023px) {
+      .header {
+        height: 6vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "options";
+      }
+      .logo {display: none;}
+      .options a {font-size: 2.6vw;}
+      .main {
+        grid-template-rows: 6vw 1fr 3fr 1fr 3fr;
+        grid-template-areas: "."
+                             "first_row"
+                             "second_row"
+                             "third_row"
+                             "fourth_row";
+      }
+      .fifth_row, .block_column9, .block_column10 {display: none;}
+    }
+    @media only screen and (min-width: 320px) and (max-width: 568px) {
+      .header {
+        height: 15vw;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo";
+      }
+      .logo {
+        border-width: 0.2em 0.2em 0.2em 0.2em;
+      }
+      .options {
+        border-width: 0.15em 0.2em 0.2em 0.2em;
+        display: block;
+        display: none;
+      }
+      .options a{
+        font-size: 9vw;
+        padding: 2.9vw 2vw;
+        display: block;
+      }
+      .back_circle {
+        height: 8vw;
+        width: 8vw;
+        margin-left: 1.5vw;
+      }
+      .logo_picture {
+        height: 5.5vw;
+        padding-right: 2vw;
+      }
+      .main {
+        grid-template-rows: 15vw 1fr 3fr 1fr;
+        grid-template-areas: "."
+                             "first_row"
+                             "second_row"
+                             "third_row";
+      }
+      .fourth_row, .fifth_row, .block_column7, .block_column8, .block_column9, .block_column10 {display: none;}
+    }
   </style>
   <body>
     <div class="header">
@@ -104,6 +205,67 @@
         <a class="fourth_o" href="#">НАЙТИ ХОЗЯИНА</a>
       </div>
     </div>
-
+    <div class="main">
+      <div class="rows first_row">
+        <div class="block block_column1 row1_block1"></div>
+        <div class="block block_column2 row1_block2"></div>
+        <div class="block block_column3 row1_block3"></div>
+        <div class="block block_column4 row1_block4"></div>
+        <div class="block block_column5 row1_block5"></div>
+        <div class="block block_column6 row1_block6"></div>
+        <div class="block block_column7 row1_block7"></div>
+        <div class="block block_column8 row1_block8"></div>
+        <div class="block block_column9 row1_block9"></div>
+        <div class="block block_column10 row1_block10"></div>
+      </div>
+      <div class="rows second_row">
+        <div class="block block_column1 row2_block1"></div>
+        <div class="block block_column2 row2_block2"></div>
+        <div class="block block_column3 row2_block3"></div>
+        <div class="block block_column4 row2_block4"></div>
+        <div class="block block_column5 row2_block5"></div>
+        <div class="block block_column6 row2_block6"></div>
+        <div class="block block_column7 row2_block7"></div>
+        <div class="block block_column8 row2_block8"></div>
+        <div class="block block_column9 row2_block9"></div>
+        <div class="block block_column10 row2_block10"></div>
+      </div>
+      <div class="rows third_row">
+        <div class="block block_column1 row3_block1"></div>
+        <div class="block block_column2 row3_block2"></div>
+        <div class="block block_column3 row3_block3"></div>
+        <div class="block block_column4 row3_block4"></div>
+        <div class="block block_column5 row3_block5"></div>
+        <div class="block block_column6 row3_block6"></div>
+        <div class="block block_column7 row3_block7"></div>
+        <div class="block block_column8 row3_block8"></div>
+        <div class="block block_column9 row3_block9"></div>
+        <div class="block block_column10 row3_block10"></div>
+      </div>
+      <div class="rows fourth_row">
+        <div class="block block_column1 row4_block1"></div>
+        <div class="block block_column2 row4_block2"></div>
+        <div class="block block_column3 row4_block3"></div>
+        <div class="block block_column4 row4_block4"></div>
+        <div class="block block_column5 row4_block5"></div>
+        <div class="block block_column6 row4_block6"></div>
+        <div class="block block_column7 row4_block7"></div>
+        <div class="block block_column8 row4_block8"></div>
+        <div class="block block_column9 row4_block9"></div>
+        <div class="block block_column10 row4_block10"></div>
+      </div>
+      <div class="rows fifth_row">
+        <div class="block block_column1 row5_block1"></div>
+        <div class="block block_column2 row5_block2"></div>
+        <div class="block block_column3 row5_block3"></div>
+        <div class="block block_column4 row5_block4"></div>
+        <div class="block block_column5 row5_block5"></div>
+        <div class="block block_column6 row5_block6"></div>
+        <div class="block block_column7 row5_block7"></div>
+        <div class="block block_column8 row5_block8"></div>
+        <div class="block block_column9 row5_block9"></div>
+        <div class="block block_column10 row5_block10"></div>
+      </div>
+    </div>
   </body>
 </html>
