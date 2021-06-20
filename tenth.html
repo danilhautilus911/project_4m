@@ -193,6 +193,130 @@
       font-size: 1.3vw;
       padding: 1vw 7% 0vw;
     }
+    .h1formobile {display: none;}
+
+    @media only screen and (min-width: 569px) and (max-width: 1023px) {
+      .header {
+        height: 6vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "options";
+      }
+      .logo {display: none;}
+      .options a {font-size: 2.6vw;}
+
+      .text, .shkala {display: none;}
+      .strelka p {
+        font-size: 2.6vw;
+        text-transform: uppercase;
+        padding: 1.3vw;
+      }
+      .strelka img {right: 1%;}
+      .main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 6vw 1fr 1fr 1fr;
+        grid-template-areas: ". ."
+                             "item1 item2"
+                             "item3 item4"
+                             "item5 item6";
+      }
+      p {display: none;}
+      h1, h2, h3 {font-size: 3vw;}
+      h1, h3, .item2 h1 {padding: 2.4vw 20vw 2vw 3%; }
+      .picture {height: 40vw;}
+      h2 {padding: 0; position: absolute; bottom: 2vw; right: 8vw;}
+      .plus {height: 3vw; width: 3vw; bottom: 2vw;}
+      .picture_type2 {
+        width: 92%;
+        margin: 4% 4% 0%;
+        height: 40vw;
+      }
+      .item1 {border-width: 0.02em 0.15em 0.15em 0.2em;}
+      .item2 {border-width: 0.02em 0.2em 0.15em 0.15em;}
+      .item3 {border-width: 0.15em 0.15em 0.15em 0.2em;}
+      .item4 {border-width: 0.15em 0.2em 0.15em 0.15em;}
+      .item5 {border-width: 0.15em 0.15em 0.2em 0.2em;}
+      .item6 {border-width: 0.15em 0.2em 0.2em 0.15em;}
+      .h1formobile {display: none;}
+    }
+    @media only screen and (min-width: 320px) and (max-width: 568px) {
+      .header {
+        height: 15vw;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo";
+      }
+      .logo {
+        border-width: 0.2em 0.2em 0.2em 0.2em;
+      }
+      .options {
+        border-width: 0.15em 0.2em 0.2em 0.2em;
+        display: block;
+        display: none;
+      }
+      .options a{
+        font-size: 9vw;
+        padding: 2.9vw 2vw;
+        display: block;
+      }
+      .back_circle {
+        height: 8vw;
+        width: 8vw;
+        margin-left: 1.5vw;
+      }
+      .logo_picture {
+        height: 5.5vw;
+        padding-right: 2vw;
+      }
+      .main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 15vw 1fr 1fr 1fr;
+        grid-template-areas: ". ."
+                             "item1 item2"
+                             "item3 item4"
+                             "item5 item6";
+      }
+      .h1forpc, p {display: none;}
+      h1, h3 {display: block; font-size: 4vw;}
+      h2 {font-size: 9vw;}
+      h1, h3, .item2 h1 {padding: 2vw 9vw 12vw 4%;}
+      h2 {padding: 0; position: absolute; bottom: 2vw; left: 2vw;}
+      .h1formobile {
+        display: block;
+        font-family: "20Kopeek_Regular";
+        font-size: 4vw;
+        padding: 1vw 7% 0vw;
+      }
+      .picture {
+        width: 90%;
+        margin: 5% 5% 0%;
+        height: 42vw;
+        border-radius: 1em;
+      }
+      .plus {height: 5.5vw; width: 5.5vw; bottom: 3vw;}
+      .picture_type2 {
+        width: 90%;
+        margin: 5% 5% 0%;
+        height: 42vw;
+        border-radius: 1em;
+      }
+      .item1 {border-width: 0.02em 0.15em 0.15em 0.2em;}
+      .item2 {border-width: 0.02em 0.2em 0.15em 0.15em;}
+      .item3 {border-width: 0.15em 0.15em 0.15em 0.2em;}
+      .item4 {border-width: 0.15em 0.2em 0.15em 0.15em;}
+      .item5 {border-width: 0.15em 0.15em 0.2em 0.2em;}
+      .item6 {border-width: 0.15em 0.2em 0.2em 0.15em;}
+      .cross {
+        width: 0.15em;
+        height: 2.8vw;
+      }
+      .plus {
+        border: 0.2em solid black;
+      }
+
+
+    }
 
   </style>
   <body>
@@ -226,7 +350,8 @@
         <div class="picture picture2">
 
         </div>
-        <h1>ИГРОВОЙ НАБОР</h1>
+        <h1 class="h1forpc">ИГРОВОЙ НАБОР</h1>
+        <h1 class="h1formobile">НАБОР</h1>
         <h2>7000₽</h2>
         <p>Открывает человеку мир игрушечной психологии. Включает здание клиники и множество аскессуаров для полноценной работы.</p>
         <div class="plus">
@@ -238,7 +363,7 @@
         <div class="picture_type2 picture2">
 
         </div>
-        <h3>ЕЖЕДНЕВНИК</h3>
+        <h3>БЛОКНОТ</h3>
         <h2>250₽</h2>
         <div class="plus">
           <span class="cross cross-1"></span>
