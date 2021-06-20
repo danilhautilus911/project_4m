@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tinder</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js.js"></script>
+  </head>
+  <style media="screen">
+    @import 'reset.css';
+    @font-face {
+    font-family: "20Kopeek_Regular";
+    src: url("./fonts/20Kopeek_Regular.otf") format("TrueType");
+    font-style: normal;
+    font-weight: normal;
+    }
+    ::-webkit-scrollbar {
+    width: 0;
+    }
+
+    body {
+      width: 100vw;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: auto;
+      /* background-color: black; */
+    }
+    .header {
+      background-color: black;
+      height: 4vw;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "logo options options options";
+      background-color: black;
+    }
+    .logo, .options {
+      position: relative;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+    }
+    .logo {
+      grid-area: logo;
+      border-width: 0.2em 0.15em 0.2em 0.2em;
+      display: flex;
+      align-items: center;
+    }
+    .options {
+      grid-area: options;
+      border-width: 0.2em 0.2em 0.2em 0.15em;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #FF5959;
+    }
+    .options a {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      color: black;
+      text-decoration: none;
+    }
+    .second_o {color: #DF3A33 !important;}
+    .logo_picture {
+      height: 1.2vw;
+      position: absolute;
+      right: 0;
+      padding-right: 1vw;
+    }
+    .back_circle {
+      position: relative;
+      height: 2.5vw;
+      width: 2.5vw;
+      margin-left: 0.5vw;
+      border-radius: 50%;
+      border-color: black;
+      border-style: solid;
+      border-width: 0.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back_circle img {height: 80%;}
+    .main {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      display: grid;
+      background-color: black;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 4vw 1fr;
+      grid-template-areas: ". ."
+                           "part1 part2";
+    }
+    .first_part {
+      grid-area: part1;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+      border-width: 0.02em 0.15em 0.2em 0.2em;
+    }
+    h1 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 1vw;
+    }
+    .item {
+      border-bottom: solid black 0.2em;
+    }
+    .second_part {
+      grid-area: part2;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+      border-width: 0.02em 0.2em 0.2em 0.15em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      position: relative;
+      background-color: #E5E5E5;
+      width: 30vw;
+      height: 40vw;
+      border-radius: 1.5em;
+      /* min-width: 450px; */
+      /* max-height: 40vw; */
+    }
+    .text_part {
+      position: absolute;
+      bottom: 0;
+      height: 20%;
+      width: 100%;
+      border-top: black solid 0.2em;
+    }
+    .text_part h1 {
+      font-size: 2.5vw;
+      padding: 0.5vw 1vw !important;
+    }
+    p {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      padding: 0vw 1vw;
+    }
+    .interest {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.3vw;
+      padding: 0vw 0.3vw 0.2vw;
+      border-radius: 1em;
+      border: black solid 0.15em;
+      position: absolute;
+    }
+    .interest1 {
+      top: 1vw;
+      right: 1vw;
+    }
+    .interest2 {
+      top: 1vw;
+      right: 4.65vw;
+    }
+    @media only screen and (min-width: 569px) and (max-width: 1023px) {
+      .header {
+        height: 6vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "options";
+      }
+      .logo {display: none;}
+      .options a {font-size: 2.6vw;}
+
+      .text, .shkala {display: none;}
+      .strelka p {
+        font-size: 2.6vw;
+        text-transform: uppercase;
+        padding: 1.3vw;
+      }
+      .strelka img {right: 1%;}
+      .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 6vw 0fr 1fr;
+        grid-template-areas: "."
+                             "part1"
+                             "part2";
+      }
+      .first_part {border-width: 0.02em 0.2em 0.15em 0.2em;}
+      .second_part {border-width: 0.15em 0.2em 0.2em 0.2em;}
+      .item7 {border-bottom: none;}
+      h1 {
+        font-size: 4.5vw;
+        padding: 1vw 2vw;
+      }
+      .card {
+        width: 75vw;
+        height: 90vw;
+        margin: 4vw;
+      }
+      .text_part h1 {
+        font-size: 4.5vw;
+        padding: 2vw 2vw 0vw !important;
+      }
+      p {
+        font-size: 2.6vw;
+        padding: 2vw 2vw;
+      }
+      .interest {
+        font-size: 2.6vw;
+        padding: 0vw 0.5vw 0.6vw;
+      }
+      .interest1 {
+        top: 2vw;
+        right: 2vw;
+      }
+      .interest2 {
+        top: 2vw;
+        right: 9.2vw;
+      }
+    }
+      @media only screen and (min-width: 320px) and (max-width: 568px) {
+        .header {
+          height: 15vw;
+          width: 100vw;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr;
+          grid-template-areas: "logo";
+        }
+        .logo {
+          border-width: 0.2em 0.2em 0.2em 0.2em;
+        }
+        .options {
+          border-width: 0.15em 0.2em 0.2em 0.2em;
+          display: block;
+          display: none;
+        }
+        .options a{
+          font-size: 9vw;
+          padding: 2.9vw 2vw;
+          display: block;
+        }
+        .back_circle {
+          height: 8vw;
+          width: 8vw;
+          margin-left: 1.5vw;
+        }
+        .logo_picture {
+          height: 5.5vw;
+          padding-right: 2vw;
+        }
+        .main {
+          grid-template-columns: 1fr;
+          grid-template-rows: 15vw 0fr 1fr;
+          grid-template-areas: "."
+                               "part1"
+                               "part2";
+        }
+        .first_part {border-width: 0.02em 0.2em 0.15em 0.2em;}
+        .second_part {border-width: 0.15em 0.2em 0.2em 0.2em;}
+        .item7 {border-bottom: none;}
+        h1 {
+          font-size: 9vw;
+          padding: 2vw 2vw;
+        }
+        .card {
+          width: 85vw;
+          height: 125vw;
+          margin: 6vw;
+          border-radius: 1em;
+        }
+        .text_part {
+          height: 21%;
+        }
+        .text_part h1 {
+          font-size: 7vw;
+          padding: 2vw 2vw 0vw !important;
+        }
+        p {
+          font-size: 3.5vw;
+          padding: 2vw 2vw;
+        }
+        .interest {
+          font-size: 3.5vw;
+          padding: 0vw 0.5vw 0.6vw;
+        }
+        .interest1 {
+          top: 2vw;
+          right: 2vw;
+        }
+        .interest2 {
+          top: 2vw;
+          right: 11.3vw;
+        }
+      }
+
+    }
+  </style>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <div class="back_circle">
+          <img src="img/arrow.svg" alt="">
+        </div>
+        <img class="logo_picture"src="img/logo.svg" alt="">
+      </div>
+      <div class="options">
+        <a class="first_o" href="#">НАЙТИ ДРУГА</a>
+        <a class="second_o" href="#">МАГАЗИН</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="first_part">
+        <div class="item item1">
+          <h1>ДРУГ 1</h1>
+        </div>
+        <div class="item item2">
+          <h1>ДРУГ 2</h1>
+        </div>
+        <div class="item item3">
+          <h1>ДРУГ 3</h1>
+        </div>
+        <div class="item item4">
+          <h1>ДРУГ 4</h1>
+        </div>
+        <div class="item item5">
+          <h1>ДРУГ 5</h1>
+        </div>
+        <div class="item item6">
+          <h1>ДРУГ 6</h1>
+        </div>
+        <div class="item item7">
+          <h1>ДРУГ 7</h1>
+        </div>
+      </div>
+      <div class="second_part">
+        <div class="card card1">
+          <div class="text_part">
+            <h1>Госиг Голден, 6</h1>
+            <p>Этот верный плюшевый друг будет всегда и всюду рядом. Он составит компанию во время игр и подарит уют перед сном.</p>
+            <div class="interest interest1">игры</div>
+            <div class="interest interest2">покушать</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
