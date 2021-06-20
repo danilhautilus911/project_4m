@@ -33,7 +33,7 @@
       width: 100vw;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr 1.5fr 0.25fr 0.9fr 0.25fr;
+      grid-template-rows: 1fr 2.5fr 0.25fr 1.1fr 0.25fr;
       grid-template-areas: "first second"
                            "third second"
                            "fourth fourth"
@@ -69,11 +69,18 @@
     .second_option {grid-area: second_option;}
     .third_option {grid-area: third_option;}
     .fourth_option {grid-area: fourth_option;}
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-decoration: none !important;
+    }
     .first p {
       position: relative;
       font-family: "20Kopeek_Regular";
       font-size: 3vw;
-      padding-left: 1vw;
+      padding: 1vw 1vw;
+      color: black;
     }
     .second {
       grid-area: second;
@@ -85,7 +92,7 @@
       left: 0;
       font-family: "20Kopeek_Regular";
       font-size: 3vw;
-      padding: 1.4vw 1vw;
+      padding: 1vw;
     }
     .second img {
       height: 3vw;
@@ -98,7 +105,7 @@
       font-family: "20Kopeek_Regular";
       font-size: 1.8vw;
       position: relative;
-      padding: 25vw 2vw 6vw 2vw;
+      padding: 25vw 1vw 6vw;
     }
     .third {
       grid-area: third;
@@ -160,7 +167,7 @@
     .first_line {
       position: relative;
       height: 1.5vw;
-      width: 93%;
+      width: 95%;
       margin: auto;
       margin-top: 15vw;
     }
@@ -173,7 +180,7 @@
     .second_line {
       position: relative;
       height: 1.5vw;
-      width: 93%;
+      width: 95%;
       margin: auto;
       margin-top: 2%;
     }
@@ -186,32 +193,50 @@
     .seventh {
       grid-area: seventh;
       border-width: 0.15em 0.2em 0.2em 0.2em;
-      background-color: #7FDEFF;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
     }
-
+    .block {
+      height: 100%;
+      transition: all 1s;
+      flex-grow: 1;
+      cursor: pointer;
+    }
+    .block1 {background-color: #7FDEFF;}
+    .block2 {background-color: #FF83BD;}
+    .block3 {background-color: #FFDD5B;}
+    .block4 {background-color: #7FDEFF;}
+    .block5 {background-color: #FFDD5B;}
+    .block6 {background-color: #FF5959;}
+    .block7 {background-color: #FF83BD;}
+    .block8 {background-color: #7FDEFF;}
+    .block9 {background-color: #FFDD5B;}
+    .block10 {background-color: #FF5959;}
 
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .blocks {
-        grid-template-rows: 0.5fr 1.5fr 0.15fr 0.4fr 0.15fr;
+        grid-template-rows: 0.38fr 1.5fr 0.15fr 0.39fr 0.15fr;
         grid-template-areas: "first first"
                              "fifth second"
                              "fourth fourth"
                              "third sixth"
                              "seventh seventh"
       }
+      .first {border-width: 0.2em 0.2em 0.15em 0.2em;}
       .first p {
         font-size: 4vw;
-        padding-left: 2vw;
+        padding: 1vw 2vw;
       }
       .second h1 {
         font-size: 4vw;
-        padding: 1.4vw 1.5vw;
+        padding: 1vw 2vw;
       }
       .second {
         border-width: 0.15em 0.2em 0.15em 0.15em;
       }
       .second img {padding: 1.2vw 1.5vw;}
-      .second p {font-size: 2.6vw;}
+      .second p {font-size: 2.6vw; padding: 25vw 2vw 6vw;}
 
       .numberphone {font-size: 4vw;}
       .animation_numberphone {
@@ -222,17 +247,17 @@
       .second_textpart {padding-left: 4vw;}
       .sixth h1 {
         font-size: 4vw;
-        padding: 1.4vw 1.5vw;
+        padding: 1vw 2vw;
       }
       .first_line p {font-size: 2.6vw;}
       .second_line p {font-size: 2.6vw;}
-      .first_line {margin-top: 17vw;}
-      .second_line {margin-top: 4%;}
+      .first_line {margin-top: 17vw; width: 91%;}
+      .second_line {margin-top: 4%; width: 91%;}
       }
       @media only screen and (min-width: 320px) and (max-width: 568px) {
         .blocks {
           grid-template-columns: 1fr 1fr;
-          grid-template-rows: 0.7fr 1.5fr 0.15fr 0.8fr 0.4fr 0.15fr;
+          grid-template-rows: 0.7fr 2.35fr 0.2fr 0.8fr 0.64fr 0.15fr;
           grid-template-areas: "first first"
                                "second second"
                                "fourth fourth"
@@ -245,7 +270,7 @@
         .seventh {border-width: 0.15em 0.2em 0.2em 0.2em;}
         .first p {
           font-size: 9vw;
-          padding-left: 2vw;
+          padding: 2vw;
         }
         .second h1 {
           font-size: 9vw;
@@ -279,22 +304,30 @@
     <div class="blocks">
       <div class="part first">
         <div class="first_option">
-          <p>УСЛУГИ</p>
+          <a href="https://danilhautilus911.github.io/project_4m/fourth_page.html">
+            <p>УСЛУГИ</p>
+          </a>
         </div>
         <div class="second_option">
-          <p>МЕРОПРИЯТИЯ</p>
+          <a href="https://danilhautilus911.github.io/project_4m/fifth2_page.html">
+            <p>МЕРОПРИЯТИЯ</p>
+          </a>
         </div>
         <div class="third_option">
-          <p>ОНЛАЙН-ТЕРАПИЯ</p>
+          <a href="https://danilhautilus911.github.io/project_4m/sixth_page.html">
+            <p>ОНЛАЙН-ТЕРАПИЯ</p>
+          </a>
         </div>
         <div class="fourth_option">
-          <p>НАЙТИ ДРУГА</p>
+          <a href="https://danilhautilus911.github.io/project_4m/eleventh.html">
+            <p>НАЙТИ ДРУГА</p>
+          </a>
         </div>
       </div>
       <div class="part second">
         <h1>О НАС</h1>
         <img src="img/logo2.svg" alt="">
-        <p>Одним игрушкам сильно везёт — они становятся лучшими друзьями со&nbsp;своим ребёнком и&nbsp;живут долго и&nbsp;счастливо. Другим же везёт меньше, после чего они попадают к&nbsp;нам — в&nbsp;клинику «Доигрались», где каждая игрушка может получить необходимую поддержку после полученных душевных травм, пройти курс реабилитации и&nbsp;начать жить настоящей жизнью.<br><br>Наша клиника не&nbsp;только делает больные игрушки здоровыми, но и&nbsp;оказывает влияние на&nbsp;общество, ликвидируя игрушечные опасности, проводит различные комьюнити-образующие мероприятия, осуществляет поддержку в&nbsp;формате групповых занятий и&nbsp;по&nbsp;горячей линии.<br><br>Мы готовы помочь каждой игрушке справиться с&nbsp;душевными травмами и&nbsp;понять, как она действительно хочет жить.</p>
+        <p>Одним игрушкам сильно везёт — они становятся лучшими друзьями со&nbsp;своим ребёнком и&nbsp;живут долго и&nbsp;счастливо. Другим же везёт меньше, после чего они попадают к&nbsp;нам&nbsp— в&nbsp;клинику «Доигрались», где каждая игрушка может получить необходимую поддержку после полученных душевных травм, пройти курс реабилитации и&nbsp;начать жить настоящей жизнью.<br><br>Наша клиника не&nbsp;только делает больные игрушки здоровыми, но и&nbsp;оказывает влияние на&nbsp;общество, ликвидируя игрушечные опасности, проводит различные комьюнити-образующие мероприятия, осуществляет поддержку в&nbsp;формате групповых занятий и&nbsp;по&nbsp;горячей линии.<br><br>Мы готовы помочь каждой игрушке справиться с&nbsp;душевными травмами и&nbsp;понять, как она действительно хочет жить.</p>
       </div>
       <div class="part third">
         <img src="img/flag.svg" alt="">
@@ -318,9 +351,17 @@
         </div>
       </div>
       <div class="part seventh">
-
+        <div class="block block1"></div>
+        <div class="block block2"></div>
+        <div class="block block3"></div>
+        <div class="block block4"></div>
+        <div class="block block5"></div>
+        <div class="block block6"></div>
+        <div class="block block7"></div>
+        <div class="block block8"></div>
+        <div class="block block9"></div>
+        <div class="block block10"></div>
       </div>
-
     </div>
   </body>
 </html>
