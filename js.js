@@ -37,9 +37,18 @@ $(document).ready(function() {
     $('.fourth_option').css('background-color', 'white');
   });
 
-  $('.block').click(function () {
-    $(this).css( "flex-grow", "+=1" );
+  $('.block').mouseover(function () {
+    $(this).css( "flex-grow", "+=10" );
   });
+  $('.block').mouseout(function () {
+    $(this).css( "flex-grow", "-=10" );
+  });
+
+  // $('.block').mouseover(function () {
+  //   setInterval(function () {
+  //     $(this).css( "flex-grow", "+=1" );
+  //   }, 1000);
+  // });
 
   $('.accordion-item_trigger').click(function(){
     // setTimeout(function() {
