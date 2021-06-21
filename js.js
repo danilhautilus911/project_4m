@@ -158,4 +158,11 @@ $(document).ready(function() {
     $(this).next('.options').slideToggle(200);
   });
 
+  // $('.color_general').mouseover(function(){
+  //   $(this).css('opacity', '1');
+  // });
+  // $('.color_general').mouseout(function(){
+  //   $(this).css('opacity', '0');
+  // });
+
 });
