@@ -91,7 +91,7 @@
       align-items: center;
       justify-content: center;
     }
-    .back_circle img {height: 80%;}
+    .back_circle img {height: 80%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
     .main {
       position: relative;
       width: 100vw;
@@ -128,13 +128,13 @@
       font-size: 1.8vw;
       padding: 3vw 1vw 1vw;
     }
-    .column1_header {grid-area: column1_header; border-width: 0.15em 0.15em 0.15em 0.2em;}
+    .column1_header {grid-area: column1_header; border-width: 1px 2px 2px 4px;}
     .column1_part2 {height: calc(100% - 5.5vw); background-color: transparent !important;}
-    .column2_header {grid-area: column2_header; border-width: 0.15em 0.15em 0.15em 0.15em;}
+    .column2_header {grid-area: column2_header; border-width: 1px 0.15em 0.15em 0.15em;}
     .column2_part1 {border-width: 0.15em 0.15em 0.15em 0.15em;}
     .column2_part2 {border-width: 0.15em 0.15em 0.15em 0.15em;}
     .column2 {grid-area: column2; border-width: 0.15em 0.15em 0.15em 0.15em;}
-    .column3_header {grid-area: column3_header; border-width: 0.15em 0.2em 0.15em 0.15em;}
+    .column3_header {grid-area: column3_header; border-width: 1px 0.2em 0.15em 0.15em;}
     .column3 {grid-area: column3; border-width: 0.15em 0.2em 0.15em 0.15em;}
     .footer {
       grid-area: footer;
@@ -167,37 +167,21 @@
       margin: 0vw 1.2vw;
       height: 2.7vw;
       flex-direction: row;
-      /* border: 0.3em solid black; */
+      justify-content: space-between;
     }
-    .color_general {
-      border: 4px solid black;
-      flex-grow: 1;
-      background-color: white;
-      border-radius: 50%;
-      margin-left: 1%;
-    }
-    .color1 {background-color: #9400D3; opacity: 0; margin-left: 0% !important;}
-    .color2 {background-color: #DA70D6; opacity: 0;}
-    .color3 {background-color: #4B0082; opacity: 0;}
-    .color4 {background-color: #0000CD; opacity: 0;}
-    .color5 {background-color: #00BFFF; opacity: 0;}
-    .color6 {background-color: #20B2AA; opacity: 0;}
-    .color7 {background-color: #32CD32; opacity: 0;}
-    .color8 {background-color: #FFD700; opacity: 0;}
-    .color9 {background-color: #FFA500; opacity: 0;}
-    .color10 {background-color: #FF0000; opacity: 0;}
     button {
       font-family: "20Kopeek_Regular";
       font-size: 1.5vw;
       position: relative;
       margin: 0.2vw;
-      border: 0.2em solid black;
+      border: 4px solid black;
       border-radius: 2em;
-      padding: 0.2vw 0.7vw 0.7vw;
+      padding: 0.2vw 0.7vw 0.5vw;
       background-color: white;
       cursor: pointer;
       text-decoration: none;
       color: black;
+      transition: all .2s;
     }
     .button1 {margin-left: 1vw;}
     .button5 {margin-left: 0.5vw;}
@@ -208,17 +192,125 @@
     }
     .p2_input {
       border: none !important;
-      border-bottom: 0.3em solid black !important;
+      border-bottom: 4px solid black !important;
       height: 2vw !important;
       font-family: "20Kopeek_Regular";
       font-size: 1.3vw;
       color: black;
       width: 60% !important;
       margin: 0.5vw 1.2vw !important;
-      /* padding: 1vw; */
+      padding-left: 0 !important;
+      outline: none;
     }
     .sentence1_part2, .sentence1_part3, .sentence1_column3 {padding: 3vw 1vw 1vw;}
     .input5_part2, .input4_part3, .input2_column3 {margin: 0vw 1.2vw 4vw !important;}
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      background-color: rgba(0,0,0,.4);
+      z-index: 2;
+      display: none;
+    }
+    .popup {
+      background-color: white;
+      border-radius: 2vw;
+      position: absolute;
+      width: 45vw;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+    }
+    h2 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      color: black;
+      padding: 3.5vw 0vw;
+    }
+    .closepopup {
+      position: absolute;
+      top: -2vw;
+      right: -2vw;
+      height: 2.5vw;
+      width: 2.5vw;
+      cursor: pointer;
+      display: flex;
+      text-align: center;
+      align-items: center;
+    }
+    .closepopup::before {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      transform: rotate(-45deg);
+    }
+    .closepopup::after {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      transform: rotate(45deg);
+    }
+    .a_back_circle {height: 100%; width: 100%; position: relative;}
+    .button_anketa_altering {
+      background-color: #FF83BD;
+      border: 4px solid #FF83BD;
+      color: white;)
+    }
+    .radio {display: none;}
+    .fake {
+      display: inline-block;
+      width: 2.5vw;
+      height: 93%;
+      position: relative;
+      border-radius: 50%;
+    }
+    .fake::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 50%;
+      height: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all .2s;
+      border-radius: 50%;
+    }
+
+    .fake1 {border: 4px solid #FF0000;}
+    .fake1::before {background-color: #FF0000;}
+    .fake2 {border: 4px solid #FF4500;}
+    .fake2::before {background-color: #FF4500;}
+    .fake3 {border: 4px solid #FFD700;}
+    .fake3::before {background-color: #FFD700;}
+    .fake4 {border: 4px solid #ADFF2F;}
+    .fake4::before {background-color: #ADFF2F;}
+    .fake5 {border: 4px solid #00BFFF;}
+    .fake5::before {background-color: #00BFFF;}
+    .fake6 {border: 4px solid #0000CD;}
+    .fake6::before {background-color: #0000CD;}
+    .fake7 {border: 4px solid #6A5ACD;}
+    .fake7::before {background-color: #6A5ACD;}
+    .fake8 {border: 4px solid #FF83BD;}
+    .fake8::before {background-color: #FF83BD;}
+
+    .radio:checked + .fake::before {opacity: 1;}
+
+    .button_wrapper1, .button_wrapper2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .header {
         height: 6vw;
@@ -238,7 +330,7 @@
       .strelka img {right: 1%;}
       .main {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 6vw 7vw 1fr 0fr 0fr 12vw;
+        grid-template-rows: 6vw 7vw 2fr 7vw 0fr 12vw;
         grid-template-areas: ". ."
                              "column1_header column2_header"
                              "column1 column2"
@@ -258,13 +350,14 @@
         font-size: 2vw;
         padding: 0.8vw 1vw 1.2vw;
         margin: 0.5vw;
+        transition: all .2s;
       }
       .button5 {margin-left: 2.5vw;}
       .button1 {margin-left: 3vw;}
       .uvlecheniya {padding: 2vw 2vw 1vw;}
       .column2 {
         display: grid;
-        grid-template-rows: 2fr 1fr;
+        grid-template-rows: 1.7fr 1fr;
         grid-template-areas: "column2_part1"
                              "column2_part2";
       }
@@ -367,7 +460,9 @@
     <div class="header">
       <div class="logo">
         <div class="back_circle">
-          <img src="img/arrow.svg" alt="">
+          <a href="javascript:history.back();" class="a_back_circle">
+            <img src="img/arrow.svg" alt="">
+          </a>
         </div>
         <img class="logo_picture"src="img/logo.svg" alt="">
       </div>
@@ -400,28 +495,54 @@
           <input type="text" name="" value="">
           <p>Любимый цвет</p>
           <div class="color">
-            <div class="color_general color1"></div>
-            <div class="color_general color2"></div>
-            <div class="color_general color3"></div>
-            <div class="color_general color4"></div>
-            <div class="color_general color5"></div>
-            <div class="color_general color6"></div>
-            <div class="color_general color7"></div>
-            <div class="color_general color8"></div>
-            <div class="color_general color9"></div>
-            <div class="color_general color10"></div>
+            <label>
+              <input type="radio" class="radio" name="name1">
+              <span class="fake fake1"></span>
+            </label>
+            <label>
+              <input type="radio" class="radio" name="name1">
+              <span class="fake fake2"></span>
+            </label>
+            <label>
+              <input type="radio" class="radio" name="name1">
+              <span class="fake fake3"></span>
+            </label>
+            <label>
+              <input type="radio" class="radio" name="name1">
+              <span class="fake fake4"></span>
+            </label>
+            <label>
+              <input type="radio" class="radio" name="name1">
+              <span class="fake fake5"></span>
+            </label>
+            <label>
+              <input type="radio" class="radio" name="name1">
+              <span class="fake fake6"></span>
+            </label>
+            <label>
+              <input type="radio" class="radio" name="name1">
+              <span class="fake fake7"></span>
+            </label>
+            <label>
+              <input type="radio" class="radio" name="name1">
+              <span class="fake fake8"></span>
+            </label>
           </div>
           <p>Любимая песня</p>
           <input type="text" name="" value="">
           <p class="uvlecheniya">Увлечения</p>
-          <button type="button" class="button1" name="button">пицца</button>
-          <button type="button" class="button2" name="button">спорт</button>
-          <button type="button" class="button3" name="button">музыка</button>
-          <button type="button" class="button4" name="button">видеоигры</button>
-          <button type="button" class="button5" name="button">фильмы</button>
-          <button type="button" class="button6" name="button">театр</button>
-          <button type="button" class="button7" name="button">архитектура</button>
-          <button type="button" class="button8" name="button">танцы</button>
+          <div class="button_wrapper1">
+            <button type="button" class="button_anketa" name="button">пицца</button>
+            <button type="button" class="button_anketa" name="button">спорт</button>
+            <button type="button" class="button_anketa" name="button">музыка</button>
+            <button type="button" class="button_anketa" name="button">видеоигры</button>
+          </div>
+          <div class="button_wrapper2">
+            <button type="button" class="button_anketa" name="button">фильмы</button>
+            <button type="button" class="button_anketa" name="button">театр</button>
+            <button type="button" class="button_anketa" name="button">архитектура</button>
+            <button type="button" class="button_anketa" name="button">танцы</button>
+          </div>
           <input class="p2_input" type="text" name="" value="" placeholder="Другое">
           <p>Любимый фильм</p>
           <input class="input5_part2" type="text" name="" value="">
@@ -448,7 +569,13 @@
         <input class="input2_column3" type="text" name="" value="">
       </div>
       <div class="footer">
-        <button type="button" class="button_footer" name="button">отправить</button>
+        <button type="button" class="button_footer button-js-campaign" name="button">отправить</button>
+      </div>
+    </div>
+    <div class="overlay overlay-js-campaign">
+      <div class="popup popup-js-campaign">
+        <h2>УСПЕШНО ОТПРАВЛЕНО!</h2>
+        <div class="closepopup closepopup-js-campaign"></div>
       </div>
     </div>
   </body>
