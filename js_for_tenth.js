@@ -31,11 +31,18 @@ $(document).ready(function() {
     $('this').css('display','none');
     $('.image_bloknote2').css('display','block');
   });
-
   $('.image_bloknote1').mouseout(function() {
     $('this').css('opacity','1');
     $('.image_bloknote2').css('display','none');
   });
+
+    $('.image_khiga1').mouseover(function() {
+      $('.image_khiga2').css('display','block');
+    });
+    $('.image_khiga1').mouseout(function() {
+      $('this').css('opacity','1');
+      $('.image_khiga2').css('display','none');
+    });
 
   $('.label2').click(function(){
     $('.text1').css('opacity','0');
