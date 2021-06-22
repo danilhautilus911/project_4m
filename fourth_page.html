@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js.js"></script>
+    <script src="js_for_fourth.js"></script>
   </head>
   <style media="screen">
     @import 'reset.css';
@@ -172,19 +173,19 @@
       grid-area: sixth;
       border-width: 0.15em 0.2em 0.2em 0.15em;
     }
-    button {
+    .part2_buttons, .part1_buttons {
     font-family: "20Kopeek_Regular";
     font-size: 1.3vw;
     bottom: 0;
     right: 0;
     position: absolute;
-    border: none;
+    border: 4px #7FDEFF solid;
     border-radius: 51px;
     padding: 0.5vw 1vw 0.7vw;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    background: #7FDEFF;
+    background: white;
     margin: 2vw 1vw;
     /* opacity: 0; */
     }
@@ -194,6 +195,66 @@
       margin: 0;
       margin-right: 1vw;
       transition: all .1s;
+      cursor: pointer;
+    }
+    .part1_buttons {
+      cursor: pointer;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,.4);
+      z-index: 2;
+      display: none;
+    }
+    .popup {
+      background-color: white;
+      border-radius: 2vw;
+      position: absolute;
+      width: 45vw;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+    h2 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 1vw 1vw;
+    }
+    .closepopup {
+      position: absolute;
+      top: -2vw;
+      right: -2vw;
+      height: 2.5vw;
+      width: 2.5vw;
+      cursor: pointer;
+      display: flex;
+      text-align: center;
+      align-items: center;
+    }
+    .closepopup::before {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      transform: rotate(-45deg);
+    }
+    .closepopup::after {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      transform: rotate(45deg);
     }
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .header {
@@ -219,16 +280,21 @@
       .third {border-width: 0.15em 0.2em 0.15em 0.2em;}
       .sixth {border-width: 0.15em 0.2em 0.2em 0.2em;}
       h1 {font-size: 4.5vw; padding: 1vw 2vw;}
+      h2 {font-size: 4.5vw; padding: 1vw 2vw;}
       .accordion-item_trigger, .accordion-item_holder {font-size: 4.5vw; padding: 1vw 2vw;}
       .accordion-item_content {
         font-size: 2.6vw;
         padding: 2vw 2vw;
         max-width: 80vw;
       }
-      button {
+      .part1_buttons, .part2_buttons {
         font-size: 2vw;
         padding: 0.8vw 1.5vw 1.2vw;
         margin: 2vw 2vw;
+      }
+      .part2_buttons {
+        bottom: 0vw;
+        margin: 0.5vw;
       }
       .arrow_picture {
         height: 3.2vw;
@@ -281,13 +347,26 @@
       .third {border-width: 0.15em 0.2em 0.15em 0.2em;}
       .sixth {border-width: 0.15em 0.2em 0.2em 0.2em;}
       h1 {font-size: 9vw; padding: 2vw 2vw;}
+      .popup {width: 85vw; border-radius: 4vw;}
+      h2 {font-size: 9vw; padding: 5vw 2vw;}
+      .closepopup {
+        position: absolute;
+        top: -7vw;
+        right: -2vw;
+        height: 5vw;
+        width: 5vw;
+        cursor: pointer;
+        display: flex;
+        text-align: center;
+        align-items: center;
+      }
       .accordion-item_trigger, .accordion-item_holder {font-size: 9vw; padding: 2vw 2vw;}
       .accordion-item_content {
         font-size: 5vw;
         padding: 2vw 3vw 14vw;
         max-width: 100vw;
       }
-      button {
+      .part1_buttons, .part2_buttons {
         font-size: 4vw;
         padding: 1.4vw 3vw 2vw;
         margin: 3vw 3vw;
@@ -297,7 +376,8 @@
       .rectangle1 {display: none;}
       .accordion-item5 {border-bottom: none !important;}
       .part2_buttons {
-        margin: 1.5vw 2vw;
+        margin: 1.5vw 2vw !important;
+        bottom: 0.2vw;
       }
     }
 
@@ -338,7 +418,7 @@
                 </div>
                 <div class="accordion-item_content">
                   Индивидуальное психологическое консультирование&nbsp;— это особая форма работы с&nbsp;психологом, направленная на&nbsp;повышение качества жизни. В&nbsp;процессе беседы игрушка начинает лучше понимать себя: собственные настроения и&nbsp;переживания, реакции на&nbsp;те&nbsp;или иные ситуации, желания и&nbsp;потребности.
-                  <button type="button" id="button1" name="button">запись</button>
+                  <button type="button" class="part1_buttons" id="button1" name="button">запись</button>
                 </div>
               </div>
               <div class="accordion-item">
@@ -348,7 +428,7 @@
                 </div>
                 <div class="accordion-item_content">
                   В&nbsp;условиях группового психологического консультирования психолог набирает группу, которая будет работать с&nbsp;определенной темой или&nbsp;циклом тем, и&nbsp;в&nbsp;нее приходят игрушки с&nbsp;похожими проблемами. Например, заявляется тема «разрыв отношений», или&nbsp;«проблема утраты смысла жизни»&nbsp;— и&nbsp;собираются те, кто готов проработать эти вопросы.
-                  <button type="button" id="button2" name="button">запись</button>
+                  <button type="button" class="part1_buttons" id="button2" name="button">запись</button>
                 </div>
               </div>
               <div class="accordion-item">
@@ -358,7 +438,7 @@
                 </div>
                 <div class="accordion-item_content">
                   Комплекс мероприятий, направленных на&nbsp;восстановление, коррекцию или&nbsp;компенсацию нарушений психических функций, состояний, личностного статуса больных, а&nbsp;также игрушек, перенесших заболевания, получивших психическую травму в&nbsp;результате резкого изменения социальных отношений и&nbsp;условий жизни.
-                  <button type="button" id="button3" name="button">запись</button>
+                  <button type="button" class="part1_buttons" id="button3" name="button">запись</button>
                 </div>
               </div>
               <div class="accordion-item">
@@ -371,7 +451,7 @@
                   <li>лучше узнать себя</li>
                   <li>оценить свои сильные и&nbsp;слабые стороны</li>
                   <li>выбрать оптимальный способ психологической помощи</li>
-                  <button type="button" id="button4" name="button">запись</button>
+                  <button type="button" class="part1_buttons" id="button4" name="button">запись</button>
                 </div>
               </div>
               <div class="accordion-item accordion-item5">
@@ -381,16 +461,14 @@
                   </div>
                   <div class="accordion-item_content">
                     Психотерапевтический метод работы с&nbsp;эмоциональными и&nbsp;поведенческими затруднениями, использующий игру в&nbsp;качестве терапевтического воздействия.
-                    <button type="button" id="button5" name="button">запись</button>
+                    <button type="button" class="part1_buttons" id="button5" name="button">запись</button>
                   </div>
               </div>
               <div class="rectangle rectangle1"></div>
             </div>
           </div>
         </div>
-        <div class="part fifth">
-
-        </div>
+        <div class="part fifth"></div>
         <div class="part sixth">
           <div class="accordion-item">
               <div class="accordion-item_holder accordion-item_holder_first">
@@ -436,6 +514,12 @@
           </div>
           <div class="rectangle"></div>
         </div>
+    </div>
+    <div class="overlay overlay-zapisany">
+      <div class="popup popup-js-campaign-zapisany">
+        <h2>ВЫ УСПЕШНО ЗАПИСАНЫ!</h2>
+        <div class="closepopup closepopup-js-campaign"></div>
+      </div>
     </div>
   </body>
 </html>
