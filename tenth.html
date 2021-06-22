@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js.js"></script>
+    <script src="js_for_tenth.js"></script>
   </head>
   <style media="screen">
     @import 'reset.css';
@@ -169,6 +170,7 @@
       margin-left: 2vw;
       bottom: 1.5vw;
       right: 2vw;
+      cursor: pointer;
     }
     .cross {
       position: absolute;
@@ -187,6 +189,8 @@
       height: 20vw;
       background-color: #E5E5E5;
       border-radius: 1.5em;
+      position: relative;
+      overflow: hidden;
     }
     h3 {
       font-family: "20Kopeek_Regular";
@@ -194,6 +198,226 @@
       padding: 1vw 7% 0vw;
     }
     .h1formobile {display: none;}
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,.4);
+      z-index: 2;
+      display: none;
+    }
+    .popup {
+      background-color: white;
+      border-radius: 2vw;
+      position: absolute;
+      width: 70vw;
+      height: 40vw;
+      left: 50%;
+      top: 53%;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+    }
+    .popup h1 {
+      padding: 1vw;
+    }
+    .popup h2 {
+      padding: 0vw;
+      position: absolute;
+      right: 1vw;
+      top: 1vw;
+    }
+    .popup p {
+      padding: 0vw 1vw 1vw;
+    }
+    .closepopup {
+      position: absolute;
+      top: -2vw;
+      right: -2vw;
+      height: 2.5vw;
+      width: 2.5vw;
+      cursor: pointer;
+      display: flex;
+      text-align: center;
+      align-items: center;
+    }
+    .closepopup::before {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      transform: rotate(-45deg);
+    }
+    .closepopup::after {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      transform: rotate(45deg);
+    }
+    .popup3 {
+      /* position: relative; */
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      grid-template-rows: 0.5fr 0fr 1fr;
+      grid-template-areas: "left_part rigth_part1"
+                           "left_part rigth_part2"
+                           "left_part rigth_part3";
+    }
+    .left_part {
+      grid-area: left_part;
+      position: relative;
+      overflow: hidden;
+      border-right: 4px solid black;
+    }
+    .left_part img {
+      position: absolute;
+      transition: all .1s;
+    }
+    .image1 {
+      opacity: 1;
+      height: 90%;
+      top: 8%;
+      left: 21%;
+    }
+    .image2 {
+      height: 90%;
+      opacity: 0;
+      top: 8%;
+      left: 21%;
+    }
+    .background_rectangle {
+      background-color: #E5E5E5;
+      border-radius: 1vw;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      right: 5%;
+      bottom: 5%;
+      z-index: -2;
+    }
+    .rigth_part1 {
+      position: relative;
+      grid-area: rigth_part1;
+      border-bottom: 4px solid black;
+    }
+    .rigth_part2 {
+      position: relative;
+      grid-area: rigth_part2;
+      border-bottom: 4px solid black;
+    }
+    .rigth_part3 {
+      position: relative;
+      grid-area: rigth_part3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button {
+      font-family: "20Kopeek_Regular";
+      font-size: 1.5vw;
+      position: relative;
+      margin: 0.2vw;
+      border: 4px solid black;
+      border-radius: 2em;
+      padding: 0.2vw 0.7vw 0.5vw;
+      background-color: white;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      transition: all .2s;
+    }
+    .label2 {margin-left: 0.3vw;}
+    .radio {display: none;}
+    .fake {
+      margin-top: 1.5vw;
+      display: inline-block;
+      width: 1.5vw;
+      height: 1.5vw;
+      position: relative;
+      border-radius: 50%;
+      border: 4px solid black;
+      cursor: pointer;
+    }
+    .fake::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all .2s;
+      border-radius: 50%;
+      background-color: black;
+    }
+    .radio:checked + .fake::before {opacity: 1;}
+    .choose_print {display: block; padding-left: 1vw; position: relative; height: 4vw;}
+    .text {
+      font-family: "20Kopeek_Regular";
+      font-size: 1vw;
+      position: absolute;
+      left: 1vw;
+      top: 0vw;
+      transition: all .1s;
+    }
+    .text1 {opacity: 1;}
+    .text2 {opacity: 0;}
+
+    .image_items {
+      position: absolute;
+      transition: all 1s;
+      cursor: pointer;
+    }
+    .image_bloknote1 {
+      opacity: 1;
+      height: 95%;
+      top: 5%;
+      left: 23%;
+    }
+    .image_bloknote2 {
+      display: none;
+      height: 97%;
+      top: 5%;
+      left: 23%;
+    }
+    .button-js-campaign {cursor: pointer;}
+    .korzina {position: relative; height: 2vw; width: 5vw;}
+    .korzina img {
+      height: 80%;
+      display: inline-block;
+    }
+    .number_of_items {
+      background-color: transparent;
+      outline: none;
+      border: none;
+      font-family: "20Kopeek_Regular";
+      font-size: 1vw;
+      display: inline-block;
+      width: 1.2vw;
+      margin-bottom: 0.5vw;
+    }
+    .popup-dobavleno {
+      background-color: white;
+      border-radius: 2vw;
+      position: absolute;
+      width: 45vw;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+    .popup-dobavleno h2 {
+      padding: 2vw 0vw;
+    }
+
+
 
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .header {
@@ -314,10 +538,7 @@
       .plus {
         border: 0.2em solid black;
       }
-
-
     }
-
   </style>
   <body>
     <div class="header">
@@ -330,6 +551,10 @@
       <div class="options">
         <a class="first_o" href="#">НАЙТИ ДРУГА</a>
         <a class="second_o" href="#">МАГАЗИН</a>
+        <div class="korzina">
+          <img src="img/korzina.svg" alt="">
+          <input class='number_of_items' value='0'>
+        </div>
       </div>
     </div>
 
@@ -359,11 +584,13 @@
           <span class="cross cross-2"></span>
         </div>
       </div>
+
       <div class="item item3">
         <div class="picture_type2 picture2">
-
+          <img class="image_items image_bloknote1 button-js-campaign" src="img/picture3.svg" alt="">
+          <img class="image_items image_bloknote2 button-js-campaign" src="img/picture3_2.svg" alt="">
         </div>
-        <h3>БЛОКНОТ</h3>
+        <h3 class="button-js-campaign">БЛОКНОТ</h3>
         <h2>250₽</h2>
         <div class="plus">
           <span class="cross cross-1"></span>
@@ -402,6 +629,45 @@
           <span class="cross cross-1"></span>
           <span class="cross cross-2"></span>
         </div>
+      </div>
+    </div>
+    <div class="overlay overlay3 overlay-js-campaign overlay-js-campaign3">
+      <div class="popup popup3 popup-js-campaign3">
+        <div class="left_part">
+          <div class="background_rectangle"></div>
+          <img class="image1" src="img/picture3.svg" alt="">
+          <img class="image2" src="img/picture3_2.svg" alt="">
+        </div>
+        <div class="rigth_part1">
+          <h1>БЛОКНОТ</h1>
+          <h2>250₽</h2>
+          <div class="choose_print">
+            <label class="label1">
+              <input type="radio" class="radio" name="name1">
+              <span class="fake"></span>
+              <span class="text text1">Принт: 1</span>
+            </label>
+            <label class="label2">
+              <input type="radio" class="radio" name="name1">
+              <span class="fake"></span>
+              <span class="text text2">Принт: 2</span>
+            </label>
+          </div>
+        </div>
+        <div class="rigth_part2">
+          <h1>ХАРАКТЕРИСТИКИ</h1>
+          <p>Формат/размеры: A5 (148 x 210 мм)<br>Количество листов, шт: 160<br>Плотность бумаги, г/м2: 70<br>Обложка: мягкая</p>
+        </div>
+        <div class="rigth_part3">
+          <button type="button" class="button_footer button-js-campaign" name="button">в корзину</button>
+        </div>
+        <div class="closepopup closepopup3 closepopup-js-campaign"></div>
+      </div>
+    </div>
+    <div class="overlay overlay-js-campaign-dobavleno">
+      <div class="popup-dobavleno popup-js-campaign-dobavleno">
+        <h2>ДОБАВЛЕНО В КОРЗИНУ!</h2>
+        <div class="closepopup closepopup-js-campaign"></div>
       </div>
     </div>
 
