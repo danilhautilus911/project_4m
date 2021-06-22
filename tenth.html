@@ -141,10 +141,36 @@
       border-radius: 2em;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
     .picture1 {
-      background-image: url(img/picture1_1.svg);
+      background: url(img/picture1_1.svg) no-repeat center;
+      background-size: cover;
+      background-color: #E5E5E5;
     }
+    .picture2 {
+      background: url(img/picture2.svg) no-repeat center;
+      background-size: 96% 90%;
+      background-position: 86% 41%;
+      background-color: #E5E5E5;
+    }
+    .picture4 {
+      background: url(img/picture4.svg) no-repeat center;
+      background-size: 100% 95%;
+    }
+    .picture5 {
+      background: url(img/picture5.svg) no-repeat center;
+      background-size: 100% 100%;
+    }
+    .picture6 {
+      background: url(img/picture6.svg) no-repeat center;
+      background-size: 90% 90%;
+    }
+    /* .picture1 {
+      background: url(img/picture1_2.svg) no-repeat center !important;
+      background-size: contain;
+      background-color: #E5E5E5;
+    } */
     h1 {
       font-family: "20Kopeek_Regular";
       font-size: 3vw;
@@ -196,6 +222,7 @@
       border-radius: 1.5em;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
     h3 {
       font-family: "20Kopeek_Regular";
@@ -212,6 +239,9 @@
       background-color: rgba(0,0,0,.4);
       z-index: 2;
       display: none;
+    }
+    .overlay2 {
+      display: block;
     }
     .popup {
       background-color: white;
@@ -263,17 +293,7 @@
       width: 100%;
       transform: rotate(45deg);
     }
-    .popup3 {
-      /* position: relative; */
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      grid-template-rows: 0.5fr 0fr 1fr;
-      grid-template-areas: "left_part rigth_part1"
-                           "left_part rigth_part2"
-                           "left_part rigth_part3";
-    }
     .left_part {
-      grid-area: left_part;
       position: relative;
       overflow: hidden;
       border-right: 4px solid black;
@@ -282,19 +302,161 @@
       position: absolute;
       transition: all .1s;
     }
-    .image1 {
+    .right_part {
+      position: relative;
+      border-bottom: 4px solid black;
+    }
+
+    .popup1 {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      grid-template-rows: 0.5fr 0fr 1fr 1fr;
+      grid-template-areas: "left_part_popup1 right_part1_popup1"
+                           "left_part_popup1 right_part2_popup1"
+                           "left_part_popup1 right_part3_popup1"
+                           "left_part_popup1 right_part4_popup1";
+    }
+    .left_part_popup1 {grid-area: left_part_popup1;}
+    .background_rectangle_popup1 {
+      background-color: #E5E5E5;
+      border-radius: 1vw;
+      position: absolute;
+      top: 5%;
+      left: 15%;
+      right: 5%;
+      bottom: 5%;
+      z-index: -2;
+    }
+    .right_part1_popup1 {grid-area: right_part1_popup1; border-bottom: 4px solid black;}
+    .right_part1_popup1 {grid-area: right_part1_popup1; border-bottom: 4px solid black;}
+    .right_part2_popup1 {grid-area: right_part2_popup1; border-bottom: 4px solid black;}
+    .right_part3_popup1 {grid-area: right_part3_popup1; border-bottom: 4px solid black;}
+    .right_part4_popup1 {
+      grid-area: rigth_part4_popup1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 0px !important;
+    }
+
+    .popup2 {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      grid-template-rows: 0.5fr 0fr 1fr 1fr;
+      grid-template-areas: "left_part_popup2 right_part1_popup2"
+                           "left_part_popup2 right_part2_popup2"
+                           "left_part_popup2 right_part3_popup2"
+                           "left_part_popup2 right_part4_popup2";
+    }
+    .left_part_popup2 {grid-area: left_part_popup2;}
+    .background_rectangle_popup2 {
+      background-color: #E5E5E5;
+      border-radius: 1vw;
+      position: absolute;
+      top: 5%;
+      left: 16.5%;
+      right: 5%;
+      bottom: 5%;
+      z-index: -2;
+    }
+    .background_rectangle_type2 {
+      background-color: #E5E5E5;
+      border-radius: 1vw;
+      position: absolute;
+      width: 4vw;
+      height: 4vw;
+      cursor: pointer;
+    }
+    .background_rectangle2_popup2 {
+      top: 5%;
+      left: 3%;
+      background: url(img/picture2.svg) no-repeat center;
+      background-size: 96% 90%;
+      background-position: 86% 41%;
+      background-color: #E5E5E5;
+    }
+    .background_rectangle3_popup2 {
+      top: 18%;
+      left: 3%;
+      background: url(img/picture2_2.svg) no-repeat center;
+      background-size: 100% 100%;
+      background-color: #E5E5E5;
+    }
+    .background_rectangle4_popup2 {
+      top: 31%;
+      left: 3%;
+      background: url(img/picture2_3.svg) no-repeat center;
+      background-size: 100% 100%;
+      background-color: #E5E5E5;
+    }
+    .background_rectangle5_popup2 {
+      top: 44%;
+      left: 3%;
+      background: url(img/picture2_4.svg) no-repeat center;
+      background-size: 100% 100%;
+      background-color: #E5E5E5;
+    }
+    .image_popup2 {
+      position: absolute;
+      transition: all .1s;
+    }
+    .image1_popup2 {
+      height: 53%;
+      left: 18%;
+      top: 21%;
+      opacity: 1;
+    }
+    .image3_popup2 {
+      height: 54%;
+      left: 20%;
+      top: 21%;
+      opacity: 0;
+    }
+    .image4_popup2 {
+      height: 54%;
+      left: 19%;
+      top: 21%;
+      opacity: 0;
+    }
+    .image5_popup2 {
+      height: 54%;
+      left: 17%;
+      top: 21%;
+      opacity: 0;
+    }
+    .right_part1_popup2 {grid-area: right_part1_popup2;}
+    .right_part2_popup2 {grid-area: right_part2_popup2;}
+    .right_part3_popup2 {grid-area: right_part3_popup2;}
+    .right_part4_popup2 {
+      grid-area: right_part4_popup2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 0px !important;
+    }
+
+    .popup3 {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      grid-template-rows: 0.5fr 0fr 1fr;
+      grid-template-areas: "left_part_popup3 rigth_part1_popup3"
+                           "left_part_popup3 rigth_part2_popup3"
+                           "left_part_popup3 rigth_part3_popup3";
+    }
+    .left_part_popup3 {grid-area: left_part_popup3;}
+    .image1_popup3 {
       opacity: 1;
       height: 90%;
       top: 8%;
       left: 21%;
     }
-    .image2 {
+    .image2_popup3 {
       height: 90%;
       opacity: 0;
       top: 8%;
       left: 21%;
     }
-    .background_rectangle {
+    .background_rectangle_popup3 {
       background-color: #E5E5E5;
       border-radius: 1vw;
       position: absolute;
@@ -304,23 +466,16 @@
       bottom: 5%;
       z-index: -2;
     }
-    .rigth_part1 {
-      position: relative;
-      grid-area: rigth_part1;
-      border-bottom: 4px solid black;
-    }
-    .rigth_part2 {
-      position: relative;
-      grid-area: rigth_part2;
-      border-bottom: 4px solid black;
-    }
-    .rigth_part3 {
-      position: relative;
-      grid-area: rigth_part3;
+    .rigth_part1_popup3 {grid-area: rigth_part1_popup3;}
+    .rigth_part2_popup3 {grid-area: rigth_part2_popup3;}
+    .rigth_part3_popup3 {
+      grid-area: rigth_part3_popup3;
       display: flex;
       align-items: center;
       justify-content: center;
+      /* border-bottom: 0px !important; */
     }
+
     button {
       font-family: "20Kopeek_Regular";
       font-size: 1.5vw;
@@ -335,9 +490,9 @@
       color: black;
       transition: all .2s;
     }
-    .label2 {margin-left: 0.3vw;}
-    .radio {display: none;}
-    .fake {
+    .label2_popup3 {margin-left: 0.3vw;}
+    .radio_popup3 {display: none;}
+    .fake_popup3 {
       margin-top: 1.5vw;
       display: inline-block;
       width: 1.5vw;
@@ -347,7 +502,7 @@
       border: 4px solid black;
       cursor: pointer;
     }
-    .fake::before {
+    .fake_popup3::before {
       content: '';
       position: absolute;
       display: block;
@@ -358,8 +513,8 @@
       border-radius: 50%;
       background-color: black;
     }
-    .radio:checked + .fake::before {opacity: 1;}
-    .choose_print {display: block; padding-left: 1vw; position: relative; height: 4vw;}
+    .radio_popup3:checked + .fake_popup3::before {opacity: 1;}
+    .choose_print_popup3 {display: block; padding-left: 1vw; position: relative; height: 4vw;}
     .text {
       font-family: "20Kopeek_Regular";
       font-size: 1vw;
@@ -368,8 +523,8 @@
       top: 0vw;
       transition: all .1s;
     }
-    .text1 {opacity: 1;}
-    .text2 {opacity: 0;}
+    .text1_popup3 {opacity: 1;}
+    .text2_popup3 {opacity: 0;}
 
     .image_items {
       position: absolute;
@@ -388,18 +543,8 @@
       top: 5%;
       left: 23%;
     }
-    .image_khiga1 {
-      opacity: 1;
-      height: 100%;
-      /* top: 5%; */
-      /* left: 23%; */
-    }
-    .image_khiga1:hover{opacity: 0;}
-    .image_khiga2 {
-      display: none;
-      height: 100%;
-    }
-    .button-js-campaign {cursor: pointer;}
+
+    .button-js3 {cursor: pointer;}
     .korzina {position: relative; height: 2vw; width: 5vw;}
     .korzina img {
       height: 80%;
@@ -576,10 +721,7 @@
 
     <div class="main">
       <div class="item item1">
-        <div class="picture picture1">
-          <!-- <img class="image_items image_khiga1" src="img/picture1_1.svg" alt=""> -->
-          <!-- <img class="image_items image_khiga2" src="img/picture1_2.svg" alt=""> -->
-        </div>
+        <div class="picture picture1"></div>
         <h1>КНИГА</h1>
         <h2>250₽</h2>
         <p>Рассказывает о том, как правильно взаимодействовать с игрушечным пространством, обо всех его особенностях и важных моментах.</p>
@@ -590,8 +732,7 @@
       </div>
 
       <div class="item item2">
-        <div class="picture picture2">
-        </div>
+        <div class="picture picture2"></div>
         <h1 class="h1forpc">ИГРОВОЙ НАБОР</h1>
         <h1 class="h1formobile">НАБОР</h1>
         <h2>7000₽</h2>
@@ -603,21 +744,20 @@
       </div>
 
       <div class="item item3">
-        <div class="picture_type2 picture2">
-          <img class="image_items image_bloknote1 button-js-campaign" src="img/picture3.svg" alt="">
-          <img class="image_items image_bloknote2 button-js-campaign" src="img/picture3_2.svg" alt="">
+        <div class="picture_type2 picture3">
+          <img class="image_items image_bloknote1 button-js3" src="img/picture3.svg" alt="">
+          <img class="image_items image_bloknote2 button-js3" src="img/picture3_2.svg" alt="">
         </div>
-        <h3 class="button-js-campaign">БЛОКНОТ</h3>
+        <h3 class="button-js3">БЛОКНОТ</h3>
         <h2>250₽</h2>
         <div class="plus">
           <span class="cross cross-1"></span>
           <span class="cross cross-2"></span>
         </div>
       </div>
-      <div class="item item4">
-        <div class="picture_type2 picture2">
 
-        </div>
+      <div class="item item4">
+        <div class="picture_type2 picture4"></div>
         <h3>ШОППЕР</h3>
         <h2>450₽</h2>
         <div class="plus">
@@ -625,10 +765,9 @@
           <span class="cross cross-2"></span>
         </div>
       </div>
-      <div class="item item5">
-        <div class="picture_type2 picture2">
 
-        </div>
+      <div class="item item5">
+        <div class="picture_type2 picture5"></div>
         <h3>ЧЕХОЛ</h3>
         <h2>300₽</h2>
         <div class="plus">
@@ -636,10 +775,9 @@
           <span class="cross cross-2"></span>
         </div>
       </div>
-      <div class="item item6">
-        <div class="picture_type2 picture2">
 
-        </div>
+      <div class="item item6">
+        <div class="picture_type2 picture6"></div>
         <h3>ПЛАКАТ</h3>
         <h2>100₽</h2>
         <div class="plus">
@@ -648,40 +786,101 @@
         </div>
       </div>
     </div>
-    <div class="overlay overlay3 overlay-js-campaign overlay-js-campaign3">
-      <div class="popup popup3 popup-js-campaign3">
-        <div class="left_part">
-          <div class="background_rectangle"></div>
-          <img class="image1" src="img/picture3.svg" alt="">
-          <img class="image2" src="img/picture3_2.svg" alt="">
+
+    <div class="overlay overlay1">
+      <div class="popup popup1 popup-js-campaign1">
+        <div class="left_part left_part_popup1">
+          <div class="background_rectangle background_rectangle_popup1"></div>
+          <!-- <img class="image1" src="img/picture3.svg" alt=""> -->
+          <!-- <img class="image2" src="img/picture3_2.svg" alt=""> -->
         </div>
-        <div class="rigth_part1">
+        <div class="right_part1_popup1 right_part">
+          <h1>КНИГА</h1>
+          <h2>250₽</h2>
+        </div>
+        <div class="right_part2_popup1 right_part">
+          <h1>ОПИСАНИЕ</h1>
+          <p>Рассказывает о концепции клиники психологической поддержки детских игрушек, сценариях взаимодействия с человеком и игрушкой. Описывает помещения клиники и их основные функции. Включает набор наклеек.</p>
+        </div>
+        <div class="right_part3_popup1 right_part">
+          <h1>ХАРАКТЕРИСТИКИ</h1>
+          <p>Язык: Русский<br>Количество страниц: 72<br>Вид бумаги: Офсетная<br>Иллюстрации: Цветные<br>Обложка: Твердая</p>
+        </div>
+        <div class="right_part right_part4_popup1">
+          <button type="button" class="button_footer" name="button">в корзину</button>
+        </div>
+        <div class="closepopup closepopup-js-campaign"></div>
+      </div>
+    </div>
+
+    <div class="overlay overlay2">
+      <div class="popup popup2 popup-js-campaign2">
+        <div class="left_part left_part_popup2">
+          <div class="background_rectangle background_rectangle_popup2"></div>
+          <div class="background_rectangle_type2 background_rectangle2_popup2"></div>
+          <div class="background_rectangle_type2 background_rectangle3_popup2"></div>
+          <div class="background_rectangle_type2 background_rectangle4_popup2"></div>
+          <div class="background_rectangle_type2 background_rectangle5_popup2"></div>
+          <img class="image_popup2 image1_popup2" src="img/picture2.svg" alt="">
+          <!-- <img class="image_popup2 image2_popup2" src="img/picture2.svg" alt=""> -->
+          <img class="image_popup2 image3_popup2" src="img/picture2_2.svg" alt="">
+          <img class="image_popup2 image4_popup2" src="img/picture2_3.svg" alt="">
+          <img class="image_popup2 image5_popup2" src="img/picture2_4.svg" alt="">
+        </div>
+        <div class="right_part1_popup2 right_part">
+          <h1>НАБОР</h1>
+          <h2>7000₽</h2>
+        </div>
+        <div class="right_part2_popup2 right_part">
+          <h1>ОПИСАНИЕ</h1>
+          <p>Клиника «Доигрались» открывает свои двери для новых пациентов! В её кабинетах можно получить индивидуальные и групповые психологические консультации. В главном зале проходят различные мероприятия, в ремонтном кабинете можно починиться, а на втором этаже также назодятся комнаты эмоциональной терапии. </p>
+        </div>
+        <div class="right_part3_popup2 right_part">
+          <h1>ХАРАКТЕРИСТИКИ</h1>
+          <p>Артикул: ASST.X45528<br>Страна-производитель:Россия<br>Габариты упаковки:30см x 53см x 10см<br>Вес упаковки: 2,17 кг</p>
+        </div>
+        <div class="right_part right_part4_popup2">
+          <button type="button" class="button_footer" name="button">в корзину</button>
+        </div>
+        <div class="closepopup closepopup-js-campaign"></div>
+      </div>
+    </div>
+
+    <div class="overlay overlay3">
+      <div class="popup popup3 popup-js-campaign3">
+        <div class="left_part left_part_popup3">
+          <div class="background_rectangle background_rectangle_popup3"></div>
+          <img class="image1_popup3" src="img/picture3.svg" alt="">
+          <img class="image2_popup3" src="img/picture3_2.svg" alt="">
+        </div>
+        <div class="right_part rigth_part1_popup3">
           <h1>БЛОКНОТ</h1>
           <h2>250₽</h2>
-          <div class="choose_print">
-            <label class="label1">
-              <input type="radio" class="radio" name="name1">
-              <span class="fake"></span>
-              <span class="text text1">Принт: 1</span>
+          <div class="choose_print_popup3">
+            <label class="label1_popup3">
+              <input type="radio" class="radio_popup3" name="name1">
+              <span class="fake_popup3"></span>
+              <span class="text text1_popup3">Принт: 1</span>
             </label>
-            <label class="label2">
-              <input type="radio" class="radio" name="name1">
-              <span class="fake"></span>
-              <span class="text text2">Принт: 2</span>
+            <label class="label2_popup3">
+              <input type="radio" class="radio_popup3" name="name1">
+              <span class="fake_popup3"></span>
+              <span class="text text2_popup3">Принт: 2</span>
             </label>
           </div>
         </div>
-        <div class="rigth_part2">
+        <div class="right_part rigth_part2_popup3">
           <h1>ХАРАКТЕРИСТИКИ</h1>
           <p>Формат/размеры: A5 (148 x 210 мм)<br>Количество листов, шт: 160<br>Плотность бумаги, г/м2: 70<br>Обложка: мягкая</p>
         </div>
-        <div class="rigth_part3">
-          <button type="button" class="button_footer button-js-campaign" name="button">в корзину</button>
+        <div class="right_part rigth_part3_popup3">
+          <button type="button" class="button_footer" name="button">в корзину</button>
         </div>
-        <div class="closepopup closepopup3 closepopup-js-campaign"></div>
+        <div class="closepopup closepopup-js-campaign"></div>
       </div>
     </div>
-    <div class="overlay overlay-js-campaign-dobavleno">
+
+    <div class="overlay overlay-dobavleno">
       <div class="popup-dobavleno popup-js-campaign-dobavleno">
         <h2>ДОБАВЛЕНО В КОРЗИНУ!</h2>
         <div class="closepopup closepopup-js-campaign"></div>
