@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js.js"></script>
+    <script src="js_for_fifth.js"></script>
   </head>
   <style media="screen">
     @import 'reset.css';
@@ -92,13 +93,13 @@
       position: fixed;
       top: 0;
       z-index: 2;
-      width: 100vw;
+      width: 50vw;
       min-height: 100vh;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       grid-template-rows: 4vw 1fr;
-      grid-template-areas: ". ."
-                           "info .";
+      grid-template-areas: "."
+                           "info";
     }
     .info {
       grid-area: info;
@@ -153,7 +154,7 @@
     .event4_data {grid-area: event4_data; border-right: 0.25vw solid black;}
     .event4_content {grid-area: event4_content;}
 
-    .event5 {grid-area: event5; grid-template-areas: "event5_data event5_content";}
+    .event5 {grid-area: event5; grid-template-areas: "event5_data event5_content"; background-color: white;}
     .event5_data {grid-area: event5_data; border-right: 0.25vw solid black;}
     .event5_content {grid-area: event5_content;}
 
@@ -169,6 +170,14 @@
     .event8_data {grid-area: event8_data; border-right: 0.25vw solid black;}
     .event8_content {grid-area: event8_content;}
 
+    /* .event_color {
+      animation: event_color 2s ease-in;
+    }
+
+    @keyframes event_color {
+      100% {background-color: #FFECA1}
+    } */
+
     .posters {
       position: relative;
       width: 100vw;
@@ -179,17 +188,20 @@
       grid-template-rows: 4vw 1fr;
       grid-template-areas: ". ."
                            ". content";
+      cursor: pointer;
     }
     .content {
       grid-area: content;
       position: relative;
       display: grid;
+      overflow: hidden;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 0.9fr;
       grid-template-areas: "p1 p1"
                            "p2 p2"
                            "p3 p3"
-                           "p4 p4";
+                           "p4 p4"
+                           "p5 p5";
     }
     .content img {
       width: 100%;
@@ -199,7 +211,7 @@
       border-radius: 1em 1em 0em 0em;
       border-style: solid;
       border-color: black;
-      border-width: 0.15em 0em 0em 0em;
+      border-width: 0.15em 0.2em 0.15em 0em;
     }
     .poster2 {
       grid-area: p2;
@@ -209,12 +221,90 @@
     }
     .poster4 {
       grid-area: p4;
+    }
+    .poster5 {
+      grid-area: p5;
       border-radius: 0em 0em 1em 1em;
       border-style: solid;
       border-color: black;
       border-width: 0em 0em 0.15em 0em;
     }
+
     .empty {display: none;}
+    .button {
+      font-family: "20Kopeek_Regular";
+      font-size: 1vw;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      border: 4px #FFDD5B solid;
+      border-radius: 51px;
+      padding: 0.3vw 0.7vw 0.5vw;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      background: white;
+      margin: 0.5vw 0.5vw;
+      opacity: 0;
+      transition: all .2s;
+      cursor: pointer;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,.4);
+      z-index: 2;
+      display: none;
+    }
+    .popup {
+      background-color: white;
+      border-radius: 2vw;
+      position: absolute;
+      width: 45vw;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+    h2 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 1vw 1vw;
+    }
+    .closepopup {
+      position: absolute;
+      top: -2vw;
+      right: -2vw;
+      height: 2.5vw;
+      width: 2.5vw;
+      cursor: pointer;
+      display: flex;
+      text-align: center;
+      align-items: center;
+    }
+    .closepopup::before {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      transform: rotate(-45deg);
+    }
+    .closepopup::after {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      transform: rotate(45deg);
+    }
 
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .header {
@@ -310,13 +400,15 @@
           <div class="event1_content">
               <h1>ОНЛАЙН-ЛЕКЦИЯ</h1>
               <p>ТЕМА: «Хобби как смысл жизни»</p>
+              <button type="button" class="button button1" name="button">запись</button>
           </div>
         </div>
         <div class="event event2">
           <div class="data event2_data">28.06</div>
           <div class="event2_content">
               <h1>АНОНС ЛИНИИ</h1>
-              <p>???</p>
+              <p>Официальная презентация в честь запуска горячей линии поддержки!</p>
+              <button type="button" class="button button2" name="button">запись</button>
           </div>
         </div>
         <div class="event event3">
@@ -324,6 +416,7 @@
           <div class="event3_content">
               <h1>ОПЭН ТОК</h1>
               <p>ТЕМА: «Польза личного дневника»</p>
+              <button type="button" class="button button3" name="button">запись</button>
           </div>
         </div>
         <div class="event event4">
@@ -331,6 +424,7 @@
           <div class="event4_content">
               <h1>МК</h1>
               <p>«Навыки саморегуляции»</p>
+              <button type="button" class="button button4" name="button">запись</button>
           </div>
         </div>
         <div class="event event5">
@@ -338,6 +432,7 @@
           <div class="event5_content">
               <h1>ГРУППОВОЕ ЗАНЯТИЕ</h1>
               <p>ТЕМА: «Домашнее насилие в мире игрушек»</p>
+              <button type="button" class="button button5" name="button">запись</button>
           </div>
         </div>
         <div class="event event6">
@@ -345,13 +440,15 @@
           <div class="event6_content">
               <h1>ОНЛАЙН-ЛЕКЦИЯ</h1>
               <p>«От мечты к цели»</p>
+              <button type="button" class="button button6" name="button">запись</button>
           </div>
         </div>
         <div class="event event7">
           <div class="data event7_data">31.10</div>
           <div class="event7_content">
               <h1>ХЭЛЛОУИН</h1>
-              <p>???</p>
+              <p>Самая страшная ночь в самой милой компании!</p>
+              <button type="button" class="button button7" name="button">запись</button>
           </div>
         </div>
         <div class="event event8">
@@ -359,6 +456,7 @@
           <div class="event8_content">
               <h1>ОНЛАЙН-ЛЕКЦИЯ</h1>
               <p>«Навыки саморегуляции»</p>
+              <button type="button" class="button button8" name="button">запись</button>
           </div>
         </div>
       </div>
@@ -368,8 +466,9 @@
       <div class="content">
           <img class="poster1"src="img/p1.svg" alt="">
           <img class="poster2"src="img/p2.svg" alt="">
-          <img class="poster3"src="img/p3.svg" alt="">
+          <a href="https://youtu.be/717AAQDsaVw" class="poster3"><img class=""src="img/p3.svg" alt=""></a>
           <img class="poster4"src="img/p4.svg" alt="">
+          <a href="https://danilhautilus911.github.io/web-poster/" class="poster5"><img src="img/p5.svg" alt=""></a>
           <div class="empty empty1"></div>
           <div class="empty empty2"></div>
           <div class="empty empty3"></div>
@@ -377,5 +476,11 @@
       </div>
     </div>
 
+    <div class="overlay overlay-zapisany">
+      <div class="popup popup-js-campaign-zapisany">
+        <h2>ВЫ УСПЕШНО ЗАПИСАНЫ!</h2>
+        <div class="closepopup closepopup-js-campaign"></div>
+      </div>
+    </div>
   </body>
 </html>
