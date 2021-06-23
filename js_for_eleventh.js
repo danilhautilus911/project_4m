@@ -9,6 +9,7 @@ $(document).ready(function() {
     $(this).css('color', 'white')
     $('.main').css('filter', 'blur(1px)');
     $('.overlay-js-campaign').fadeIn();
+    $('input').val('');
   });
 
   $('.closepopup-js-campaign').click(function() {
