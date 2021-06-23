@@ -157,15 +157,16 @@
       justify-content: center;
       position: relative;
       height: 80%;
+      overflow: hidden;
     }
-    .img_part1_card1 img {
-      height: 95%;
-    }
+    .img_part1_card1 img {height: 95%;}
     .img_part1_card2 {overflow: hidden;}
-    .img_part1_card2 img {
-      margin-top: 30%;
-      height: 120%;
-    }
+    .img_part1_card2 img {margin-top: 30%; height: 140%;}
+    .img_part1_card3 img {height: 100%;}
+    .img_part1_card4 img {height: 110%;}
+    .img_part1_card5 img {margin-top: 30%; height: 140%; margin-left: -8%;}
+    .img_part1_card6 img {margin-top: 30%; height: 150%; margin-left: 10%;}
+    .img_part1_card7 img {height: 110%;}
     .text_part1 {
       position: absolute;
       bottom: 0;
@@ -190,14 +191,16 @@
       border: black solid 0.15em;
       position: absolute;
     }
-    .interest1_card1, .interest1_card2 {
+    .interest1_card1, .interest1_card2, .interest1_card3, .interest1_card4, .interest1_card5, .interest1_card6, .interest1_card7{
       top: 1vw;
       right: 1vw;
     }
-    .interest2_card1, .interest2_card2 {
-      top: 1vw;
-      right: 4.65vw;
-    }
+    .interest2_card1 {top: 1vw; right: 4.65vw;}
+    .interest2_card2 {top: 1vw; right: 9.4vw;}
+    .interest2_card3 {top: 1vw; right: 6.7vw;}
+    .interest2_card4 {top: 1vw; right: 6.9vw;}
+    .interest2_card6 {top: 1vw; right: 7.3vw;}
+    .interest2_card7 {top: 1vw; right: 5.1vw;}
     .lets_message {
       /* display: flex;
       align-items: center;
@@ -244,7 +247,7 @@
       right: 0;
       background-color: rgba(0,0,0,.4);
       z-index: 2;
-      display: block;
+      display: none;
     }
     .popup {
       background-color: white;
@@ -255,10 +258,18 @@
       top: 50%;
       transform: translate(-50%, -50%);
       box-sizing: border-box;
-      /* display: flex; */
-      /* text-align: center; */
-      /* align-items: center; */
-      /* justify-content: center; */
+    }
+    .popup2_js_twelth_page {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+    /* .overlay2_twelth_page {display: block !important;} */
+    .popup2_js_twelth_page h2 {
+      font-family: "20Kopeek_Regular";
+      font-size: 3vw;
+      padding: 1vw 1vw;
     }
     .first_input {
       width: 90%;
@@ -270,9 +281,6 @@
       font-size: 1.3vw;
       border: 0.25vw solid black;
       resize: none;
-      /* padding-left: 0.5vw; */
-      /* vertical-align: top; */
-      /* padding-bottom: 1vw; */
     }
     .second_input {
       height: 1vw;
@@ -500,8 +508,8 @@
             <img src="img/friend1.svg" alt="">
           </div>
           <div class="text_part1 text_part1_card1">
-            <h1>Госиг Голден, 6</h1>
-            <p>Этот верный плюшевый друг будет всегда и всюду рядом. Он составит компанию во время игр и подарит уют перед сном.</p>
+            <h1>Уткабот, 1</h1>
+            <p>Этот верный резиново-пластиковый друг будет всегда и всюду рядом. Он составит компанию во время принятия ванной и игры в гостиной.</p>
             <div class="interest interest1_card1">игры</div>
             <div class="interest interest2_card1">покушать</div>
           </div>
@@ -511,27 +519,89 @@
             <img src="img/friend2.svg" alt="">
           </div>
           <div class="text_part1 text_part1_card2">
-            <h1>Госиг Голден, 6</h1>
-            <p>Этот верный плюшевый друг будет всегда и всюду рядом. Он составит компанию во время игр и подарит уют перед сном.</p>
-            <div class="interest interest1_card2">игры</div>
-            <div class="interest interest2_card2">покушать</div>
+            <h1>Робот, 5</h1>
+            <p>Когда-то был самым технологичным и современным! Обладатель награды  «‎Игрушка года 1999г»‎:)</p>
+            <div class="interest interest1_card2">головоломки</div>
+            <div class="interest interest2_card2">кроссворды</div>
           </div>
         </div>
+        <div class="card card3">
+          <div class="img_part1 img_part1_card3">
+            <img src="img/friend3.svg" alt="">
+          </div>
+          <div class="text_part1 text_part1_card3">
+            <h1>Зайка, 2</h1>
+            <p>Всегда готов выслушать детские секреты, играть, веселиться и шалить.</p>
+            <div class="interest interest1_card3">морковь</div>
+            <div class="interest interest2_card3">прогулки</div>
+          </div>
+        </div>
+        <div class="card card4">
+          <div class="img_part1 img_part1_card4">
+            <img src="img/friend4.svg" alt="">
+          </div>
+          <div class="text_part1 text_part1_card4">
+            <h1>Дино, 1</h1>
+            <p>Ищу того, кто сделает жизнь ярче и веселее! Пока что серотонин на нуле, но #its_okay_to_cry ...</p>
+            <div class="interest interest1_card4">pc music</div>
+            <div class="interest interest2_card4">chinese food</div>
+          </div>
+        </div>
+        <div class="card card5">
+          <div class="img_part1 img_part1_card5">
+            <img src="img/friend5.svg" alt="">
+          </div>
+          <div class="text_part1 text_part1_card5">
+            <h1>Медвед, 20</h1>
+            <p>Побит, но не сломлен! Требую много внимания и заботы, ласкового и бережного обращения. Взамен - все, что угодно для настоящего друга.</p>
+            <div class="interest interest1_card5">сказки</div>
+          </div>
+        </div>
+        <div class="card card6">
+          <div class="img_part1 img_part1_card6">
+            <img src="img/friend6.svg" alt="">
+          </div>
+          <div class="text_part1 text_part1_card6">
+            <h1>Роза, 5</h1>
+            <p>Возможно самый лучший в мире друг, которого можно обнимать и всюду носить с собой.</p>
+            <div class="interest interest1_card6">мультики</div>
+            <div class="interest interest2_card6">красота</div>
+          </div>
+        </div>
+        <div class="card card7">
+          <div class="img_part1 img_part1_card7">
+            <img src="img/friend7.svg" alt="">
+          </div>
+          <div class="text_part1 text_part1_card7">
+            <h1>Змея, 15</h1>
+            <p>Я приятна на ощупь, а моим длинным хвостом можно кого-нибудь щекотать.</p>
+            <div class="interest interest1_card7">охота</div>
+            <div class="interest interest2_card7">природа</div>
+          </div>
+        </div>
+
+
         <div class="lets_message">
             <div class="lets_message_background"></div>
             <button type="button" class="button_twelth_page button1_twelth_page" name="button">написать</button>
         </div>
       </div>
+    </div>
+    <div class="overlay overlay_twelth_page">
+      <div class="popup popup_js_twelth_page">
+        <h2>СООБЩЕНИЕ</h2>
+        <textarea class="first_input"></textarea>
+        <p>Email для обратной связи</p>
+        <input class="second_input" type="text" name="" value="">
+        <div class="closepopup closepopup_js_campaign_twelth_page"></div>
+        <button type="button" class="button_twelth_page button2_twelth_page" name="button">написать</button>
+      </div>
+    </div>
 
-      <div class="overlay overlay_twelth_page">
-        <div class="popup popup_js_twelth_page">
-          <h2>СООБЩЕНИЕ</h2>
-          <textarea class="first_input"></textarea>
-          <p>Email для обратной связи</p>
-          <input class="second_input" type="text" name="" value="">
-          <div class="closepopup closepopup_js_campaign_twelth_page"></div>
-          <button type="button" class="button_twelth_page button2_twelth_page" name="button">написать</button>
-        </div>
+    <div class="overlay overlay2_twelth_page">
+      <div class="popup popup2_js_twelth_page">
+        <h2>УСПЕШНО ОТПРАВЛЕНО!</h2>
+        <div class="closepopup closepopup_js_campaign_twelth_page"></div>
       </div>
     </div>
   </body>
