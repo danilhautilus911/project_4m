@@ -33,7 +33,7 @@
       width: 100vw;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr 2.5fr 0.25fr 1.1fr 0.25fr;
+      grid-template-rows: 1fr 2.5fr 0.25fr 1.04fr 0.25fr;
       grid-template-areas: "first second"
                            "third second"
                            "fourth fourth"
@@ -86,7 +86,7 @@
       grid-area: second;
       border-width: 0.2em 0.2em 0.15em 0.15em;
     }
-    .second h1 {
+    h1 {
       position: absolute;
       top: 0;
       left: 0;
@@ -156,14 +156,14 @@
       grid-area: sixth;
       border-width: 0.15em 0.2em 0.15em 0.15em;
     }
-    .sixth h1 {
+    /* .sixth h1 {
       position: absolute;
       top: 0;
       left: 0;
       font-family: "20Kopeek_Regular";
       font-size: 3vw;
       padding: 2vw 1vw;
-    }
+    } */
     .first_line {
       position: relative;
       height: 1.5vw;
@@ -257,7 +257,7 @@
       @media only screen and (min-width: 320px) and (max-width: 568px) {
         .blocks {
           grid-template-columns: 1fr 1fr;
-          grid-template-rows: 0.7fr 2.35fr 0.2fr 0.8fr 0.64fr 0.15fr;
+          grid-template-rows: 0.7fr 2.35fr 0.2fr 0.8fr 0.64fr 0.25fr;
           grid-template-areas: "first first"
                                "second second"
                                "fourth fourth"
