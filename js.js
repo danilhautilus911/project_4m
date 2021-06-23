@@ -60,13 +60,21 @@ $(document).ready(function() {
   //   }, 100);
   // })
 
-
+  // $('.accordion-item_trigger').mouseover(function(){
+  //   $('.arrow_picture').addClass('strelka_action');
+  // });
+  // $('.accordion-item_trigger').mouseout(function(){
+  //   $('.arrow_picture').removeClass('strelka_action');
+  // });
+  // $('.accordion-item_trigger').click(function () {
+  //   $('.arrow_picture').toggleClass('rotational_action');
+  // });
 
   $('.accordion-item_trigger_first').mouseover(function () {
-    $('.arrow_picture_first').css('opacity', '1');
+    $('.arrow_picture_first').addClass('strelka_action');
   });
   $('.accordion-item_trigger_first').mouseout(function () {
-    $('.arrow_picture_first').css('opacity', '0');
+    $('.arrow_picture_first').removeClass('strelka_action');
   });
   $('.accordion-item_trigger_first').click(function () {
     $('.arrow_picture_first').toggleClass('rotational_action');
@@ -210,21 +218,25 @@ $(document).ready(function() {
   $('.next_arrow').click(function () {
     click++;
     if(click === 1) {
-      $('.first_number, .first_sentence').css('display', 'none');
-      $('.second_number, .second_sentence').css('display', 'block');
-      $('.block1_seventh_page').css('background-color', '#7FDEFF');
-      $('.block2_seventh_page').css('background-color', '#DF3A33');
-      $('.block3_seventh_page').css('background-color', '#4BBDE4');
-      $('.block4_seventh_page').css('background-color', '#F655A0');
-      $('.block5_seventh_page').css('background-color', '#FFDD5B');
-      $('.block6_seventh_page').css('background-color', '#C5C5C5');
-      $('.block7_seventh_page').css('background-color', '#FF5959');
-      $('.block8_seventh_page').css('background-color', '#777777');
+      lusher();
   }
     if(click === 2) {
       location.href = "https://danilhautilus911.github.io/project_4m/eighth.html";
   }
   });
+
+  function lusher() {
+    $('.first_number, .first_sentence').css('display', 'none');
+    $('.second_number, .second_sentence').css('display', 'block');
+    $('.block1_seventh_page').css('background-color', '#7FDEFF');
+    $('.block2_seventh_page').css('background-color', '#DF3A33');
+    $('.block3_seventh_page').css('background-color', '#4BBDE4');
+    $('.block4_seventh_page').css('background-color', '#F655A0');
+    $('.block5_seventh_page').css('background-color', '#FFDD5B');
+    $('.block6_seventh_page').css('background-color', '#C5C5C5');
+    $('.block7_seventh_page').css('background-color', '#FF5959');
+    $('.block8_seventh_page').css('background-color', '#777777');
+  }
 
   $('.item_page12').mouseover(function () {
     $(this).css('background-color','#F24941')
