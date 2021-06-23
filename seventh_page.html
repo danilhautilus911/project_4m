@@ -102,7 +102,7 @@
                            "block1 block2 block3 block4"
                            "block5 block6 block7 block8";
     }
-    .top, .block1, .block2, .block3, .block4, .block5, .block6, .block7, .block8 {
+    .top, .block1_seventh_page, .block2_seventh_page, .block3_seventh_page, .block4_seventh_page, .block5_seventh_page, .block6_seventh_page, .block7_seventh_page, .block8_seventh_page {
       border-radius: 1em;
       position: relative;
       border-style: solid;
@@ -135,61 +135,72 @@
       padding: 1vw 0.5vw 1vw 1vw;
     }
     .second_number, .third_number, .second_sentence, .third_sentence {display: none;}
-    .block1 {
+    .block_seventh_page {cursor: pointer; transition: all .2s;}
+    .block1_seventh_page {
       grid-area: block1;
       background-color: #FFDD5B;
       border-width: 0.15em 0.15em 0.15em 0.2em;
     }
-    .block2 {
+    .block2_seventh_page {
       grid-area: block2;
       background-color: #777777;
       border-width: 0.15em 0.15em 0.15em 0.15em;
     }
-    .block3 {
+    .block3_seventh_page {
       grid-area: block3;
       background-color: #7FDEFF;
       border-width: 0.15em 0.15em 0.15em 0.15em;
     }
-    .block4 {
+    .block4_seventh_page {
       grid-area: block4;
       background-color: #FF5959;
       border-width: 0.15em 0.2em 0.15em 0.15em;
     }
-    .block5 {
+    .block5_seventh_page {
       grid-area: block5;
       background-color: #4BBDE4;
       border-width: 0.15em 0.15em 0.2em 0.2em;
     }
-    .block6 {
+    .block6_seventh_page {
       grid-area: block6;
       background-color: #F655A0;
       border-width: 0.15em 0.15em 0.15em 0.15em;
     }
-    .block7 {
+    .block7_seventh_page {
       grid-area: block7;
       background-color: #DF3A33;
       border-width: 0.15em 0.15em 0.15em 0.15em;
     }
-    .block8 {
+    .block8_seventh_page {
       grid-area: block8;
       background-color: #C5C5C5;
       border-width: 0.15em 0.2em 0.2em 0.15em;
     }
-    button {
+    .button_seventh_page {
       font-family: "20Kopeek_Regular";
       font-size: 1vw;
       position: absolute;
       right: 0;
       /* top: 0; */
       bottom: 0;
-      border: none;
+      border: 0.3vw solid #FF5959;
       border-radius: 51px;
-      padding: 0.5vw 1vw 0.7vw;
+      padding: 0.3vw 0.5vw 0.5vw;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      background: #FF5959;
+      background: white;
       margin: 0.6vw 1vw;
+      cursor: pointer;
+    }
+    .next_arrow {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      cursor: pointer;
+      transform: rotate(180deg);
+      height: 55%;
+      padding: 0.8vw;
     }
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .header {
@@ -324,24 +335,26 @@
       <div class="top">
         <div class="number">
           <h1 class="first_number">1.</h1>
-          <h1 class="second_number">3.</h1>
-          <h1 class="third_number">2.</h1>
+          <h1 class="second_number">2.</h1>
+          <!-- <h1 class="third_number">3.</h1> -->
         </div>
         <div class="text">
-          <p class="first_sentence">Расставьте цвета от наименее симпатичного к наиболее симпатичному.</p>
-          <p class="second_sentence">Расставьте цвета от наиболее симпатичного к наименее симпатичному.</p>
-          <p class="third_sentence">Расставьте цвета от наиболее несимпатичного к наименее несимпатичному.</p>
+          <p class="first_sentence">Кликай на цвета от наименее симпатичного к наиболее симпатичному.</p>
+          <p class="second_sentence">Кликай на цвета от наиболее симпатичного к наименее симпатичному.</p>
+          <!-- <p class="third_sentence">Кликай на цвета от наиболее несимпатичного к наименее несимпатичному.</p> -->
         </div>
-        <button type="button" id="button5" name="button">дальше</button>
+        <img class="next_arrow" src="img/arrow.svg" alt="">
+
+        <!-- <button type="button" class="button_seventh_page" name="button">дальше</button> -->
       </div>
-      <div class="block1"></div>
-      <div class="block2"></div>
-      <div class="block3"></div>
-      <div class="block4"></div>
-      <div class="block5"></div>
-      <div class="block6"></div>
-      <div class="block7"></div>
-      <div class="block8"></div>
+      <div class="block_seventh_page block1_seventh_page"></div>
+      <div class="block_seventh_page block2_seventh_page"></div>
+      <div class="block_seventh_page block3_seventh_page"></div>
+      <div class="block_seventh_page block4_seventh_page"></div>
+      <div class="block_seventh_page block5_seventh_page"></div>
+      <div class="block_seventh_page block6_seventh_page"></div>
+      <div class="block_seventh_page block7_seventh_page"></div>
+      <div class="block_seventh_page block8_seventh_page"></div>
     </div>
 
   </body>
