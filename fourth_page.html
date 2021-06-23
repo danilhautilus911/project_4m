@@ -50,13 +50,13 @@
     }
     .logo {
       grid-area: logo;
-      border-width: 0.2em 0.15em 0.2em 0.2em;
+      border-width: 0.25em 0.15em 0.25em 0.25em;
       display: flex;
       align-items: center;
     }
     .options {
       grid-area: options;
-      border-width: 0.2em 0.2em 0.2em 0.15em;
+      border-width: 0.25em 0.25em 0.25em 0.15em;
     }
     .logo_picture {
       height: 1.2vw;
@@ -114,7 +114,7 @@
     }
     .first {
       grid-area: first;
-      border-width: 0.2em 0.15em 0.15em 0.2em;
+      border-width: 0.25em 0.15em 0.15em 0.25em;
     }
     h1 {
       font-family: "20Kopeek_Regular";
@@ -126,17 +126,17 @@
     }
     .second {
       grid-area: second;
-      border-width: 0.2em 0.2em 0.15em 0.15em;
+      border-width: 0.25em 0.25em 0.15em 0.15em;
     }
     .third {
       grid-area: third;
-      border-width: 0.15em 0.15em 0.15em 0.2em;
+      border-width: 0.15em 0.15em 0.15em 0.25em;
     }
     .fourth {
       grid-area: fourth;
-      border-width: 0.15em 0.2em 0.15em 0.15em;
+      border-width: 0.15em 0.25em 0.15em 0.15em;
     }
-    .accordion-item {position: relative; border-bottom: 0.2em solid black;}
+    .accordion-item {position: relative; border-bottom: 0.25em solid black;}
     .arrow_picture {
       position: absolute;
       height: 2vw;
@@ -156,10 +156,13 @@
       cursor: pointer;
     }
     .accordion-item_content {
+      display: none;
+    }
+    .accordion-item_content p {
       font-family: "20Kopeek_Regular";
       font-size: 1.8vw;
-      display: none;
-      padding: 2vw 1vw;
+      display: inline-block;
+      padding: 2vw 0vw 2vw 1vw;
       max-width: 65vw;
     }
     .rectangle {
@@ -167,21 +170,21 @@
     }
     .fifth {
       grid-area: fifth;
-      border-width: 0.15em 0.15em 0.2em 0.2em;
+      border-width: 0.15em 0.15em 0.25em 0.25em;
     }
     .sixth {
       grid-area: sixth;
-      border-width: 0.15em 0.2em 0.2em 0.15em;
+      border-width: 0.15em 0.25em 0.25em 0.15em;
     }
     .part2_buttons, .part1_buttons {
     font-family: "20Kopeek_Regular";
     font-size: 1.3vw;
-    bottom: 0;
-    right: 0;
-    position: absolute;
+    /* bottom: 0; */
+    /* right: 0; */
+    position: relative;
     border: 4px #7FDEFF solid;
-    border-radius: 51px;
-    padding: 0.5vw 1vw 0.7vw;
+    border-radius: 51vw;
+    padding: 0.3vw 0.8vw 0.6vw;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -189,6 +192,9 @@
     margin: 2vw 1vw;
     /* opacity: 0; */
     }
+    /* .part1_buttons {
+      opacity: 0;
+    } */
     .part2_buttons {
       opacity: 0;
       bottom: 1vw;
@@ -196,6 +202,10 @@
       margin-right: 1vw;
       transition: all .1s;
       cursor: pointer;
+    }
+    .part2_buttons:hover{
+      background: #7FDEFF;
+      color: white;
     }
     .part1_buttons {
       cursor: pointer;
@@ -256,7 +266,7 @@
       width: 100%;
       transform: rotate(45deg);
     }
-    @media only screen and (min-width: 569px) and (max-width: 1023px) {
+    @media only screen and (min-width: 569px) and (max-width: 1223px) {
       .header {
         height: 6vw;
         grid-template-columns: 1fr;
@@ -275,10 +285,10 @@
       }
       .second {display: none;}
       .fifth {display: none;}
-      .first {border-width: 0.2em 0.2em 0.15em 0.2em;}
-      .fourth {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .third {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .sixth {border-width: 0.15em 0.2em 0.2em 0.2em;}
+      .first {border-width: 0.25em 0.25em 0.15em 0.25em;}
+      .fourth {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .third {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .sixth {border-width: 0.15em 0.25em 0.25em 0.25em;}
       h1 {font-size: 4.5vw; padding: 1vw 2vw;}
       h2 {font-size: 4.5vw; padding: 1vw 2vw;}
       .accordion-item_trigger, .accordion-item_holder {font-size: 4.5vw; padding: 1vw 2vw;}
@@ -311,10 +321,10 @@
         grid-template-areas: "logo";
       }
       .logo {
-        border-width: 0.2em 0.2em 0.2em 0.2em;
+        border-width: 0.25em 0.25em 0.25em 0.25em;
       }
       .options {
-        border-width: 0.15em 0.2em 0.2em 0.2em;
+        border-width: 0.15em 0.25em 0.25em 0.25em;
         display: block;
         display: none;
       }
@@ -342,10 +352,10 @@
       }
       .second {display: none;}
       .fifth {display: none;}
-      .first {border-width: 0.2em 0.2em 0.15em 0.2em;}
-      .fourth {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .third {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .sixth {border-width: 0.15em 0.2em 0.2em 0.2em;}
+      .first {border-width: 0.25em 0.25em 0.15em 0.25em;}
+      .fourth {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .third {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .sixth {border-width: 0.15em 0.25em 0.25em 0.25em;}
       h1 {font-size: 9vw; padding: 2vw 2vw;}
       .popup {width: 85vw; border-radius: 4vw;}
       h2 {font-size: 9vw; padding: 5vw 2vw;}
@@ -417,8 +427,8 @@
                   <img class="arrow_picture arrow_picture_first"src="img/arrow2.svg" alt="">
                 </div>
                 <div class="accordion-item_content">
-                  Индивидуальное психологическое консультирование&nbsp;— это особая форма работы с&nbsp;психологом, направленная на&nbsp;повышение качества жизни. В&nbsp;процессе беседы игрушка начинает лучше понимать себя: собственные настроения и&nbsp;переживания, реакции на&nbsp;те&nbsp;или иные ситуации, желания и&nbsp;потребности.
-                  <button type="button" class="part1_buttons" id="button1" name="button">запись</button>
+                  <p>Индивидуальное психологическое консультирование&nbsp;— это особая форма работы с&nbsp;психологом, направленная на&nbsp;повышение качества жизни. В&nbsp;процессе беседы игрушка начинает лучше понимать себя: собственные настроения и&nbsp;переживания, реакции на&nbsp;те&nbsp;или иные ситуации, желания и&nbsp;потребности.</p>
+                  <button type="button" class="part1_buttons button1_part1" id="button1" name="button">запись</button>
                 </div>
               </div>
               <div class="accordion-item">
