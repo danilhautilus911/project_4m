@@ -192,6 +192,56 @@ $(document).ready(function() {
   	}
   });
 
+  $('.button_sixth_page').click(function() {
+    $(this).css('background-color','#FF5959');
+    $(this).css('color','white');
+  })
+
+  $('.block_seventh_page').click(function() {
+    $(this).css('background-color', 'white')
+  })
+
+  var click = 0;
+  $('.next_arrow').click(function () {
+    click++;
+    if(click === 1) {
+      $('.first_number, .first_sentence').css('display', 'none');
+      $('.second_number, .second_sentence').css('display', 'block');
+      $('.block1_seventh_page').css('background-color', '#7FDEFF');
+      $('.block2_seventh_page').css('background-color', '#DF3A33');
+      $('.block3_seventh_page').css('background-color', '#4BBDE4');
+      $('.block4_seventh_page').css('background-color', '#F655A0');
+      $('.block5_seventh_page').css('background-color', '#FFDD5B');
+      $('.block6_seventh_page').css('background-color', '#C5C5C5');
+      $('.block7_seventh_page').css('background-color', '#FF5959');
+      $('.block8_seventh_page').css('background-color', '#777777');
+  }
+    if(click === 2) {
+      location.href = "https://danilhautilus911.github.io/project_4m/eighth.html";
+  }
+  });
+
+
+
+  // $('.next_arrow').click(function() {
+  //   $('.first_number, .first_sentence').css('display', 'none');
+  //   $('.second_number, .second_sentence').css('display', 'block');
+  //   $('.block1_seventh_page').css('background-color', '#7FDEFF');
+  //   $('.block2_seventh_page').css('background-color', '#DF3A33');
+  //   $('.block3_seventh_page').css('background-color', '#4BBDE4');
+  //   $('.block4_seventh_page').css('background-color', '#F655A0');
+  //   $('.block5_seventh_page').css('background-color', '#FFDD5B');
+  //   $('.block6_seventh_page').css('background-color', '#C5C5C5');
+  //   $('.block7_seventh_page').css('background-color', '#FF5959');
+  //   $('.block8_seventh_page').css('background-color', '#777777');
+  // })
+
+// function changing_colors () {
+//   if(document.getElementById('.block1_seventh_page, .block2_seventh_page, .block3_seventh_page, .block4_seventh_page, .block5_seventh_page, .block6_seventh_page, .block7_seventh_page, .block8_seventh_page').style.backgroundColor == "white") {
+//   document.getElementById('.block1_seventh_page').style.backgroundColor = '#777777';
+//   };
+// }
+
 
   // $('.color_general').mouseover(function(){
   //   $(this).css('opacity', '1');
