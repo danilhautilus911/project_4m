@@ -51,15 +51,16 @@ $(document).ready(function() {
   // });
 
   $('.accordion-item_trigger').click(function(){
-    // setTimeout(function() {
-    //   $(this).next('.accordion-item_content').find('button').css('opacity', '1');
-    // }, 800);
-    // setTimeout(function(){ alert("Hello"); }, 3000);
     $(this).next('.accordion-item_content').slideToggle(200);
-
-
-    // $(this).next('.accordion-item_content').find('button').css('opacity', '1')
   });
+
+  // $('.accordion-item_trigger_first').click(function(){
+  //   setTimeout(function(){
+  //       $('.button1_part1').css('opacity', '1')
+  //   }, 100);
+  // })
+
+
 
   $('.accordion-item_trigger_first').mouseover(function () {
     $('.arrow_picture_first').css('opacity', '1');
@@ -233,7 +234,7 @@ $(document).ready(function() {
     $(this).css('background-color','white')
   })
 
-  
+
 // ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
   $('.item1_page12').click(function () {
     $('.card1').css('opacity','1');
