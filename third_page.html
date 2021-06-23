@@ -33,7 +33,7 @@
       width: 100vw;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 0.42fr 1fr 1fr 0.2fr;
+      grid-template-rows: 0.32fr 1fr 1fr 0.2fr;
       grid-template-areas: "first second"
                            "third second"
                            "fourth second"
@@ -69,7 +69,7 @@
       position: relative;
       font-family: "20Kopeek_Regular";
       font-size: 3vw;
-      padding-left: 1vw;
+      padding: 1vw;
     }
     .second {
       grid-area: second;
@@ -81,7 +81,7 @@
       left: 0;
       font-family: "20Kopeek_Regular";
       font-size: 3vw;
-      padding: 1.4vw 1vw;
+      padding: 1vw;
     }
     .second img {
       height: 3vw;
@@ -94,7 +94,7 @@
       font-family: "20Kopeek_Regular";
       font-size: 1.8vw;
       position: relative;
-      padding: 25vw 2vw 6vw 2vw;
+      padding: 25vw 1vw 6vw;
     }
     .third {
       grid-area: third;
@@ -105,11 +105,6 @@
       background-repeat: no-repeat;
       background-size: 120%;
     }
-    /* .third img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    } */
     .fourth {
       grid-area: fourth;
       border-width: 0.15em 0.15em 0.15em 0.2em;
@@ -123,40 +118,20 @@
     }
     .block {
       height: 100%;
-      transition: all .2s;
+      transition: all 1s;
       flex-grow: 1;
       cursor: pointer;
     }
-    .block1 {
-      background-color: #7FDEFF;
-    }
-    .block2 {
-      background-color: #FF83BD;
-    }
-    .block3 {
-      background-color: #FFDD5B;
-    }
-    .block4 {
-      background-color: #7FDEFF;
-    }
-    .block5 {
-      background-color: #FFDD5B;
-    }
-    .block6 {
-      background-color: #FF5959;
-    }
-    .block7 {
-      background-color: #FF83BD;
-    }
-    .block8 {
-      background-color: #7FDEFF;
-    }
-    .block9 {
-      background-color: #FFDD5B;
-    }
-    .block10 {
-      background-color: #FF5959;
-    }
+    .block1 {background-color: #7FDEFF;}
+    .block2 {background-color: #FF83BD;}
+    .block3 {background-color: #FFDD5B;}
+    .block4 {background-color: #7FDEFF;}
+    .block5 {background-color: #FFDD5B;}
+    .block6 {background-color: #FF5959;}
+    .block7 {background-color: #FF83BD;}
+    .block8 {background-color: #7FDEFF;}
+    .block9 {background-color: #FFDD5B;}
+    .block10 {background-color: #FF5959;}
 
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .blocks {
@@ -164,7 +139,7 @@
         width: 100vw;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 0.19fr 0.35fr 1fr 0.11fr;
+        grid-template-rows: 0.2fr 0.35fr 1fr 0.11fr;
         grid-template-areas: "first first"
                              "third second"
                              "fourth second"
@@ -172,33 +147,38 @@
       }
       .first p {
         font-size: 4vw;
-        padding-left: 2vw;
+        padding: 2vw;
       }
       .second h1 {
         font-size: 4vw;
         padding: 1.4vw 1.5vw;
       }
+      .first {
+        border-width: 0.2em 0.2em 0.15em 0.2em;
+      }
       .second {
         border-width: 0.15em 0.2em 0.15em 0.15em;
       }
       .second img {padding: 1.2vw 1.5vw;}
-      .second p {font-size: 2.6vw;}
+      .second p {font-size: 2.6vw; padding: 25vw 2vw 6vw;}
+      .block9 {display: none;}
+      .block10 {display: none;}
     }
     @media only screen and (min-width: 320px) and (max-width: 568px) {
       .blocks {
-        grid-template-rows: 0.19fr 1fr 0.3fr 0.5fr 0.08fr;
+        grid-template-rows: 0.12fr 1fr 0.3fr 60vw;
         grid-template-areas: "first first"
                              "second second"
                              "third third"
-                             "fourth fourth"
-                             "fifth fifth"
+                             /* "fourth fourth" */
+                             "fifth fifth";
       }
       .first {border-width: 0.2em 0.2em 0.15em 0.2em;}
       .second, .third, .fourth, .sixth {border-width: 0.15em 0.2em 0.15em 0.2em;}
       .seventh {border-width: 0.15em 0.2em 0.2em 0.2em;}
       .first p {
         font-size: 9vw;
-        padding-left: 2vw;
+        padding: 2vw;
       }
       .second h1 {
         font-size: 9vw;
@@ -209,6 +189,11 @@
         padding: 35vw 3vw 20vw 3vw;
       }
       .second img {padding: 6vw 3vw; height: 7vw;}
+      .fourth {display: none;}
+      .block7 {display: none;}
+      .block8 {display: none;}
+      .block9 {display: none;}
+      .block10 {display: none;}
     }
   </style>
   <body>
