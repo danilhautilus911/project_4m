@@ -158,7 +158,7 @@
     .accordion-item_content {
       display: none;
     }
-    .accordion-item_content p {
+    .accordion-item_content p, .accordion-item_content li {
       font-family: "20Kopeek_Regular";
       font-size: 1.8vw;
       display: inline-block;
@@ -179,10 +179,8 @@
     .part2_buttons, .part1_buttons {
     font-family: "20Kopeek_Regular";
     font-size: 1.3vw;
-    /* bottom: 0; */
-    /* right: 0; */
     position: relative;
-    border: 4px #7FDEFF solid;
+    border: 0.25em #7FDEFF solid;
     border-radius: 51vw;
     padding: 0.3vw 0.8vw 0.6vw;
     text-align: center;
@@ -190,11 +188,7 @@
     display: inline-block;
     background: white;
     margin: 2vw 1vw;
-    /* opacity: 0; */
     }
-    /* .part1_buttons {
-      opacity: 0;
-    } */
     .part2_buttons {
       opacity: 0;
       bottom: 1vw;
@@ -202,6 +196,8 @@
       margin-right: 1vw;
       transition: all .1s;
       cursor: pointer;
+      position: absolute;
+      right: 0vw;
     }
     .part2_buttons:hover{
       background: #7FDEFF;
@@ -275,6 +271,9 @@
       }
       .logo {display: none;}
       .options a {font-size: 2.6vw;}
+      .options {
+        border-width: 0.25em 0.25em 0.25em 0.25em;
+      }
       .main {
         grid-template-columns: 1fr;
         grid-template-rows: 20vw 1fr 20vw 58vw;;
@@ -290,11 +289,11 @@
       .third {border-width: 0.15em 0.25em 0.15em 0.25em;}
       .sixth {border-width: 0.15em 0.25em 0.25em 0.25em;}
       h1 {font-size: 4.5vw; padding: 1vw 2vw;}
-      h2 {font-size: 4.5vw; padding: 1vw 2vw;}
+      h2 {font-size: 4.5vw; padding: 2vw 2vw;}
       .accordion-item_trigger, .accordion-item_holder {font-size: 4.5vw; padding: 1vw 2vw;}
-      .accordion-item_content {
+      .accordion-item_content p {
         font-size: 2.6vw;
-        padding: 2vw 2vw;
+        padding: 2vw;
         max-width: 80vw;
       }
       .part1_buttons, .part2_buttons {
@@ -304,13 +303,12 @@
       }
       .part2_buttons {
         bottom: 0vw;
-        margin: 0.5vw;
+        margin: 0.6vw 2vw;
       }
       .arrow_picture {
         height: 3.2vw;
         padding: 1.5vw 1vw;
       }
-      /* .rectangle {display: none;} */
     }
     @media only screen and (min-width: 320px) and (max-width: 568px) {
       .header {
@@ -333,11 +331,7 @@
         padding: 2.9vw 2vw;
         display: block;
       }
-      .back_circle {
-        height: 8vw;
-        width: 8vw;
-        margin-left: 1.5vw;
-      }
+      .back_circle {display: none;}
       .logo_picture {
         height: 5.5vw;
         padding-right: 2vw;
@@ -371,15 +365,15 @@
         align-items: center;
       }
       .accordion-item_trigger, .accordion-item_holder {font-size: 9vw; padding: 2vw 2vw;}
-      .accordion-item_content {
+      .accordion-item_content p {
         font-size: 5vw;
-        padding: 2vw 3vw 14vw;
+        padding: 2vw 2vw 0vw;
         max-width: 100vw;
       }
       .part1_buttons, .part2_buttons {
         font-size: 4vw;
         padding: 1.4vw 3vw 2vw;
-        margin: 3vw 3vw;
+        margin: 3vw 39vw 4vw;
       }
       .arrow_picture {display: none;}
       .rectangle {height: 20vw;}
@@ -437,7 +431,7 @@
                   <img class="arrow_picture arrow_picture_second"src="img/arrow2.svg" alt="">
                 </div>
                 <div class="accordion-item_content">
-                  В&nbsp;условиях группового психологического консультирования психолог набирает группу, которая будет работать с&nbsp;определенной темой или&nbsp;циклом тем, и&nbsp;в&nbsp;нее приходят игрушки с&nbsp;похожими проблемами. Например, заявляется тема «разрыв отношений», или&nbsp;«проблема утраты смысла жизни»&nbsp;— и&nbsp;собираются те, кто готов проработать эти вопросы.
+                  <p>В&nbsp;условиях группового психологического консультирования психолог набирает группу, которая будет работать с&nbsp;определенной темой или&nbsp;циклом тем, и&nbsp;в&nbsp;нее приходят игрушки с&nbsp;похожими проблемами. Например, заявляется тема «разрыв отношений», или&nbsp;«проблема утраты смысла жизни»&nbsp;— и&nbsp;собираются те, кто готов проработать эти вопросы.</p>
                   <button type="button" class="part1_buttons" id="button2" name="button">запись</button>
                 </div>
               </div>
@@ -447,7 +441,7 @@
                   <img class="arrow_picture arrow_picture_third"src="img/arrow2.svg" alt="">
                 </div>
                 <div class="accordion-item_content">
-                  Комплекс мероприятий, направленных на&nbsp;восстановление, коррекцию или&nbsp;компенсацию нарушений психических функций, состояний, личностного статуса больных, а&nbsp;также игрушек, перенесших заболевания, получивших психическую травму в&nbsp;результате резкого изменения социальных отношений и&nbsp;условий жизни.
+                  <p>Комплекс мероприятий, направленных на&nbsp;восстановление, коррекцию или&nbsp;компенсацию нарушений психических функций, состояний, личностного статуса больных, а&nbsp;также игрушек, перенесших заболевания, получивших психическую травму в&nbsp;результате резкого изменения социальных отношений и&nbsp;условий жизни.</p>
                   <button type="button" class="part1_buttons" id="button3" name="button">запись</button>
                 </div>
               </div>
@@ -457,10 +451,8 @@
                   <img class="arrow_picture arrow_picture_fourth"src="img/arrow2.svg" alt="">
                 </div>
                 <div class="accordion-item_content">
-                  Психологическая диагностика&nbsp;— это раздел психологии, который занимается разработкой методов оценки индивидуальных психологических особенностей игрушки. Она помогает:
-                  <li>лучше узнать себя</li>
-                  <li>оценить свои сильные и&nbsp;слабые стороны</li>
-                  <li>выбрать оптимальный способ психологической помощи</li>
+                  <p>
+                    Психологическая диагностика&nbsp;— это раздел психологии, который занимается разработкой методов оценки индивидуальных психологических особенностей игрушки. Она помогает лучше узнать себя, оценить свои сильные и&nbsp;слабые стороны, выбрать оптимальный способ психологической помощи.</p>
                   <button type="button" class="part1_buttons" id="button4" name="button">запись</button>
                 </div>
               </div>
@@ -470,7 +462,7 @@
                     <img class="arrow_picture arrow_picture_fifth"src="img/arrow2.svg" alt="">
                   </div>
                   <div class="accordion-item_content">
-                    Психотерапевтический метод работы с&nbsp;эмоциональными и&nbsp;поведенческими затруднениями, использующий игру в&nbsp;качестве терапевтического воздействия.
+                    <p>Психотерапевтический метод работы с&nbsp;эмоциональными и&nbsp;поведенческими затруднениями, использующий игру в&nbsp;качестве терапевтического воздействия.</p>
                     <button type="button" class="part1_buttons" id="button5" name="button">запись</button>
                   </div>
               </div>
