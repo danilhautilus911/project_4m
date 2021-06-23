@@ -118,30 +118,33 @@
     }
     .text {
       grid-area: text;
-      border-width: 0.4vw 0.2vw 0.4vw 0.4vw;
+      border-width: 0.25vw 0.15vw 0.25vw 0.25vw;
     }
     p {
       font-family: "20Kopeek_Regular";
     }
     .text p, .strelka p {
       font-size: 1.3vw;
-      padding: 0.8vw;
+      padding: 1vw;
       display: inline-block;
     }
+    .strelka p {max-width: 8vw;}
     .shkala {
       grid-area: shkala;
-      border-width: 0.4vw 0.2vw 0.4vw 0.2vw;
+      border-width: 0.25vw 0.15vw 0.25vw 0.15vw;
       display: flex;
       flex-direction: row;
       position: relative;
       justify-content: space-between;
       align-items: flex-end;
+      overflow: hidden;
     }
     .shkala p {
       font-size: 2vw;
       padding: 0vw 1vw 1vw 3vw;
       display: inline-block;
-      border-right: black solid 0.4vw;
+      border-right: black solid 0.25vw;
+      z-index: 4;
     }
     .first {padding: 0vw 1vw 1vw 4vw !important;}
     .tenth {
@@ -149,9 +152,17 @@
       border: none !important;
     }
     .strelka {
-      background-color: #FFDD5B !important;
+      /* background-color: white !important; */
       grid-area: strelka;
-      border-width: 0.4vw 0.4vw 0.4vw 0.2vw;
+      border-width: 0.25vw 0.25vw 0.25vw 0.15vw;
+      animation: strelka_flashing 3s 4.2s infinite alternate;
+      transition: all 1s;
+    }
+    @keyframes strelka_flashing {
+      0% {background-color: white;}
+      33% {background-color: #7FDEFF;}
+      66% {background-color: #FF83BD;}
+      100% {background-color: #FF5959;}
     }
     .strelka img {
       transform: rotate(180deg);
@@ -213,6 +224,21 @@
       font-size: 1.8vw;
       padding: 2vw 1vw;
       /* max-width: 10vw; */
+    }
+    .level_anxiety {
+      position: absolute;
+      z-index: 1;
+      background-color: #FF5959;
+      height: 10vw;
+      width: 62vw;
+      bottom: -1vw;
+      left: -1vw;
+      transition: all .2s;
+      animation: level_anxiety_action 4s ease-out;
+    }
+    @keyframes level_anxiety_action {
+      0% {width: 0vw;}
+      100% {width: 62vw;}
     }
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .header {
@@ -359,7 +385,7 @@
     </div>
     <div class="footer">
         <div class="text">
-          <p>Шкала эмоционального самочувствия</p>
+          <p>Шкала эмоционального истощения</p>
         </div>
         <div class="shkala">
           <p class="first">1</p>
@@ -372,12 +398,13 @@
           <p>8</p>
           <p>9</p>
           <p class="tenth">10</p>
+          <div class="level_anxiety"></div>
         </div>
+
         <div class="strelka">
           <p>Необходима релаксация</p>
-          <img src="img/arrow.svg" alt="">
+          <a href="https://danilhautilus911.github.io/web-poster-2/"><img class="next_arrow_eight_page" src="img/arrow.svg" alt=""></a>
         </div>
     </div>
-
   </body>
 </html>
