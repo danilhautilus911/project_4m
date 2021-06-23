@@ -192,9 +192,13 @@ $(document).ready(function() {
   	}
   });
 
-  $('.button_sixth_page').click(function() {
+  $('.button_sixth_page').mouseover(function() {
     $(this).css('background-color','#FF5959');
     $(this).css('color','white');
+  })
+  $('.button_sixth_page').mouseout(function() {
+    $(this).css('background-color','white');
+    $(this).css('color','black');
   })
 
   $('.block_seventh_page').click(function() {
@@ -220,6 +224,31 @@ $(document).ready(function() {
       location.href = "https://danilhautilus911.github.io/project_4m/eighth.html";
   }
   });
+
+  $('.item_page12').mouseover(function () {
+    $(this).css('background-color','#F24941')
+  })
+
+  $('.item_page12').mouseout(function () {
+    $(this).css('background-color','white')
+  })
+
+  $('.item1_page12').click(function () {
+    $('.card1').css('opacity','1');
+    $('.card2, .card3, .card4, .card5, .card6, .card7, .card8').css('opacity','0');
+  })
+
+  $('.item2_page12').click(function () {
+    $('.card2').css('opacity','1');
+    $('.card1, .card3, .card4, .card5, .card6, .card7, .card8').css('opacity','0');
+  })
+
+  $('.card').mouseover(function () {
+    $('.lets_message').css('display','block');
+  })
+  $('.card').mouseout(function () {
+    $('.lets_message').css('display','none');
+  })
 
 
 
