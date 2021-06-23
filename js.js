@@ -233,15 +233,38 @@ $(document).ready(function() {
     $(this).css('background-color','white')
   })
 
+  
+// ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
   $('.item1_page12').click(function () {
     $('.card1').css('opacity','1');
     $('.card2, .card3, .card4, .card5, .card6, .card7, .card8').css('opacity','0');
   })
-
   $('.item2_page12').click(function () {
     $('.card2').css('opacity','1');
     $('.card1, .card3, .card4, .card5, .card6, .card7, .card8').css('opacity','0');
   })
+  $('.item3_page12').click(function () {
+    $('.card3').css('opacity','1');
+    $('.card1, .card7, .card4, .card5, .card6, .card2, .card8').css('opacity','0');
+  })
+  $('.item4_page12').click(function () {
+    $('.card4').css('opacity','1');
+    $('.card1, .card7, .card3, .card5, .card6, .card2, .card8').css('opacity','0');
+  })
+  $('.item5_page12').click(function () {
+    $('.card5').css('opacity','1');
+    $('.card1, .card7, .card3, .card4, .card6, .card2, .card8').css('opacity','0');
+  })
+  $('.item6_page12').click(function () {
+    $('.card6').css('opacity','1');
+    $('.card1, .card7, .card3, .card4, .card5, .card2, .card8').css('opacity','0');
+  })
+  $('.item7_page12').click(function () {
+    $('.card7').css('opacity','1');
+    $('.card1, .card3, .card4, .card5, .card6, .card2, .card8').css('opacity','0');
+  })
+// ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
 
   $('.card').mouseover(function () {
     $('.lets_message').css('display','block');
@@ -249,6 +272,41 @@ $(document).ready(function() {
   $('.card').mouseout(function () {
     $('.lets_message').css('display','none');
   })
+
+  $('.button1_twelth_page').click(function() {
+    $(this).css('background-color', '#F24941');
+    $(this).css('color', 'white')
+    $('.main, .header').css('filter', 'blur(1px)');
+    $('.overlay_twelth_page').fadeIn();
+  });
+
+  $('.closepopup_js_campaign_twelth_page').click(function() {
+    $('.button1_twelth_page').css('background-color', 'white');
+    $('.button1_twelth_page').css('color', 'black')
+    $('.button2_twelth_page').css('background-color', 'white');
+    $('.button2_twelth_page').css('color', 'black')
+    $('.main, .header').css('filter', 'none');
+    $('.overlay_twelth_page').fadeOut();
+    $('.overlay2_twelth_page').fadeOut();
+  });
+
+  $('.button2_twelth_page').click(function() {
+    $(this).css('background-color', '#F24941');
+    $(this).css('color', 'white')
+    $('.main, .header').css('filter', 'blur(1px)');
+    $('.overlay_twelth_page').fadeOut();
+    $('.overlay2_twelth_page').fadeIn();
+  });
+
+  $(document).mouseup(function (e) {
+    var popup = $('.popup_js_twelth_page, popup2_js_twelth_page');
+    if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+      $('.overlay_twelth_page, .overlay2_twelth_page').fadeOut();
+      $('.button1_twelth_page, .button2_twelth_page').css('background-color', 'white');
+      $('.button1_twelth_page, .button2_twelth_page').css('color', 'black')
+      $('.main, .header').css('filter', 'none');
+    }
+  });
 
 
 
