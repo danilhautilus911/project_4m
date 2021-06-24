@@ -323,6 +323,10 @@ $(document).ready(function() {
     }
   });
 
+  function goBack() {
+  window.history.back();
+  }
+
 
 
   // $('.button_anketa').click(function() {
