@@ -1,59 +1,56 @@
 $(document).ready(function() {
   $('.button-js3').click(function() {
-    $('.main').css('filter', 'blur(1px)');
+    $('.main, .header').css('filter', 'blur(1px)');
     $('.overlay3').fadeIn();
   });
 
   $('.button-js1').click(function() {
-    $('.main').css('filter', 'blur(1px)');
+    $('.main, .header').css('filter', 'blur(1px)');
     $('.overlay1').fadeIn();
   });
 
   $('.button-js2').click(function() {
-    $('.main').css('filter', 'blur(1px)');
+    $('.main, .header').css('filter', 'blur(1px)');
     $('.overlay2').fadeIn();
   });
 
   $('.button-js4').click(function() {
-    $('.main').css('filter', 'blur(1px)');
+    $('.main, .header').css('filter', 'blur(1px)');
     $('.overlay4').fadeIn();
   });
 
   $('.button-js5').click(function() {
-    $('.main').css('filter', 'blur(1px)');
+    $('.main, .header').css('filter', 'blur(1px)');
     $('.overlay5').fadeIn();
   });
 
   $('.button-js6').click(function() {
-    $('.main').css('filter', 'blur(1px)');
+    $('.main, .header').css('filter', 'blur(1px)');
     $('.overlay6').fadeIn();
   });
 
-  $('.closepopup-js-campaign').click(function() {
-    $('.main').css('filter', 'none');
-    $('.overlay').fadeOut();
-    $('.overlay-dobavleno').fadeOut();
-  });
 
   $('.button_footer').click(function() {
     $('.overlay').fadeOut();
     $('.overlay-dobavleno').fadeIn();
+    $('.main, .header').css('filter', 'blur(1px)');
   });
 
   $('.plus').click(function() {
     $('.overlay-dobavleno').fadeIn();
+    $('.main, .header').css('filter', 'blur(1px)');
   });
 
   $('.button-js3').click(function() {
-    $('.main').css('filter', 'blur(1px)');
+    $('.main, .header').css('filter', 'blur(1px)');
     $('.overlay3').fadeIn();
   });
 
   // $(document).mouseup(function (e) {
-  // 	var popup = $('.popup-js-campaign');
+  // 	var popup = $('.popup');
   // 	if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-  // 		$('.overlay-js-campaign').fadeOut();
-  //     $('.main').css('filter', 'none');
+  // 		$('.overlay').fadeOut();
+  //     $('.main, .header').css('filter', 'none');
   // 	}
   // });
 
