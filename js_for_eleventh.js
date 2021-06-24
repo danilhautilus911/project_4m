@@ -1,8 +1,4 @@
 $(document).ready(function() {
-  $('.button_anketa').click(function() {
-    $(this).toggleClass('button_anketa_altering');
-  });
-
   $('.button-js-campaign').click(function() {
     $(this).css('background-color', '#FF83BD');
     $(this).css('border', 'none');
