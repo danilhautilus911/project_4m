@@ -257,6 +257,8 @@
       }
       .logo {display: none;}
       .options a {font-size: 2.6vw;}
+      .options {border-width: 0.25em 0.25em 0.25em 0.25em;}
+      .empty1 {border-width: 0em 0.25em 0em 0.15em;}
       .footer {
         height: 6vw;
         grid-template-columns: 1fr;
@@ -267,21 +269,30 @@
         font-size: 2.6vw;
         text-transform: uppercase;
         padding: 1.3vw;
+        max-width: 50vw;
       }
       .strelka img {right: 1%;}
       .main {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 6vw 1fr 6vw;
         grid-template-areas: ". ."
-                             "column1 empty"
+                             "column1 empty1"
                              ". .";
       }
+      .empty2 {display: none;}
       h1 {
         font-size: 4.5vw;
         padding: 1vw 2vw;
       }
       h2 {font-size: 2.6vw; padding: 2vw 2vw 1vw;}
       p {font-size: 2.6vw; padding: 2vw 2vw;}
+      .h1{border-width: 0em 0.15em 0.15em 0.25em;}
+      .paragraph1 {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .paragraph2 {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .paragraph3 {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .paragraph4 {border-width: 0.15em 0.15em 0em 0.25em;}
+      .strelka {border-width: 0.25em 0.25em 0.25em 0.25em; animation: strelka_flashing 3s infinite alternate !important;}
+
     }
     @media only screen and (min-width: 320px) and (max-width: 568px){
       .header {
@@ -304,11 +315,7 @@
         padding: 2.9vw 2vw;
         display: block;
       }
-      .back_circle {
-        height: 8vw;
-        width: 8vw;
-        margin-left: 1.5vw;
-      }
+      .back_circle {display: none;}
       .logo_picture {
         height: 5.5vw;
         padding-right: 2vw;
@@ -321,7 +328,7 @@
                              ".";
       }
       .footer {
-        height: 15vw;
+        height: 16vw;
         grid-template-columns: 1fr;
         grid-template-areas: "strelka";
       }
@@ -331,14 +338,14 @@
         padding: 2vw 2vw;
       }
       .h1 {border-width: 0em 0.25em 0.15em 0.25em;}
-      .empty {display: none;}
+      .empty1, .empty2 {display: none;}
       h2 {
         font-size: 5vw;
-        padding: 5vw 3vw 1vw;
+        padding: 5vw 2vw 1vw;
       }
       p {
         font-size: 5vw;
-        padding: 2vw 3vw 5vw;
+        padding: 2vw 2vw 5vw;
       }
       .paragraph1, .paragraph2, .paragraph3 {border-width: 0.15em 0.25em 0.15em 0.25em;}
       .paragraph4 {border-width: 0.15em 0.25em 0em 0.25em;}
@@ -346,9 +353,10 @@
         font-size: 5.5vw;
         text-transform: uppercase;
         padding: 4vw 2vw;
+        max-width: 80vw;
       }
-      .strelka {border-width: 0.25em 0.25em 0.4em 0.25em;}
-      .strelka img {top: 14%;}
+      .strelka {border-width: 0.25em 0.25em 0.25em 0.25em;}
+      .strelka img {top: 18%; right: 2%;}
     }
 
   </style>
