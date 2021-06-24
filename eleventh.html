@@ -54,13 +54,13 @@
     }
     .logo {
       grid-area: logo;
-      border-width: 0.2em 0.15em 0.2em 0.2em;
+      border-width: 0.25em 0.15em 0.25em 0.25em;
       display: flex;
       align-items: center;
     }
     .options {
       grid-area: options;
-      border-width: 0.2em 0.2em 0.2em 0.15em;
+      border-width: 0.25em 0.25em 0.25em 0.15em;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -117,7 +117,7 @@
       grid-area: column1;
       position: relative;
       background-color: white;
-      border-width: 0.15em 0.15em 0.15em 0.2em;
+      border-width: 0.15em 0.15em 0.15em 0.25em;
     }
     h1 {
       font-family: "20Kopeek_Regular";
@@ -129,17 +129,17 @@
       font-size: 1.8vw;
       padding: 3vw 1vw 1vw;
     }
-    .column1_header {grid-area: column1_header; border-width: 1px 2px 2px 4px;}
-    .column1_part2 {height: calc(100% - 5.5vw); background-color: transparent !important;}
-    .column2_header {grid-area: column2_header; border-width: 1px 0.15em 0.15em 0.15em;}
+    .column1_header {grid-area: column1_header; border-width: 0em 0.15em 0.15em 0.25em;}
+    /* .column1_part2 {height: calc(100% - 5.5vw); background-color: transparent !important;} */
+    .column2_header {grid-area: column2_header; border-width: 0em 0.15em 0.15em 0.15em;}
     .column2_part1 {border-width: 0.15em 0.15em 0.15em 0.15em;}
     .column2_part2 {border-width: 0.15em 0.15em 0.15em 0.15em;}
-    .column2 {grid-area: column2; border-width: 0.15em 0.15em 0.15em 0.15em;}
-    .column3_header {grid-area: column3_header; border-width: 1px 0.2em 0.15em 0.15em;}
-    .column3 {grid-area: column3; border-width: 0.15em 0.2em 0.15em 0.15em;}
+    .column2 {grid-area: column2;}
+    .column3_header {grid-area: column3_header; border-width: 0em 0.25em 0.15em 0.15em;}
+    .column3 {grid-area: column3; border-width: 0.15em 0.25em 0.15em 0.15em;}
     .footer {
       grid-area: footer;
-      border-width: 0.15em 0.2em 0.2em 0.2em;
+      border-width: 0.15em 0.25em 0.25em 0.25em;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -170,7 +170,7 @@
       flex-direction: row;
       justify-content: space-between;
     }
-    button {
+    .button_anketa, .button_footer  {
       font-family: "20Kopeek_Regular";
       font-size: 1.5vw;
       position: relative;
@@ -184,8 +184,8 @@
       color: black;
       transition: all .2s;
     }
-    .button1 {margin-left: 1vw;}
-    .button5 {margin-left: 0.5vw;}
+    /* .button1 {margin-left: 1vw;}
+    .button5 {margin-left: 0.5vw;} */
     .p2 {
       font-family: "20Kopeek_Regular";
       font-size: 1.3vw;
@@ -230,7 +230,7 @@
       font-family: "20Kopeek_Regular";
       font-size: 3vw;
       color: black;
-      padding: 3.5vw 0vw;
+      padding: 1vw;
     }
     .closepopup {
       position: absolute;
@@ -269,7 +269,7 @@
     .fake {
       display: inline-block;
       width: 2.5vw;
-      height: 93%;
+      height: 90%;
       position: relative;
       border-radius: 50%;
     }
@@ -321,6 +321,7 @@
       }
       .logo {display: none;}
       .options a {font-size: 2.6vw;}
+      .options {border-width: 0.25em 0.25em 0.25em 0.25em;}
 
       .text, .shkala {display: none;}
       .strelka p {
@@ -345,7 +346,13 @@
       }
       .column1_text p, p {
         font-size: 2.6vw;
-        padding: 2vw 2vw;
+        padding: 2vw 2vw 1vw;
+      }
+      input[type="text"], select {
+          height: 3vw !important;
+          font-size: 1.8vw !important;
+          width: 88%;
+          padding-left: 2vw;
       }
       button {
         font-size: 2vw;
@@ -364,6 +371,7 @@
       }
       .column2_part1 {grid-area: column2_part1};
       .column2_part2 {grid-area: column2_part2};
+
     }
     @media only screen and (min-width: 320px) and (max-width: 568px) {
       .header {
@@ -374,10 +382,10 @@
         grid-template-areas: "logo";
       }
       .logo {
-        border-width: 0.2em 0.2em 0.2em 0.2em;
+        border-width: 0.25em 0.25em 0.25em 0.25em;
       }
       .options {
-        border-width: 0.15em 0.2em 0.2em 0.2em;
+        border-width: 0.15em 0.25em 0.25em 0.25em;
         display: block;
         display: none;
       }
@@ -445,15 +453,15 @@
         font-size: 4vw;
         margin: 1vw 3vw 3vw!important;
       }
-      .column1_header {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .column1 {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .column2_header {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .column2_part1 {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .column2_part2 {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .column2 {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .column3_header {grid-arborder-width: 0.15em 0.2em 0.15em 0.2em;}
-      .column3 {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .footer {border-width: 0.15em 0.2em 0.2em 0.2em;}
+      .column1_header {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .column1 {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .column2_header {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .column2_part1 {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .column2_part2 {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .column2 {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .column3_header {grid-arborder-width: 0.15em 0.25em 0.15em 0.25em;}
+      .column3 {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .footer {border-width: 0.15em 0.25em 0.25em 0.25em;}
     }
 
   </style>
