@@ -187,6 +187,8 @@ $(document).ready(function() {
     // $('.part2_buttons').css('opacity', '0')
     $('.main').css('filter', 'none');
     $('.overlay-js-campaign').fadeOut();
+    $('.overlay').fadeOut();
+    $('.overlay-dobavleno').fadeOut();
   });
 
   $(document).mouseup(function (e) {
@@ -320,6 +322,14 @@ $(document).ready(function() {
       $('.main, .header').css('filter', 'none');
     }
   });
+
+  $('.button_anketa').click(function() {
+    $(this).toggleClass('button_anketa_altering');
+  });
+
+  // $('.button_anketa').click(function() {
+  //   $(this).addClass('.button_anketa_altering')
+  // });
 
 
 
