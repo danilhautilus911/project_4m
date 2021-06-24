@@ -323,9 +323,7 @@ $(document).ready(function() {
     }
   });
 
-  $('.button_anketa').click(function() {
-    $(this).toggleClass('button_anketa_altering');
-  });
+
 
   // $('.button_anketa').click(function() {
   //   $(this).addClass('.button_anketa_altering')
