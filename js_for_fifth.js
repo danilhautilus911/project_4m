@@ -64,4 +64,31 @@ $('.poster4').click(function () {
       $('.main').css('filter', 'none');
   	}
   });
-});
+
+  if (jQuery(window).width() < 630) {
+    $('.event1').mouseover(function () {$('.black_rectangle1').addClass('black_rectangle_action')});
+    $('.event1').mouseout(function () {$('.black_rectangle1').removeClass('black_rectangle_action')});
+
+    $('.event2').mouseover(function () {$('.black_rectangle2').addClass('black_rectangle_action')});
+    $('.event2').mouseout(function () {$('.black_rectangle2').removeClass('black_rectangle_action')});
+
+    $('.event3').mouseover(function () {$('.black_rectangle3').addClass('black_rectangle_action')});
+    $('.event3').mouseout(function () {$('.black_rectangle3').removeClass('black_rectangle_action')});
+
+    $('.event4').mouseover(function () {$('.black_rectangle4').addClass('black_rectangle_action')});
+    $('.event4').mouseout(function () {$('.black_rectangle4').removeClass('black_rectangle_action')});
+
+    $('.event5').mouseover(function () {$('.black_rectangle5').addClass('black_rectangle_action')});
+    $('.event5').mouseout(function () {$('.black_rectangle5').removeClass('black_rectangle_action')});
+
+    $('.event6').mouseover(function () {$('.black_rectangle6').addClass('black_rectangle_action')});
+    $('.event6').mouseout(function () {$('.black_rectangle6').removeClass('black_rectangle_action')});
+
+    $('.event7').mouseover(function () {$('.black_rectangle7').addClass('black_rectangle_action')});
+    $('.event7').mouseout(function () {$('.black_rectangle7').removeClass('black_rectangle_action')});
+
+    $('.event8').mouseover(function () {$('.black_rectangle8').addClass('black_rectangle_action')});
+    $('.event8').mouseout(function () {$('.black_rectangle8').removeClass('black_rectangle_action')});
+    // $('.event1').mouseout(function () {$('.button1').removeClass('opacity_action')});
+  }
+  });
