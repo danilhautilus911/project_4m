@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+  $('.back_circle').click(function() {
+    window.history.back()
+});
+
   $('.button1').mouseover(function () {
     $('.button_action1').addClass('sizer');
   });
