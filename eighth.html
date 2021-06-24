@@ -58,13 +58,13 @@
     }
     .logo {
       grid-area: logo;
-      border-width: 0.2em 0.15em 0.2em 0.2em;
+      border-width: 0.25em 0.15em 0.25em 0.25em;
       display: flex;
       align-items: center;
     }
     .options {
       grid-area: options;
-      border-width: 0.2em 0.2em 0.2em 0.15em;
+      border-width: 0.25em 0.25em 0.25em 0.15em;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -118,7 +118,7 @@
     }
     .text {
       grid-area: text;
-      border-width: 0.25vw 0.15vw 0.25vw 0.25vw;
+      border-width: 0.25em 0.15em 0.25em 0.25em;
     }
     p {
       font-family: "20Kopeek_Regular";
@@ -131,7 +131,7 @@
     .strelka p {max-width: 8vw;}
     .shkala {
       grid-area: shkala;
-      border-width: 0.25vw 0.15vw 0.25vw 0.15vw;
+      border-width: 0.25em 0.15em 0.25em 0.15em;
       display: flex;
       flex-direction: row;
       position: relative;
@@ -154,7 +154,7 @@
     .strelka {
       /* background-color: white !important; */
       grid-area: strelka;
-      border-width: 0.25vw 0.25vw 0.25vw 0.15vw;
+      border-width: 0.25em 0.25em 0.25em 0.15em;
       animation: strelka_flashing 3s 4.2s infinite alternate;
       transition: all 1s;
     }
@@ -181,16 +181,24 @@
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 4vw 1fr 5vw;
       grid-template-areas: ". . ."
-                           "column1 empty empty"
+                           "empty1 column1 empty2"
                            ". . .";
     }
-    .empty {
-      grid-area: empty;
+    .empty1 {
+      grid-area: empty1;
       background-color: white;
       border-radius: 1em;
       border-color: black;
       border-style: solid;
-      border-width: 0.01vw 0.4vw 0vw 0.2vw;
+      border-width: 0em 0.15em 0em 0.25em;
+    }
+    .empty2 {
+      grid-area: empty2;
+      background-color: white;
+      border-radius: 1em;
+      border-color: black;
+      border-style: solid;
+      border-width: 0em 0.25em 0em 0.15em;
     }
     .column1 {
       grid-area: column1;
@@ -203,17 +211,17 @@
       border-style: solid;
     }
     .h1{
-      border-width: 0.01vw 0.2vw 0.2vw 0.4vw;
+      border-width: 0em 0.15em 0.15em 0.15em;
     }
     h1 {
       font-family: "20Kopeek_Regular";
       font-size: 3vw;
       padding: 1vw;
     }
-    .paragraph1 {border-width: 0.15vw 0.15vw 0.15vw 0.2vw;}
-    .paragraph2 {border-width: 0.15vw 0.15vw 0.15vw 0.2vw;}
-    .paragraph3 {border-width: 0.15vw 0.15vw 0.15vw 0.2vw;}
-    .paragraph4 {border-width: 0.15vw 0.15vw 0vw 0.2vw;}
+    .paragraph1 {border-width: 0.15em 0.15em 0.15em 0.15em;}
+    .paragraph2 {border-width: 0.15em 0.15em 0.15em 0.15em;}
+    .paragraph3 {border-width: 0.15em 0.15em 0.15em 0.15em;}
+    .paragraph4 {border-width: 0.15em 0.15em 0em 0.15em;}
     h2 {
       font-family: "20Kopeek_DemiBold";
       font-size: 1.8vw;
@@ -284,10 +292,10 @@
         grid-template-areas: "logo";
       }
       .logo {
-        border-width: 0.2em 0.2em 0.2em 0.2em;
+        border-width: 0.25em 0.25em 0.25em 0.25em;
       }
       .options {
-        border-width: 0.15em 0.2em 0.2em 0.2em;
+        border-width: 0.15em 0.25em 0.25em 0.25em;
         display: block;
         display: none;
       }
@@ -322,7 +330,7 @@
         font-size: 9vw;
         padding: 2vw 2vw;
       }
-      .h1 {border-width: 0em 0.2em 0.15em 0.2em;}
+      .h1 {border-width: 0em 0.25em 0.15em 0.25em;}
       .empty {display: none;}
       h2 {
         font-size: 5vw;
@@ -332,14 +340,14 @@
         font-size: 5vw;
         padding: 2vw 3vw 5vw;
       }
-      .paragraph1, .paragraph2, .paragraph3 {border-width: 0.15em 0.2em 0.15em 0.2em;}
-      .paragraph4 {border-width: 0.15em 0.2em 0em 0.2em;}
+      .paragraph1, .paragraph2, .paragraph3 {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .paragraph4 {border-width: 0.15em 0.25em 0em 0.25em;}
       .strelka p {
         font-size: 5.5vw;
         text-transform: uppercase;
         padding: 4vw 2vw;
       }
-      .strelka {border-width: 0.2em 0.2em 0.4em 0.2em;}
+      .strelka {border-width: 0.25em 0.25em 0.4em 0.25em;}
       .strelka img {top: 14%;}
     }
 
@@ -360,7 +368,8 @@
       </div>
     </div>
     <div class="main">
-      <div class="empty"></div>
+      <div class="empty1"></div>
+      <div class="empty2"></div>
       <div class="column1">
         <div class="h1">
           <h1>ИНТЕРПРЕТАЦИЯ ЦВЕТОВЫХ ВЫБОРОВ</h1>
