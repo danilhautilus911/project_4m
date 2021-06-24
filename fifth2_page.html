@@ -203,22 +203,15 @@
                            "p4 p4"
                            "p5 p5";
     }
-    .content img {
-      width: 100%;
-    }
+    .content img {width: 100%;}
     .content div {
       border-color: black;
       border-style: solid;
       border-width: 0em 0.25em 0em 0em;
       transition: all .2s;
     }
-    .poster1 {
-      grid-area: p1;
-      max-width: 50vw;
-    }
-    .poster1 img {
-      border-radius: 1em 1em 0em 0em;
-    }
+    .poster1 {grid-area: p1;}
+    .poster1 img {border-radius: 1em 1em 0em 0em;}
     .poster2 {grid-area: p2;}
     .poster2:hover, .poster1:hover, .poster4:hover {transform: scale(1.005);}
     .poster3 {grid-area: p3;}
@@ -238,8 +231,6 @@
       transform: scale(1.005);
       filter: brightness(0.8);
     }
-
-    .empty {display: none;}
     .button {
       font-family: "20Kopeek_Regular";
       font-size: 1vw;
@@ -323,6 +314,18 @@
       60% {background-color: #FFDD5B}
       100% {background-color: white;}
     }
+    .black_rectangle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: black;
+      opacity: 0.5;
+      display: none;
+      transition: all .2s;
+    }
+    .black_rectangle_action {display: block;}
 
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .header {
@@ -346,20 +349,25 @@
         grid-template-rows: 6vw 1fr;
         grid-template-areas: "."
                              "info"
-                             "posters";
       }
       .info {grid-template-rows: repeat(8, 0fr);}
-      .data {border-right: 0.4vw solid black;}
-      .event {border-bottom: 0.4vw solid black;}
-      .data, h1 {
+      .data {border-right: 4px solid black;}
+      .event {
+        border-bottom: 4px solid black;
+      }
+      h1 {
         font-size: 4.5vw;
         padding: 1vw 2vw;
+      }
+      .data {
+       font-size: 4.5vw;
+       padding: 1vw 4vw;
       }
       p {
         font-size: 2.6vw;
         padding: 0vw 2vw 1vw;
       }
-      .event {grid-template-columns: 0.4fr 3fr;}
+      .event {grid-template-columns: 0.8fr 3fr;}
       .event2 p {max-width: 60vw;}
       .button {
         font-size: 2vw;
@@ -376,20 +384,130 @@
       }
       .content {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr 1fr 1.89fr;
+        grid-template-rows: 0fr 0fr 1fr;
         grid-template-areas:         "p1 p2"
         "p3 p4"
         "p5 p5";
       }
-      /* .content div {
-       border-right: 0em !important;
-    } */
+
       .poster1 {border-width: 0em 0.1em 0em 0.25em !important;}
       .poster1 img, .poster2 img, .poster3 img, .poster4 img, .poster5 img {border-radius: 1em 1em 1em 1em; border: 0em;}
       .poster2 {border-width: 0em 0.25em 0em 0.1em !important;}
       .poster3 {border-width: 0em 0.1em 0em 0.25em !important;}
       .poster4 {border-width: 0em 0.25em 0em 0.1em !important;}
       .poster5 {border-width: 0em 0.25em 0em 0.25em !important;}
+    }
+    @media only screen and (min-width: 320px) and (max-width: 630px) {
+      .header {
+        height: 15vw;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo";
+      }
+      .logo {
+        border-width: 0.25em 0.25em 0.25em 0.25em;
+      }
+      .options {
+        border-width: 0.15em 0.25em 0.25em 0.25em;
+        display: block;
+        display: none;
+      }
+      .options a{
+        font-size: 9vw;
+        padding: 2.9vw 2vw;
+        display: block;
+      }
+      .back_circle {display: none;}
+      .logo_picture {
+        height: 5.5vw;
+        padding-right: 2vw;
+      }
+      .main {
+        width: 100vw;
+        position: relative;
+        z-index: 0;
+        min-height: 0vw;
+        background-color: black;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15vw 1fr;
+        grid-template-areas: "."
+                             "info"
+      }
+      .info {grid-template-rows: repeat(8, 0fr);}
+       h1 {
+        font-size: 9vw;
+        padding: 2vw 2vw;
+      }
+      .data {
+        font-size: 9vw;
+        padding: 2vw 4vw;
+      }
+      p {display: none;}
+      .data {border-right: 4px solid black;}
+      .event {border-bottom: 4px solid black;}
+      .button {
+        font-size: 4vw;
+        bottom: 50%;
+        right: 50%;
+        transform: translate(50%, 50%);
+        padding: 0.4vw 2vw 1vw;
+        margin: 0vw;
+      }
+      .popup {width: 85vw; border-radius: 4vw;}
+      h2 {font-size: 9vw; padding: 5vw 2vw;}
+      .closepopup {
+        position: absolute;
+        top: -7vw;
+        right: -2vw;
+        height: 5vw;
+        width: 5vw;
+        cursor: pointer;
+        display: flex;
+        text-align: center;
+        align-items: center;
+      }
+      .posters {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "content";
+      }
+      .content {
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 1fr 1fr 1fr 1fr 0.945fr; */
+        grid-template-rows: 0fr 0fr 0fr 0fr 0fr;
+        grid-template-areas:         "p1"
+        "p2"
+        "p3"
+        "p4"
+        "p5";
+      }
+      .poster1 {max-width: 100vw;}
+      .poster1 {border-width: 0em 0.25em 0em 0.25em !important;}
+      .poster2 {border-width: 0em 0.25em 0em 0.25em !important;}
+      .poster3 {border-width: 0em 0.25em 0em 0.25em !important;}
+      .poster4 {border-width: 0em 0.25em 0em 0.25em !important;}
+      .poster5 {border-width: 0em 0.25em 0em 0.25em !important;}
+
+      .poster2:hover, .poster1:hover, .poster4:hover {transform: scale(1);}
+      .poster3:hover {
+        transform: scale(1);
+        filter: brightness(0.8);
+      }
+      .poster5:hover {
+        transform: scale(1);
+        filter: brightness(0.8);
+      }
+      .poster3 img, .poster5 img {
+        border-top: 0.15em solid black;
+        border-bottom: 0.15em solid black;
+        animation: poster3_5_activity 1.5s infinite ease-in;
+        border-radius: 1em;
+      }
+      @keyframes poster3_5_activity {
+        50% {transform: scale(1.009);}
+        100% {transform: scale(1);}
+      }
     }
   </style>
   <body>
@@ -414,64 +532,72 @@
           <div class="event1_content">
               <h1>ОНЛАЙН-ЛЕКЦИЯ</h1>
               <p>ТЕМА: «Хобби как смысл жизни»</p>
-              <button type="button" class="button button1" name="button">запись</button>
           </div>
+          <div class="black_rectangle black_rectangle1"></div>
+          <button type="button" class="button button1" name="button">запись</button>
         </div>
         <div class="event event2">
           <div class="data event2_data">28.06</div>
           <div class="event2_content">
               <h1>АНОНС ЛИНИИ</h1>
               <p>Официальная презентация в честь запуска горячей линии поддержки!</p>
-              <button type="button" class="button button2" name="button">запись</button>
           </div>
+          <div class="black_rectangle black_rectangle2"></div>
+          <button type="button" class="button button2" name="button">запись</button>
         </div>
         <div class="event event3">
           <div class="data event3_data">15.07</div>
           <div class="event3_content">
               <h1>ОПЭН ТОК</h1>
               <p>ТЕМА: «Польза личного дневника»</p>
-              <button type="button" class="button button3" name="button">запись</button>
           </div>
+          <div class="black_rectangle black_rectangle3"></div>
+          <button type="button" class="button button3" name="button">запись</button>
         </div>
         <div class="event event4">
           <div class="data event4_data">10.08</div>
           <div class="event4_content">
               <h1>МК</h1>
               <p>«Навыки саморегуляции»</p>
-              <button type="button" class="button button4" name="button">запись</button>
           </div>
+          <div class="black_rectangle black_rectangle4"></div>
+          <button type="button" class="button button4" name="button">запись</button>
         </div>
         <div class="event event5">
           <div class="data event5_data">22.08</div>
           <div class="event5_content">
               <h1>ГРУППОВОЕ ЗАНЯТИЕ</h1>
               <p>ТЕМА: «Домашнее насилие в мире игрушек»</p>
-              <button type="button" class="button button5" name="button">запись</button>
           </div>
+          <div class="black_rectangle black_rectangle5"></div>
+          <button type="button" class="button button5" name="button">запись</button>
         </div>
         <div class="event event6">
           <div class="data event6_data">15.09</div>
           <div class="event6_content">
               <h1>ОНЛАЙН-ЛЕКЦИЯ</h1>
               <p>«От мечты к цели»</p>
-              <button type="button" class="button button6" name="button">запись</button>
           </div>
+          <div class="black_rectangle black_rectangle6"></div>
+          <button type="button" class="button button6" name="button">запись</button>
         </div>
         <div class="event event7">
           <div class="data event7_data">31.10</div>
           <div class="event7_content">
               <h1>ХЭЛЛОУИН</h1>
               <p>Самая страшная ночь в самой милой компании!</p>
-              <button type="button" class="button button7" name="button">запись</button>
           </div>
+          <div class="black_rectangle black_rectangle7"></div>
+          <button type="button" class="button button7" name="button">запись</button>
         </div>
         <div class="event event8">
           <div class="data event8_data">19.11</div>
           <div class="event8_content">
               <h1>ОНЛАЙН-ЛЕКЦИЯ</h1>
               <p>«Навыки саморегуляции»</p>
-              <button type="button" class="button button8" name="button">запись</button>
           </div>
+          <div class="black_rectangle black_rectangle8"></div>
+          <button type="button" class="button button8" name="button">запись</button>
         </div>
       </div>
     </div>
