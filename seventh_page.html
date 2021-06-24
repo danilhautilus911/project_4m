@@ -50,13 +50,13 @@
     }
     .logo {
       grid-area: logo;
-      border-width: 0.2em 0.15em 0.15em 0.2em;
+      border-width: 0.25em 0.15em 0.25em 0.25em;
       display: flex;
       align-items: center;
     }
     .options {
       grid-area: options;
-      border-width: 0.2em 0.2em 0.15em 0.15em;
+      border-width: 0.25em 0.25em 0.25em 0.15em;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -112,7 +112,7 @@
       position: relative;
       grid-area: top;
       background-color: transparent;
-      border-width: 0.15em 0.2em 0.15em 0.2em;
+      border-width: 0em 0.25em 0em 0.25em;
       display: grid;
       grid-template-columns: 0.35fr 10fr;
       grid-template-areas: "number text";
@@ -120,7 +120,7 @@
     .number {
       border-radius: 1em;
       grid-area: number;
-      border-right: 0.2em black solid;
+      border-right: 0.25em black solid;
       background-color: white;
     }
     .text {
@@ -132,49 +132,49 @@
     h1, p {
       font-family: "20Kopeek_Regular";
       font-size: 1.8vw;
-      padding: 1vw 0.5vw 1vw 1vw;
+      padding: 1vw;
     }
     .second_number, .third_number, .second_sentence, .third_sentence {display: none;}
     .block_seventh_page {cursor: pointer; transition: all .2s;}
     .block1_seventh_page {
       grid-area: block1;
       background-color: #FFDD5B;
-      border-width: 0.15em 0.15em 0.15em 0.2em;
+      border-width: 0.25em 0.15em 0.15em 0.25em;
     }
     .block2_seventh_page {
       grid-area: block2;
       background-color: #777777;
-      border-width: 0.15em 0.15em 0.15em 0.15em;
+      border-width: 0.25em 0.15em 0.15em 0.15em;
     }
     .block3_seventh_page {
       grid-area: block3;
       background-color: #7FDEFF;
-      border-width: 0.15em 0.15em 0.15em 0.15em;
+      border-width: 0.25em 0.15em 0.15em 0.15em;
     }
     .block4_seventh_page {
       grid-area: block4;
       background-color: #FF5959;
-      border-width: 0.15em 0.2em 0.15em 0.15em;
+      border-width: 0.25em 0.25em 0.15em 0.15em;
     }
     .block5_seventh_page {
       grid-area: block5;
       background-color: #4BBDE4;
-      border-width: 0.15em 0.15em 0.2em 0.2em;
+      border-width: 0.15em 0.15em 0.25em 0.25em;
     }
     .block6_seventh_page {
       grid-area: block6;
       background-color: #F655A0;
-      border-width: 0.15em 0.15em 0.15em 0.15em;
+      border-width: 0.15em 0.15em 0.25em 0.15em;
     }
     .block7_seventh_page {
       grid-area: block7;
       background-color: #DF3A33;
-      border-width: 0.15em 0.15em 0.15em 0.15em;
+      border-width: 0.15em 0.15em 0.25em 0.15em;
     }
     .block8_seventh_page {
       grid-area: block8;
       background-color: #C5C5C5;
-      border-width: 0.15em 0.2em 0.2em 0.15em;
+      border-width: 0.15em 0.25em 0.25em 0.15em;
     }
     .button_seventh_page {
       font-family: "20Kopeek_Regular";
@@ -211,9 +211,12 @@
       }
       .logo {display: none;}
       .options a {font-size: 2.6vw;}
+      .options {
+        border-width: 0.25em 0.25em 0.25em 0.25em;
+      }
       .main {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 6vw 8vw 5fr 5fr 5fr 5fr;
+        grid-template-rows: 6vw 0fr 5fr 5fr 5fr 5fr;
         grid-template-areas: "header header"
                              "top top"
                              "block1 block2"
@@ -221,33 +224,28 @@
                              "block5 block6"
                              "block7 block8";
       }
-      h1, p {
-          font-size: 2.6vw;
-          padding: 1vw 1vw 1vw 1vw;
+      h1 {
+        font-size: 5vw;
+        padding: 1vw 0.5vw 1vw 1.5vw;
       }
-      p {max-width: 50vw}
-      .text {
-        width: 95vw;
-      }
-      .top {
-        display: block;
-        border-radius: 1em;
+      p {max-width: 50vw; font-size: 2.6vw; padding: 1vw 2vw;}
+      .number, .text {
         background-color: white;
       }
-      .number, .text {
-        display: inline-block;
-        vertical-align: top;
-        border-radius: 0;
-        border: none;
-        background-color: transparent;
-      }
-      .number {border-right: none;}
-      h1 {padding: 1vw 0vw 1vw 1vw;}
       button {
         font-size: 2vw;
         padding: 0.8vw 1.5vw 1.2vw;
         margin: 1.5vw 1vw;
       }
+      .block1_seventh_page {border-width: 0.25em 0.15em 0.15em 0.25em;}
+      .block2_seventh_page {border-width: 0.25em 0.25em 0.15em 0.15em;}
+      .block3_seventh_page {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .block4_seventh_page {border-width: 0.15em 0.25em 0.15em 0.15em;}
+      .block5_seventh_page {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .block6_seventh_page {border-width: 0.15em 0.25em 0.15em 0.15em;}
+      .block7_seventh_page {border-width: 0.15em 0.15em 0.25em 0.25em;}
+      .block8_seventh_page {border-width: 0.15em 0.25em 0.25em 0.15em;}
+      .next_arrow {padding: 1.8vw;}
     }
     @media only screen and (min-width: 320px) and (max-width: 568px) {
       .header {
@@ -257,11 +255,9 @@
         grid-template-rows: 1fr;
         grid-template-areas: "logo";
       }
-      .logo {
-        border-width: 0.2em 0.2em 0.15em 0.2em;
-      }
+      .logo {border-width: 0.25em 0.25em 0.25em 0.25em;}
       .options {
-        border-width: 0.15em 0.2em 0.2em 0.2em;
+        border-width: 0.15em 0.25em 0.25em 0.25em;
         display: block;
         display: none;
       }
@@ -270,18 +266,14 @@
         padding: 2.9vw 2vw;
         display: block;
       }
-      .back_circle {
-        height: 8vw;
-        width: 8vw;
-        margin-left: 1.5vw;
-      }
+      .back_circle {display: none;}
       .logo_picture {
         height: 5.5vw;
         padding-right: 2vw;
       }
       .main {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 15vw 30vw 5fr 5fr 5fr 5fr;
+        grid-template-rows: 15vw 0fr 3fr 3fr 3fr 3fr;
         grid-template-areas: "header header"
                              "top top"
                              "block1 block2"
@@ -312,6 +304,15 @@
         padding: 1.4vw 3vw 2vw;
         margin: 3vw 3vw;
       }
+      .block1_seventh_page {border-width: 0.25em 0.15em 0.15em 0.25em;}
+      .block2_seventh_page {border-width: 0.25em 0.25em 0.15em 0.15em;}
+      .block3_seventh_page {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .block4_seventh_page {border-width: 0.15em 0.25em 0.15em 0.15em;}
+      .block5_seventh_page {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .block6_seventh_page {border-width: 0.15em 0.25em 0.15em 0.15em;}
+      .block7_seventh_page {border-width: 0.15em 0.15em 0.25em 0.25em;}
+      .block8_seventh_page {border-width: 0.15em 0.25em 0.25em 0.15em;}
+      .next_arrow {display: none;}
     }
 
 
