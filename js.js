@@ -81,40 +81,40 @@ $(document).ready(function() {
   });
 
   $('.accordion-item_trigger_second').mouseover(function () {
-    $('.arrow_picture_second').css('opacity', '1');
+    $('.arrow_picture_second').addClass('strelka_action');
   });
   $('.accordion-item_trigger_second').mouseout(function () {
-    $('.arrow_picture_second').css('opacity', '0');
+    $('.arrow_picture_second').removeClass('strelka_action');
   });
   $('.accordion-item_trigger_second').click(function () {
     $('.arrow_picture_second').toggleClass('rotational_action');
   });
 
   $('.accordion-item_trigger_third').mouseover(function () {
-    $('.arrow_picture_third').css('opacity', '1');
+    $('.arrow_picture_third').addClass('strelka_action');
   });
   $('.accordion-item_trigger_third').mouseout(function () {
-    $('.arrow_picture_third').css('opacity', '0');
+    $('.arrow_picture_third').removeClass('strelka_action');
   });
   $('.accordion-item_trigger_third').click(function () {
     $('.arrow_picture_third').toggleClass('rotational_action');
   });
 
   $('.accordion-item_trigger_fourth').mouseover(function () {
-    $('.arrow_picture_fourth').css('opacity', '1');
+    $('.arrow_picture_fourth').addClass('strelka_action');
   });
   $('.accordion-item_trigger_fourth').mouseout(function () {
-    $('.arrow_picture_fourth').css('opacity', '0');
+    $('.arrow_picture_fourth').removeClass('strelka_action');
   });
   $('.accordion-item_trigger_fourth').click(function () {
     $('.arrow_picture_fourth').toggleClass('rotational_action');
   });
 
   $('.accordion-item_trigger_fifth').mouseover(function () {
-    $('.arrow_picture_fifth').css('opacity', '1');
+    $('.arrow_picture_fifth').addClass('strelka_action');
   });
   $('.accordion-item_trigger_fifth').mouseout(function () {
-    $('.arrow_picture_fifth').css('opacity', '0');
+    $('.arrow_picture_fifth').removeClass('strelka_action');
   });
   $('.accordion-item_trigger_fifth').click(function () {
     $('.arrow_picture_fifth').toggleClass('rotational_action');
@@ -126,9 +126,7 @@ $(document).ready(function() {
   $('.accordion-item_holder_first').mouseout(function () {
     $('.button6').css('opacity', '0');
   });
-  $('.button6').click(function () {
-    $(this).css('opacity', '1');
-  });
+
   $('.accordion-item_holder_second').mouseover(function () {
     $('.button7').css('opacity', '1');
   });
@@ -186,6 +184,7 @@ $(document).ready(function() {
     $('.button-js-campaign').css('background-color', 'white');
     $('.button-js-campaign').css('border', '4px solid black');
     $('.button-js-campaign').css('color', 'black')
+    // $('.part2_buttons').css('opacity', '0')
     $('.main').css('filter', 'none');
     $('.overlay-js-campaign').fadeOut();
   });
@@ -197,6 +196,7 @@ $(document).ready(function() {
       $('.button-js-campaign').css('background-color', 'white');
       $('.button-js-campaign').css('border', '4px solid black');
       $('.button-js-campaign').css('color', 'black')
+
       $('.main').css('filter', 'none');
   	}
   });
