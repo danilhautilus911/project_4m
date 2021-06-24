@@ -351,26 +351,39 @@
       input[type="text"], select {
           height: 3vw !important;
           font-size: 1.8vw !important;
-          width: 88%;
-          padding-left: 2vw;
+          width: 91%;
+          /* padding-left: 2vw; */
       }
-      button {
+      .button_anketa, .button_footer {
         font-size: 2vw;
-        padding: 0.8vw 1vw 1.2vw;
+        padding: 0.8vw 1.5vw 1.2vw;
         margin: 0.5vw;
         transition: all .2s;
       }
       .button5 {margin-left: 2.5vw;}
       .button1 {margin-left: 3vw;}
       .uvlecheniya {padding: 2vw 2vw 1vw;}
+      .column2_part1 {border-width: 0.15em 0.25em 0.15em 0.15em;}
+      .column2_part2 {border-width: 0.15em 0.25em 0.15em 0.15em;}
       .column2 {
         display: grid;
         grid-template-rows: 1.7fr 1fr;
         grid-template-areas: "column2_part1"
                              "column2_part2";
       }
+      h2 {font-size: 4.5vw; padding: 2vw 2vw;}
+      .column2_header {border-width: 0em 0.25em 0.15em 0.15em;}
       .column2_part1 {grid-area: column2_part1};
       .column2_part2 {grid-area: column2_part2};
+      .column1 {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .column3_header {grid-area: column3_header; border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .column3 {grid-area: column3; border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .color {
+        width: 90%;
+        margin: 0vw 2.5vw;
+        height: 3.7vw;
+      }
+      .fake {width: 3.4vw;}
 
     }
     @media only screen and (min-width: 320px) and (max-width: 568px) {
@@ -394,11 +407,7 @@
         padding: 2.9vw 2vw;
         display: block;
       }
-      .back_circle {
-        height: 8vw;
-        width: 8vw;
-        margin-left: 1.5vw;
-      }
+      .back_circle {display: none;}
       .logo_picture {
         height: 5.5vw;
         padding-right: 2vw;
@@ -433,13 +442,14 @@
       input[type="text"], select, .color {
         margin: 0vw 3vw;
         height: 6.5vw;
+        font-size: 4vw;
       }
       .input5_part2, .input4_part3, .input2_column3 {
         margin: 0vw 3vw 6vw !important;
       }
-      button {
+      .button_anketa, .button_footer {
         font-size: 4vw;
-        padding: 1vw 2.2vw 1.9vw;;
+        padding: 0.4vw 2vw 1vw;;
         margin: 1vw 1vw;
       }
       .button1 {
@@ -453,15 +463,29 @@
         font-size: 4vw;
         margin: 1vw 3vw 3vw!important;
       }
-      .column1_header {border-width: 0.15em 0.25em 0.15em 0.25em;}
+      .column1_header {border-width: 0em 0.25em 0.15em 0.25em;}
       .column1 {border-width: 0.15em 0.25em 0.15em 0.25em;}
       .column2_header {border-width: 0.15em 0.25em 0.15em 0.25em;}
       .column2_part1 {border-width: 0.15em 0.25em 0.15em 0.25em;}
       .column2_part2 {border-width: 0.15em 0.25em 0.15em 0.25em;}
       .column2 {border-width: 0.15em 0.25em 0.15em 0.25em;}
-      .column3_header {grid-arborder-width: 0.15em 0.25em 0.15em 0.25em;}
+      .column3_header {border-width: 0.15em 0.25em 0.15em 0.25em;}
       .column3 {border-width: 0.15em 0.25em 0.15em 0.25em;}
       .footer {border-width: 0.15em 0.25em 0.25em 0.25em;}
+      .popup {width: 85vw; border-radius: 4vw;}
+      h2 {font-size: 9vw; padding: 5vw 2vw;}
+      .closepopup {
+        position: absolute;
+        top: -7vw;
+        right: -2vw;
+        height: 5vw;
+        width: 5vw;
+        cursor: pointer;
+        display: flex;
+        text-align: center;
+        align-items: center;
+      }
+      .fake {width: 6vw;}
     }
 
   </style>
