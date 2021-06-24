@@ -397,7 +397,7 @@
       .poster4 {border-width: 0em 0.25em 0em 0.1em !important;}
       .poster5 {border-width: 0em 0.25em 0em 0.25em !important;}
     }
-    @media only screen and (min-width: 320px) and (max-width: 630px) {
+    @media only screen and (min-width: 320px) and (max-width: 568px) {
       .header {
         height: 15vw;
         width: 100vw;
@@ -405,6 +405,7 @@
         grid-template-rows: 1fr;
         grid-template-areas: "logo";
       }
+      .back_circle {display: none;}
       .logo {
         border-width: 0.25em 0.25em 0.25em 0.25em;
       }
@@ -499,8 +500,8 @@
         filter: brightness(0.8);
       }
       .poster3 img, .poster5 img {
-        border-top: 0.15em solid black;
-        border-bottom: 0.15em solid black;
+        border-top: 0.1em solid black;
+        border-bottom: 0.1em solid black;
         animation: poster3_5_activity 1.5s infinite ease-in;
         border-radius: 1em;
       }
