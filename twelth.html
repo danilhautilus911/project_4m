@@ -286,7 +286,7 @@
       height: 1vw;
       width: 35%;
       border: 0px;
-      border-bottom: 0.25vw solid black !important;
+      border-bottom: 4px solid black !important;
       outline: 0px;
       margin-left: 2vw;
       margin-top: 0.5vw;
@@ -420,14 +420,15 @@
       }
       .popup_js_twelth_page p {
         padding: 1.5vw 3vw 0vw;
-    }
-    .second_input {
-    height: 2vw;
-    margin-left: 3vw;
-    font-size: 1.8vw;
-}
-.interest {top: 1.5vw !important;}
+      }
+       .second_input {
+        height: 2vw;
+        margin-left: 3vw;
+        font-size: 1.8vw;
+      }
+      .interest {top: 1.5vw !important;}
       .first_input {height: 28vw; border: 4px solid black;}
+      .popup2_js_twelth_page h2 {font-size: 4.5vw; padding: 2vw 2vw;}
     }
       @media only screen and (min-width: 320px) and (max-width: 568px) {
         .header {
@@ -450,34 +451,35 @@
           padding: 2.9vw 2vw;
           display: block;
         }
-        .back_circle {
-          height: 8vw;
-          width: 8vw;
-          margin-left: 1.5vw;
-        }
+        .back_circle {display: none;}
         .logo_picture {
           height: 5.5vw;
           padding-right: 2vw;
         }
         .main {
           grid-template-columns: 1fr;
-          grid-template-rows: 15vw 0fr 1fr;
+          grid-template-rows: 15vw 0fr 1.5fr;
           grid-template-areas: "."
                                "part1"
                                "part2";
         }
-        .first_part {border-width: 0.02em 0.25em 0.15em 0.25em;}
-        .second_part {border-width: 0.15em 0.25em 0.25em 0.25em;}
+        .first_part {border-radius: 0em; border-width: 0em 0.25em 0.25em 0.25em; background-color: black;}
+        .second_part {border-width: 0em 0.25em 0.25em 0.25em;}
         .item7 {border-bottom: none;}
+        .item7 {border-bottom: none;}
+        .item1_page12 {border-radius: 1em 1em 0em 0em;}
+        .item_page12 {border-bottom: solid black 4px;}
+        .item7_page12 {border-bottom: 0px !important; border-radius: 0em 0em 1em 1em;}
+        .text_part1 h1 {font-size: 9vw; padding: 2vw 2vw 0vw !important;}
         h1 {
           font-size: 9vw;
           padding: 2vw 2vw;
         }
         .card {
           width: 85vw;
-          height: 125vw;
+          height: 127vw;
           margin: 6vw;
-          border-radius: 1em;
+          border-radius: 1em !important;
         }
         .text_part {
           height: 21%;
@@ -502,6 +504,74 @@
           top: 2vw;
           right: 11.3vw;
         }
+        .img_part1_card2 img {
+          margin-top: 21%;
+          height: 118%;
+        }
+        .img_part1_card4 img {
+          height: 88%;
+        }
+        .img_part1_card6 img {
+          height: 135%;
+        }
+        .interest {top: 4vw !important;}
+        .interest1_card1, .interest1_card2, .interest1_card3, .interest1_card4, .interest1_card5, .interest1_card6, .interest1_card7, .interest1_card8 {right: 2vw;}
+        .interest2_card1 {right: 11.5vw;}
+        .interest2_card2 {right: 23.8vw;}
+        .interest2_card3 {right: 16.9vw;}
+        .interest2_card4 {right: 17.5vw;}
+        .interest2_card6 {right: 18vw;}
+        .interest2_card7 {right: 12.1vw;}
+        .lets_message {
+          width: 85vw;
+          height: 127vw;
+        }
+        .button_twelth_page {
+          font-size: 4vw;
+          border: 4px solid #FF5959;
+          padding: 0.4vw 2vw 1vw;
+          margin-right: 4vw;
+          margin-bottom: 5vw;
+        }
+        h2 {font-size: 9vw; padding: 3vw 2vw 2vw;}
+        .popup_js_twelth_page {
+          border-radius: 2em;
+              height: 63vw;
+          width: 90vw;
+        }
+        .closepopup {
+          position: absolute;
+          top: -7vw;
+          right: -2vw;
+          height: 5vw;
+          width: 5vw;
+          cursor: pointer;
+          display: flex;
+          text-align: center;
+          align-items: center;
+        }
+        .popup_js_twelth_page p {
+          font-size: 4vw;
+              padding: 3vw 4vw 0vw;
+      }
+      .second_input {
+      height: 5vw;
+      margin-left: 4vw;
+      font-size: 4vw;
+      width: 50%;
+      border-bottom: 4px solid black !important;
+  }
+  .interest {top: 1.5vw !important;}
+        .first_input {height: 28vw; border: 4px solid black; width: 88%;}
+        .popup {
+      width: 85vw;
+          border-radius: 4vw;
+  }
+  .popup2_js_twelth_page h2 {
+      font-size: 9vw;
+      padding: 5vw 2vw;
+  }
+      }
       }
 
     }
