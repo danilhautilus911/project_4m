@@ -50,13 +50,13 @@
     }
     .logo {
       grid-area: logo;
-      border-width: 0.2em 0.15em 0.15em 0.2em;
+      border-width: 0.25em 0.15em 0.25em 0.25em;
       display: flex;
       align-items: center;
     }
     .options {
       grid-area: options;
-      border-width: 0.2em 0.2em 0.15em 0.15em;
+      border-width: 0.25em 0.25em 0.25em 0.15em;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -103,7 +103,7 @@
     }
     .info {
       grid-area: info;
-      border-width: 0.15em 0.2em 0.15em 0.2em;
+      border-width: 0.0em 0.25em 0.25em 0.25em;
       border-radius: 1em;
       background-color: white;
       position: relative;
@@ -196,7 +196,7 @@
       display: grid;
       overflow: hidden;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr 1fr 1fr 1fr 0.9fr;
+      grid-template-rows: 0fr 0fr 0fr 0fr 0fr;
       grid-template-areas: "p1 p1"
                            "p2 p2"
                            "p3 p3"
@@ -206,28 +206,37 @@
     .content img {
       width: 100%;
     }
+    .content div {
+      border-color: black;
+      border-style: solid;
+      border-width: 0em 0.25em 0em 0em;
+      transition: all .2s;
+    }
     .poster1 {
       grid-area: p1;
+      max-width: 50vw;
+    }
+    .poster1 img {
       border-radius: 1em 1em 0em 0em;
-      border-style: solid;
-      border-color: black;
-      border-width: 0.15em 0.2em 0.15em 0em;
     }
-    .poster2 {
-      grid-area: p2;
+    .poster2 {grid-area: p2;}
+    .poster2:hover, .poster1:hover, .poster4:hover {transform: scale(1.005);}
+    .poster3 {grid-area: p3;}
+    .poster3:hover {
+      transform: scale(1.005);
+      filter: brightness(0.8);
     }
-    .poster3 {
-      grid-area: p3;
-    }
-    .poster4 {
-      grid-area: p4;
-    }
+    .poster4 {grid-area: p4;}
     .poster5 {
       grid-area: p5;
-      border-radius: 0em 0em 1em 1em;
       border-style: solid;
       border-color: black;
-      border-width: 0em 0em 0.15em 0em;
+      transition: all .2s;
+    }
+    .poster5 img {border-radius: 0em 0em 1em 1em;}
+    .poster5:hover {
+      transform: scale(1.005);
+      filter: brightness(0.8);
     }
 
     .empty {display: none;}
@@ -305,6 +314,15 @@
       width: 100%;
       transform: rotate(45deg);
     }
+    .opacity_action {opacity: 1;}
+    .opacity_action2 {opacity: 1 !important;}
+    .animation_for_posters {
+      animation: animation_for_posters 1s ease-in;
+    }
+    @keyframes animation_for_posters {
+      60% {background-color: #FFDD5B}
+      100% {background-color: white;}
+    }
 
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .header {
@@ -314,8 +332,12 @@
         grid-template-areas: "options";
       }
       .logo {display: none;}
+      .options {
+        border-width: 0.25em 0.25em 0.25em 0.25em;
+      }
       .options a {font-size: 2.6vw;}
       .main {
+        width: 100vw;
         position: relative;
         z-index: 0;
         min-height: 0vw;
@@ -323,8 +345,12 @@
         grid-template-columns: 1fr;
         grid-template-rows: 6vw 1fr;
         grid-template-areas: "."
-                             "info";
+                             "info"
+                             "posters";
       }
+      .info {grid-template-rows: repeat(8, 0fr);}
+      .data {border-right: 0.4vw solid black;}
+      .event {border-bottom: 0.4vw solid black;}
       .data, h1 {
         font-size: 4.5vw;
         padding: 1vw 2vw;
@@ -333,9 +359,16 @@
         font-size: 2.6vw;
         padding: 0vw 2vw 1vw;
       }
-      .event {
-        grid-template-columns: 0.5fr 3fr;
+      .event {grid-template-columns: 0.4fr 3fr;}
+      .event2 p {max-width: 60vw;}
+      .button {
+        font-size: 2vw;
+        bottom: 0;
+        right: 0;
+        padding: 0.8vw 1.5vw 1.2vw;
+        margin: 1vw 1vw;
       }
+      h2 {font-size: 4.5vw; padding: 2vw 2vw;}
       .posters {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -343,39 +376,20 @@
       }
       .content {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas:         "p1 empty1"
-        "empty2 p2"
-        "p3 empty3"
-        "p4 empty4";
+        grid-template-rows: 1fr 1fr 1.89fr;
+        grid-template-areas:         "p1 p2"
+        "p3 p4"
+        "p5 p5";
       }
-      .empty {
-        display: block;
-        border-radius: 1em;
-        border-color: black;
-        border-style: solid;
-        background-color: white;
-      }
-      .empty1 {
-        grid-area: empty1;
-        border-width: 0.2vw 0.4vw 0.2vw 0.2vw;
-      }
-      .empty2 {
-        grid-area: empty2;
-        border-width: 0.2vw 0.15vw 0.2vw 0.4vw;
-      }
-      .empty3 {
-        grid-area: empty3;
-        border-width: 0.2vw 0.4vw 0.2vw 0.2vw;
-      }
-      .empty4 {
-        grid-area: empty4;
-        border-width: 0.2vw 0.4vw 0.4vw 0.2vw;
-      }
-      .poster1 {border-radius: 1em 1em 1em 1em; border-width: 0.2vw 0.2vw 0.2vw 0.4vw;}
-      .poster2 {border-radius: 1em 1em 1em 1em; border-width: 0.2vw 0.4vw 0.2vw 0.2vw;}
-      .poster3 {border-radius: 1em 1em 1em 1em; border-width: 0.2vw 0.2vw 0.2vw 0.4vw;}
-      .poster4 {border-radius: 1em 1em 1em 1em; border-width: 0.2vw 0.2vw 0.2vw 0.4vw;}
+      /* .content div {
+       border-right: 0em !important;
+    } */
+      .poster1 {border-width: 0em 0.1em 0em 0.25em !important;}
+      .poster1 img, .poster2 img, .poster3 img, .poster4 img, .poster5 img {border-radius: 1em 1em 1em 1em; border: 0em;}
+      .poster2 {border-width: 0em 0.25em 0em 0.1em !important;}
+      .poster3 {border-width: 0em 0.1em 0em 0.25em !important;}
+      .poster4 {border-width: 0em 0.25em 0em 0.1em !important;}
+      .poster5 {border-width: 0em 0.25em 0em 0.25em !important;}
     }
   </style>
   <body>
@@ -464,15 +478,21 @@
 
     <div class="posters">
       <div class="content">
-          <img class="poster1"src="img/p1.svg" alt="">
-          <img class="poster2"src="img/p2.svg" alt="">
-          <a href="https://youtu.be/717AAQDsaVw" class="poster3"><img class=""src="img/p3.svg" alt=""></a>
-          <img class="poster4"src="img/p4.svg" alt="">
-          <a href="https://danilhautilus911.github.io/web-poster/" class="poster5"><img src="img/p5.svg" alt=""></a>
-          <div class="empty empty1"></div>
-          <div class="empty empty2"></div>
-          <div class="empty empty3"></div>
-          <div class="empty empty4"></div>
+        <div class="poster1">
+          <img src="img/p1.svg" alt="">
+        </div>
+        <div class="poster2">
+          <img src="img/p2.svg" alt="">
+        </div>
+        <div class="poster3">
+          <a href="https://youtu.be/717AAQDsaVw"><img class=""src="img/p3.svg" alt=""></a>
+        </div>
+        <div class="poster4">
+          <img src="img/p4.svg" alt="">
+        </div>
+        <div class="poster5">
+          <a href="https://danilhautilus911.github.io/web-poster/" ><img src="img/p5.svg" alt=""></a>
+        </div>
       </div>
     </div>
 
