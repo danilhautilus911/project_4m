@@ -245,6 +245,7 @@
       z-index: 2;
       display: none;
     }
+
     /* .overlay6 {
       display: block;
     } */
@@ -253,7 +254,7 @@
       border-radius: 2vw;
       position: absolute;
       width: 70vw;
-      height: 40vw;
+      /* height: 40vw; */
       left: 50%;
       top: 53%;
       transform: translate(-50%, -50%);
@@ -775,7 +776,7 @@
       }
       .logo {display: none;}
       .options a {font-size: 2.6vw;}
-
+      .options {justify-content: space-around; border-width: 0.25em 0.25em 0.25em 0.25em;}
       .text, .shkala {display: none;}
       .strelka p {
         font-size: 2.6vw;
@@ -794,6 +795,9 @@
       p {display: none;}
       h1, h2, h3 {font-size: 3vw;}
       h1, h3, .item2 h1 {padding: 2.4vw 20vw 2vw 3%; }
+      .popup-dobavleno h2 {
+        font-size: 4.5vw; padding: 2vw 2vw; position: relative !important; bottom: 0vw !important; right: 0vw !important;
+      }
       .picture {height: 40vw;}
       h2 {padding: 0; position: absolute; bottom: 2vw; right: 8vw;}
       .plus {height: 3vw; width: 3vw; bottom: 2vw;}
@@ -802,13 +806,17 @@
         margin: 4% 4% 0%;
         height: 40vw;
       }
-      .item1 {border-width: 0.02em 0.15em 0.15em 0.25em;}
-      .item2 {border-width: 0.02em 0.25em 0.15em 0.15em;}
+      .item1 {border-width: 0em 0.15em 0.15em 0.25em;}
+      .item2 {border-width: 0em 0.25em 0.25em 0.15em;}
       .item3 {border-width: 0.15em 0.15em 0.15em 0.25em;}
       .item4 {border-width: 0.15em 0.25em 0.15em 0.15em;}
       .item5 {border-width: 0.15em 0.15em 0.25em 0.25em;}
       .item6 {border-width: 0.15em 0.25em 0.25em 0.15em;}
       .h1formobile {display: none;}
+      .number_of_items {font-size: 2.5vw; width: 2vw;}
+      .korzina {height: 3vw; width: 9vw;}
+      .korzina img {height: 100%;}
+      /* .overlay */
     }
     @media only screen and (min-width: 320px) and (max-width: 568px) {
       .header {
@@ -831,11 +839,7 @@
         padding: 2.9vw 2vw;
         display: block;
       }
-      .back_circle {
-        height: 8vw;
-        width: 8vw;
-        margin-left: 1.5vw;
-      }
+      .back_circle {display: none}
       .logo_picture {
         padding-right: 2vw;
         height: 80%;
@@ -853,6 +857,25 @@
       h2 {font-size: 9vw;}
       h1, h3, .item2 h1 {padding: 2vw 9vw 12vw 4%;}
       h2 {padding: 0; position: absolute; bottom: 2vw; left: 2vw;}
+      .popup-dobavleno h2 {
+        font-size: 9vw;
+    padding: 5vw 2vw; position: relative !important; bottom: 0vw !important; left: 0vw !important;
+      }
+      .closepopup {
+        position: absolute;
+        top: -7vw;
+        right: -2vw;
+        height: 5vw;
+        width: 5vw;
+        cursor: pointer;
+        display: flex;
+        text-align: center;
+        align-items: center;
+      }
+      .popup-dobavleno {
+    width: 85vw;
+    border-radius: 4vw;
+}
       .h1formobile {
         display: block;
         font-family: "20Kopeek_Regular";
