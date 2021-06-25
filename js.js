@@ -279,6 +279,15 @@ $('.logo_picture').click(function() {
 $('.next_arrow').click(function() {
    location.href = "https://danilhautilus911.github.io/project_4m/eighth.html";
 })
+
+  if (jQuery(window).width() < 568) {
+    $('.logo_picture1').click(function() {
+       location.href = "https://danilhautilus911.github.io/project_4m/second_page.html";
+    })
+    $('.logo_picture2').click(function() {
+       location.href = "https://danilhautilus911.github.io/project_4m/third_page.html";
+    })
+  }
   // $('.block_seventh_page').click(function() {
   //   if ($('.block_seventh_page').hasClass('coloring')) {
   //     $(this).addClass('coloring2');
