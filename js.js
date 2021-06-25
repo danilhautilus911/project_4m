@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+$('.logo_picture').click(function() {
+    location.href = "https://danilhautilus911.github.io/project_4m/index.html";
+});
+
   $('.back_circle').click(function() {
     window.history.back()
 });
