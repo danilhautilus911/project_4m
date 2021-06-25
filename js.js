@@ -218,32 +218,83 @@ $(document).ready(function() {
   })
 
   $('.block_seventh_page').click(function() {
-    $(this).css('background-color', 'white')
+    $(this).addClass('coloring')
   })
 
-  var click = 0;
-  $('.next_arrow').click(function () {
-    click++;
-    if(click === 1) {
-      lusher();
-  }
-    if(click === 2) {
-      location.href = "https://danilhautilus911.github.io/project_4m/eighth.html";
-  }
-  });
+  // var click = 0;
+  // $('.block_seventh_page').click(function () {
+  //   click++;
+  //  if(click === 1) {
+  //    let coloring_number = document.getElementsByClassName('coloring').length;
+  //    console.log(coloring_number);
+  //    if (coloring_number === 8) {
+  //      lusher();
+  //    }
+  //  }
+  //
+  //   if(click === 2) {
+  //
+  //     location.href = "https://danilhautilus911.github.io/project_4m/eighth.html";
+  // }
+  // });
 
-  function lusher() {
-    $('.first_number, .first_sentence').css('display', 'none');
-    $('.second_number, .second_sentence').css('display', 'block');
-    $('.block1_seventh_page').css('background-color', '#7FDEFF');
-    $('.block2_seventh_page').css('background-color', '#DF3A33');
-    $('.block3_seventh_page').css('background-color', '#4BBDE4');
-    $('.block4_seventh_page').css('background-color', '#F655A0');
-    $('.block5_seventh_page').css('background-color', '#FFDD5B');
-    $('.block6_seventh_page').css('background-color', '#C5C5C5');
-    $('.block7_seventh_page').css('background-color', '#FF5959');
-    $('.block8_seventh_page').css('background-color', '#777777');
+  // let coloring_number = 0;
+  // $('.block_seventh_page').click(function() {
+  //   coloring_number++;
+  //   if (coloring_number === 8) {
+  //     lusher();
+  //   }
+  //   console.log(coloring_number);
+  // })
+
+  $('.block_seventh_page').click(function() {
+    let coloring_number = document.getElementsByClassName('coloring').length;
+    console.log(coloring_number);
+    if (coloring_number === 8) {
+      lusher();
+    }
+    if ($('.block1_2_seventh_page').hasClass('coloring') & $('.block3_2_seventh_page').hasClass('coloring') & $('.block4_2_seventh_page').hasClass('coloring') & $('.block5_2_seventh_page').hasClass('coloring') & $('.block6_2_seventh_page').hasClass('coloring') & $('.block7_2_seventh_page').hasClass('coloring') & $('.block8_2_seventh_page').hasClass('coloring') & $('.block2_2_seventh_page').hasClass('coloring')) {
+      $('.next_arrow').css('display','block')
+    }
+  })
+
+  if (jQuery(window).width() < 568) {
+    $('.block_seventh_page').click(function() {
+      let coloring_number = document.getElementsByClassName('coloring').length;
+      console.log(coloring_number);
+      if (coloring_number === 8) {
+        lusher();
+      }
+      if ($('.block1_2_seventh_page').hasClass('coloring') & $('.block3_2_seventh_page').hasClass('coloring') & $('.block4_2_seventh_page').hasClass('coloring') & $('.block5_2_seventh_page').hasClass('coloring') & $('.block6_2_seventh_page').hasClass('coloring') & $('.block7_2_seventh_page').hasClass('coloring') & $('.block8_2_seventh_page').hasClass('coloring') & $('.block2_2_seventh_page').hasClass('coloring')) {
+        $('.next_arrow').css('display','block')
+        $('.second_sentence').css('color','white')
+      }
+    })
   }
+
+  // $('.block_seventh_page').click(function() {
+  //   if ($('.block_seventh_page').hasClass('coloring')) {
+  //     $(this).addClass('coloring2');
+  //   }
+  //   let coloring_number2 = document.getElementsByClassName('coloring2').length;
+  //   console.log(coloring_number2);
+  //   if (coloring_number === 8) {
+  //     location.href = "https://danilhautilus911.github.io/project_4m/eighth.html";
+  //   }
+  // })
+
+  // function coloring_function () {
+  //   if (color_number === 3) {
+  //     $('.block1_seventh_page').addClass('coloring1');
+  //   }
+  // }
+
+
+function lusher() {
+  $('.first_number, .first_sentence').css('display', 'none');
+  $('.second_number, .second_sentence').css('display', 'block');
+  $('.block1_2_seventh_page, .block2_2_seventh_page, .block3_2_seventh_page, .block4_2_seventh_page, .block5_2_seventh_page, .block6_2_seventh_page, .block7_2_seventh_page, .block8_2_seventh_page').addClass('coloring1');
+}
 
   $('.item_page12').mouseover(function () {
     $(this).css('background-color','#F24941')
