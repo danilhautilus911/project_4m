@@ -70,10 +70,10 @@
     }
     .first_o, .second_o, .fourth_o {color: #C5C5C5 !important;}
     .logo_picture {
-      height: 1.2vw;
       position: absolute;
       right: 0;
       padding-right: 1vw;
+      height: 70%;
     }
     .back_circle {
       position: relative;
@@ -103,7 +103,7 @@
                            "block1 block2 block3 block4"
                            "block5 block6 block7 block8";
     }
-    .top, .block1_seventh_page, .block2_seventh_page, .block3_seventh_page, .block4_seventh_page, .block5_seventh_page, .block6_seventh_page, .block7_seventh_page, .block8_seventh_page {
+    .top, .block_seventh_page {
       border-radius: 1em;
       position: relative;
       border-style: solid;
@@ -141,42 +141,101 @@
       grid-area: block1;
       background-color: #FFDD5B;
       border-width: 0.25em 0.15em 0.15em 0.25em;
+
+    }
+    .block1_2_seventh_page {
+      grid-area: block1;
+      background-color: #7FDEFF;
+      border-width: 0.25em 0.15em 0.15em 0.25em;
+      display: none;
     }
     .block2_seventh_page {
       grid-area: block2;
       background-color: #777777;
       border-width: 0.25em 0.15em 0.15em 0.15em;
     }
+    .block2_2_seventh_page {
+      grid-area: block2;
+      background-color: #DF3A33;
+      border-width: 0.25em 0.15em 0.15em 0.15em;
+      display: none;
+    }
     .block3_seventh_page {
       grid-area: block3;
       background-color: #7FDEFF;
       border-width: 0.25em 0.15em 0.15em 0.15em;
+    }
+    .block3_2_seventh_page {
+      grid-area: block3;
+      background-color: #4BBDE4;
+      border-width: 0.25em 0.15em 0.15em 0.15em;
+      display: none;
     }
     .block4_seventh_page {
       grid-area: block4;
       background-color: #FF5959;
       border-width: 0.25em 0.25em 0.15em 0.15em;
     }
+    .block4_2_seventh_page {
+      grid-area: block4;
+      background-color: #F655A0;
+      border-width: 0.25em 0.25em 0.15em 0.15em;
+      display: none;
+    }
     .block5_seventh_page {
       grid-area: block5;
       background-color: #4BBDE4;
       border-width: 0.15em 0.15em 0.25em 0.25em;
+    }
+    .block5_2_seventh_page {
+      grid-area: block5;
+      background-color: #FFDD5B;
+      border-width: 0.15em 0.15em 0.25em 0.25em;
+      display: none;
     }
     .block6_seventh_page {
       grid-area: block6;
       background-color: #F655A0;
       border-width: 0.15em 0.15em 0.25em 0.15em;
     }
+    .block6_2_seventh_page {
+      grid-area: block6;
+      background-color: #C5C5C5;
+      border-width: 0.15em 0.15em 0.25em 0.15em;
+      display: none;
+    }
     .block7_seventh_page {
       grid-area: block7;
       background-color: #DF3A33;
       border-width: 0.15em 0.15em 0.25em 0.15em;
+    }
+    .block7_2_seventh_page {
+      grid-area: block7;
+      background-color: #FF5959;
+      border-width: 0.15em 0.15em 0.25em 0.15em;
+      display: none;
     }
     .block8_seventh_page {
       grid-area: block8;
       background-color: #C5C5C5;
       border-width: 0.15em 0.25em 0.25em 0.15em;
     }
+    .block8_2_seventh_page {
+      grid-area: block8;
+      background-color: #777777;
+      border-width: 0.15em 0.25em 0.25em 0.15em;
+      display: none;
+    }
+    .coloring {display: none !important;}
+    .coloring1 {display: block;}
+    /* .coloring1 {background-color: #7FDEFF;}
+    .coloring2 {background-color: #DF3A33;}
+    .coloring3 {background-color: #4BBDE4;}
+    .coloring4 {background-color: #F655A0;}
+    .coloring5 {background-color: #FFDD5B;}
+    .coloring6 {background-color: #C5C5C5;}
+    .coloring7 {background-color: #FF5959;}
+    .coloring8 {background-color: #777777;} */
     .button_seventh_page {
       font-family: "20Kopeek_Regular";
       font-size: 1vw;
@@ -202,6 +261,10 @@
       transform: rotate(180deg);
       height: 55%;
       padding: 0.8vw;
+      display: none;
+      transition: all .2s;
+      position: absolute;
+
     }
     @media only screen and (min-width: 569px) and (max-width: 1023px) {
       .header {
@@ -246,6 +309,14 @@
       .block6_seventh_page {border-width: 0.15em 0.25em 0.15em 0.15em;}
       .block7_seventh_page {border-width: 0.15em 0.15em 0.25em 0.25em;}
       .block8_seventh_page {border-width: 0.15em 0.25em 0.25em 0.15em;}
+      .block1_2_seventh_page {border-width: 0.25em 0.15em 0.15em 0.25em;}
+      .block2_2_seventh_page {border-width: 0.25em 0.25em 0.15em 0.15em;}
+      .block3_2_seventh_page {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .block4_2_seventh_page {border-width: 0.15em 0.25em 0.15em 0.15em;}
+      .block5_2_seventh_page {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .block6_2_seventh_page {border-width: 0.15em 0.25em 0.15em 0.15em;}
+      .block7_2_seventh_page {border-width: 0.15em 0.15em 0.25em 0.25em;}
+      .block8_2_seventh_page {border-width: 0.15em 0.25em 0.25em 0.15em;}
       .next_arrow {padding: 1.8vw;}
     }
     @media only screen and (min-width: 320px) and (max-width: 568px) {
@@ -314,7 +385,15 @@
       .block6_seventh_page {border-width: 0.15em 0.25em 0.15em 0.15em;}
       .block7_seventh_page {border-width: 0.15em 0.15em 0.25em 0.25em;}
       .block8_seventh_page {border-width: 0.15em 0.25em 0.25em 0.15em;}
-      .next_arrow {display: none;}
+      .block1_2_seventh_page {border-width: 0.25em 0.15em 0.15em 0.25em;}
+      .block2_2_seventh_page {border-width: 0.25em 0.25em 0.15em 0.15em;}
+      .block3_2_seventh_page {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .block4_2_seventh_page {border-width: 0.15em 0.25em 0.15em 0.15em;}
+      .block5_2_seventh_page {border-width: 0.15em 0.15em 0.15em 0.25em;}
+      .block6_2_seventh_page {border-width: 0.15em 0.25em 0.15em 0.15em;}
+      .block7_2_seventh_page {border-width: 0.15em 0.15em 0.25em 0.25em;}
+      .block8_2_seventh_page {border-width: 0.15em 0.25em 0.25em 0.15em;}
+      .next_arrow {display: none; padding: 3.8vw;}
     }
 
 
@@ -346,6 +425,7 @@
           <p class="second_sentence">Кликай на цвета от наиболее симпатичного к наименее симпатичному.</p>
           <!-- <p class="third_sentence">Кликай на цвета от наиболее несимпатичного к наименее несимпатичному.</p> -->
         </div>
+
         <img class="next_arrow" src="img/arrow.svg" alt="">
 
         <!-- <button type="button" class="button_seventh_page" name="button">дальше</button> -->
@@ -358,6 +438,15 @@
       <div class="block_seventh_page block6_seventh_page"></div>
       <div class="block_seventh_page block7_seventh_page"></div>
       <div class="block_seventh_page block8_seventh_page"></div>
+
+      <div class="block_seventh_page block1_2_seventh_page"></div>
+      <div class="block_seventh_page block2_2_seventh_page"></div>
+      <div class="block_seventh_page block3_2_seventh_page"></div>
+      <div class="block_seventh_page block4_2_seventh_page"></div>
+      <div class="block_seventh_page block5_2_seventh_page"></div>
+      <div class="block_seventh_page block6_2_seventh_page"></div>
+      <div class="block_seventh_page block7_2_seventh_page"></div>
+      <div class="block_seventh_page block8_2_seventh_page"></div>
     </div>
 
   </body>
