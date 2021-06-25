@@ -764,6 +764,8 @@
     .popup-dobavleno h2 {
       padding: 2vw 0vw;
     }
+    .korzina_for_iphone {display: none;}
+    .number_of_items_for_iphone {display: none;}
 
 
 
@@ -908,6 +910,23 @@
       .plus {
         border: 0.25em solid black;
       }
+      .korzina_for_iphone {display: block; position: relative; margin-left: 2vw;     height: 10vw;
+    width: 21vw;}
+      .korzina_for_iphone img {
+        height: 80%;
+        display: inline-block;
+      }
+      .number_of_items_for_iphone {
+        display: block;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font-family: "20Kopeek_Regular";
+        font-size: 7vw;
+        display: inline-block;
+        width: 6.2vw;
+        margin-bottom: 0.5vw;
+      }
     }
   </style>
   <body>
@@ -917,6 +936,10 @@
           <img src="img/arrow.svg" alt="">
         </div>
         <img class="logo_picture"src="img/logo10.svg" alt="">
+        <div class="korzina_for_iphone">
+          <img src="img/korzina.svg" alt="">
+          <input class='number_of_items_for_iphone' value='0'>
+        </div>
       </div>
       <div class="options">
         <a class="first_o" href="https://danilhautilus911.github.io/project_4m/twelth.html">НАЙТИ ДРУГА</a>
