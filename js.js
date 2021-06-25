@@ -272,6 +272,9 @@ $(document).ready(function() {
     })
   }
 
+$('.next_arrow').click(function() {
+   location.href = "https://danilhautilus911.github.io/project_4m/eighth.html";
+})
   // $('.block_seventh_page').click(function() {
   //   if ($('.block_seventh_page').hasClass('coloring')) {
   //     $(this).addClass('coloring2');
