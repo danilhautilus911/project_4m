@@ -166,7 +166,7 @@ $(document).ready(function() {
   // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
   $('.plus, .button_footer').click(function() {
-    var $number_of_items = $(".number_of_items");
+    var $number_of_items = $(".number_of_items, .number_of_items_for_iphone");
     $number_of_items.val(parseInt($number_of_items.val()) + 1);
     $number_of_items.change();
   });
